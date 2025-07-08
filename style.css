@@ -121,3 +121,4 @@ a { color: var(--color-accent); text-decoration: none; }
 }
 /* Initial animation state */
 .intro-section, .content-block { visibility: hidden; }
+
