@@ -3,83 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Richard T. Shen - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Richard T. Shen - Curriculum Vitae</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="dashboard-grid">
 
-        <div class="widget profile">
-            <img src="profile.jpg" alt="Rectangular photograph of Richard T. Shen" class="profile-avatar">
-            <h1 class="profile-name">Richard T. SHEN</h1>
-            <p class="profile-title">B.S. in Economics, Shenzhen MSU-BIT University</p>
+    <header class="site-header">
+        <div class="header-content">
+            <div class="site-title">Richard T. Shen / CV</div>
+            <button id="theme-toggle" class="theme-toggle-button">Toggle Theme</button>
         </div>
+    </header>
 
-        <div class="widget about">
-            <h2 class="widget-title">About Me</h2>
-            <p>Applied econometrics student focusing on computationally efficient tools and leveraging big data to generate actionable policy insights. My broader interests span Labor Economics, Digital Economics, and Microeconomic Theory.</p>
-        </div>
+    <div class="container">
+        <main class="timeline-container">
 
-        <div class="widget contact">
-            <a href="mailto:mr.shentao@outlook.com" class="contact-link" aria-label="Email">
-                <i class="fas fa-envelope"></i>
-            </a>
-            <a href="https://github.com/shentao-coder" target="_blank" class="contact-link" aria-label="GitHub">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="#" target="_blank" class="contact-link" aria-label="LinkedIn">
-                <i class="fab fa-linkedin"></i>
-            </a>
-        </div>
+            <section class="timeline-entry" id="intro">
+                <div class="entry-year">Intro</div>
+                <div class="entry-content">
+                    <h1 class="intro-name">Richard T. Shen</h1>
+                    <p class="intro-contact">
+                        54 Longgang St Shenzhen, GD 518172<br>
+                        <a href="mailto:mr.shentao@outlook.com">mr.shentao@outlook.com</a> | (86) 185-2908-5521
+                    </p>
+                </div>
+            </section>
 
-        <div class="widget clock">
-            <div class="time" id="time">12:00:00</div>
-            <div class="location" id="location">Shenzhen, CST</div>
-        </div>
+            <section class="timeline-entry" id="experience-2025">
+                <div class="entry-year">2025</div>
+                <div class="entry-content">
+                    <div class="event-item">
+                        <h2 class="event-title">International Business Intern</h2>
+                        <p class="event-meta">CITIC FUTURES CO., LTD | Shenzhen, GD | Feb - May 2025</p>
+                        <ul class="event-details">
+                            <li>Analyzed futures hedging announcements for 50+ A-share companies using Wind Terminal and Excel to identify trends in corporate risk management.</li>
+                            <li>Automated client trading data analysis using Python (Pandas) and Excel (VBA), creating dashboards that reduced manual reporting time by over 30%.</li>
+                            <li>Supported institutional client investment strategy reports by analyzing 20+ sell-side research papers and historical market data.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
-        <div class="widget skills">
-            <h2 class="widget-title">Technical Expertise</h2>
-            <div class="skills-tags">
-                <span>Python</span><span>R</span><span>MATLAB</span><span>SQL</span><span>Pandas</span><span>VBA</span><span>Latex</span><span>Canva</span>
-            </div>
-        </div>
+            <section class="timeline-entry" id="experience-2024">
+                <div class="entry-year">2024</div>
+                <div class="entry-content">
+                    <div class="event-item">
+                        <h2 class="event-title">Operations Management Intern</h2>
+                        <p class="event-meta">CHINA CITIC BANK INTERNATIONAL | Shenzhen, GD | Nov - Dec 2024</p>
+                        <ul class="event-details">
+                            <li>Conducted competitive analysis on 10+ peer banks, delivering an 8-page report with recommendations that contributed to a 10% reduction in reporting errors.</li>
+                            <li>Analyzed client survey feedback to present insights on customer needs at departmental strategy meetings.</li>
+                        </ul>
+                    </div>
+                    <div class="event-item">
+                        <h2 class="event-title">Manager's Assistant</h2>
+                        <p class="event-meta">AGRICULTURAL BANK OF CHINA | Shenzhen, GD | Jul - Aug 2024</p>
+                        <ul class="event-details">
+                            <li>Analyzed daily transaction patterns from a customer flow of 200+ individuals to identify peak demand periods for optimizing staff allocation.</li>
+                            <li>Mapped and streamlined the end-to-end client service workflow, contributing to a 10% increase in client satisfaction scores.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="timeline-entry" id="leadership-2023">
+                <div class="entry-year">2023</div>
+                <div class="entry-content">
+                     <div class="event-item">
+                        <h2 class="event-title">Team Leader, Analytical Consultant</h2>
+                        <p class="event-meta">GAOTON ACCA ENTERPRISE CHALLENGE | Shenzhen, GD | Dec 2023 - Feb 2024</p>
+                        <ul class="event-details">
+                            <li>Coordinated project arrangements, set overall strategic direction, and assigned tasks according to team members' areas of expertise.</li>
+                            <li>Led the Case Report analysis and Slides Deck production by searching for literature and analyzing topic phenomena.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
-        <div class="widget experience-citic-futures">
-            <h3 class="experience-title">International Business Intern</h3>
-            <p class="experience-company">CITIC Futures Co., Ltd</p>
-            <p class="experience-date">Feb 2025 - May 2025</p>
-        </div>
-        
-        <div class="widget experience-citic-bank">
-            <h3 class="experience-title">Operations Management Intern</h3>
-            <p class="experience-company">China CITIC Bank Int'l</p>
-            <p class="experience-date">Nov 2024 - Dec 2024</p>
-        </div>
+            <section class="timeline-entry" id="education">
+                <div class="entry-year">2021-25</div>
+                <div class="entry-content">
+                    <div class="event-item">
+                        <h2 class="event-title">B.S. in Economics</h2>
+                        <p class="event-meta">SHENZHEN MSU-BIT UNIVERSITY | GPA: 3.74/4.00</p>
+                        <p class="event-details-single">
+                            <strong>Awards & Honors:</strong> Scholarship for First-Year Bachelor's Students; Third Prize, The Global Management Challenge, China.
+                        </p>
+                    </div>
+                </div>
+            </section>
 
-        <div class="widget experience-abc">
-             <h3 class="experience-title">Manager's Assistant</h3>
-            <p class="experience-company">Agricultural Bank of China</p>
-            <p class="experience-date">Jul 2024 - Aug 2024</p>
-        </div>
-        
-        <div class="widget cta-cv">
-            <a href="resume.pdf" target="_blank">
-                <span>View Full</span>
-                <strong>Curriculum Vitae</strong>
-            </a>
-        </div>
-
-        <div class="widget theme-toggle-widget">
-            <button id="theme-toggle" title="Toggle Theme">
-                <i class="fas fa-sun"></i>
-                <i class="fas fa-moon"></i>
-            </button>
-        </div>
-
+        </main>
     </div>
 
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h4>Skills</h4>
+                <p>Python, R, MATLAB, SQL, VBA, Latex, Stata</p>
+            </div>
+            <div class="footer-column">
+                <h4>Languages</h4>
+                <p>Mandarin, English, Cantonese, Russian</p>
+            </div>
+            <div class="footer-column">
+                <h4>Interests</h4>
+                <p>Badminton, Music, Running, Movie, Traveling</p>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <a href="mailto:mr.shentao@outlook.com">Email</a>
+                <a href="https://github.com/shentao-coder" target="_blank">GitHub</a>
+                 <a href="#" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>This website was designed in collaboration with Google AI and coded by Richard T. Shen. Last updated: July 2025.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="main.js"></script>
 </body>
 </html>
