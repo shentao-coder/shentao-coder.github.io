@@ -1,21 +1,34 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
 
-    // --- 1. Theme Toggle ---
+    // --- 1. Theme Toggle Logic ---
     const themeToggle = document.getElementById('theme-toggle');
     if (themeToggle) {
+        // ... (Same theme toggle logic as our very last version) ...
+         const setInitialTheme = () => {
+            const preferredTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', preferredTheme);
+        };
+        setInitialTheme();
         themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const targetTheme = currentTheme === 'day' ? 'night' : 'day';
+            let targetTheme = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
             document.documentElement.setAttribute('data-theme', targetTheme);
-            themeToggle.textContent = targetTheme === 'day' ? 'Switch to Night Edition' : 'Switch to Day Edition';
+            localStorage.setItem('theme', targetTheme);
         });
     }
 
-    // --- 2. Dynamic Date ---
-    const dateElement = document.getElementById('current-date');
-    if(dateElement) {
-        const today = new Date();
-        const options = { year: 'numeric', month: 'long', day: 'numeric' };
-        dateElement.textContent = today.toLocaleDateString('en-US', options).toUpperCase();
+    // --- 2. Scroll Reveal for a gentle entrance ---
+    // We are adding this back, but in a very subtle way
+    if (typeof ScrollReveal !== 'undefined') {
+        const sr = ScrollReveal({
+            distance: '20px',
+            duration: 800,
+            easing: 'ease-out',
+            reset: false,
+            viewFactor: 0.2
+        });
+        sr.reveal('.note-card', { origin: 'bottom', interval: 100 });
+        sr.reveal('.about-card', { origin: 'bottom' });
+        sr.reveal('.hero-statement', { origin: 'top' });
     }
+
 });
