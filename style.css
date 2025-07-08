@@ -118,3 +118,4 @@ a { color: var(--color-accent); text-decoration: none; }
 .note-card, .about-card {
     visibility: hidden; /* For animation */
 }
+
