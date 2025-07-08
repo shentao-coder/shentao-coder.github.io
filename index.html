@@ -1,90 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shen Tao - Academic Portfolio</title>
+    <title>Shen Tao - Portfolio</title>
     
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div class="container">
 
-        <header class="intro">
-            <h1>Shen Tao</h1>
-            <p class="subtitle">Applying quantitative methods to solve challenges in engineering and management.</p>
+        <header class="site-header">
+            <div class="profile-info">
+                <img src="profile.jpg" alt="Profile photograph of Shen Tao" class="profile-avatar">
+                <div>
+                    <h1 class="profile-name">Shen Tao</h1>
+                    <p class="profile-status">Seeking opportunities in Engineering Management</p>
+                </div>
+            </div>
+            <button id="theme-toggle" class="theme-toggle-button">
+                <span class="sun-icon">☀️</span>
+                <span class="moon-icon">🌙</span>
+            </button>
         </header>
 
-        <div class="profile-image-container">
-            <img src="profile.jpg" alt="A rectangular profile photograph of Shen Tao">
-        </div>
-
         <main>
-            <section class="content-section" id="statement">
-                <p class="lead">
-                    I am a researcher and analyst with a rigorous foundation in applied econometrics, dedicated to uncovering causal relationships within complex systems. My work focuses on the intersection of data science, technology strategy, and operations management. I am currently seeking admission to a top-tier Engineering Management program to further my ambition of leading data-informed, innovative projects.
-                </p>
+            <section class="statement">
+                <p>I am a researcher and analyst applying rigorous quantitative methods to solve complex challenges at the intersection of technology, business, and engineering. My work focuses on data-driven decision-making, from causal inference to predictive analytics, with the goal of optimizing complex systems.</p>
             </section>
 
-            <section class="content-section" id="projects">
+            <section class="works">
                 <h2 class="section-title">Selected Works</h2>
                 
-                <article class="project-item">
-                    <span class="project-number">01</span>
+                <a href="#" class="project-card">
                     <div class="project-content">
                         <h3>Undergraduate Thesis: [Your Thesis Title Here]</h3>
-                        <p>This thesis investigates [briefly describe the core problem or question]. By employing a [mention your model, e.g., Difference-in-Differences] model, the study provides causal evidence of [mention your key finding].</p>
-                        <p class="project-meta"><span>Econometrics</span><span>Causal Inference</span><span>Stata</span></p>
+                        <p>This thesis investigates [briefly describe the core problem or question], providing causal evidence of [mention your key finding] through econometric modeling.</p>
+                        <div class="project-tags">
+                            <span>Econometrics</span>
+                            <span>Causal Inference</span>
+                            <span>Stata</span>
+                        </div>
                     </div>
-                </article>
+                    <span class="project-arrow">→</span>
+                </a>
 
-                <article class="project-item">
-                    <span class="project-number">02</span>
+                <a href="[Link to your project on GitHub]" target="_blank" class="project-card">
                     <div class="project-content">
                         <h3>Predictive Modeling: [Kaggle House Price Prediction]</h3>
-                        <p>Developed a predictive model to forecast housing prices with high accuracy. The project involved comprehensive data cleaning, feature engineering, and a comparative analysis of multiple regression algorithms.</p>
-                        <p class="project-meta"><span>Machine Learning</span><span>Python</span><span>Data Visualization</span></p>
-                        <a href="[Link to your project on GitHub]" class="project-link" target="_blank">View on GitHub</a>
+                        <p>Developed a predictive model to forecast housing prices with high accuracy, involving comprehensive feature engineering and model comparison.</p>
+                        <div class="project-tags">
+                            <span>Machine Learning</span>
+                            <span>Python</span>
+                            <span>Data Visualization</span>
+                        </div>
                     </div>
-                </article>
+                    <span class="project-arrow">→</span>
+                </a>
             </section>
             
-            <section class="content-section" id="cv">
+            <section class="cv-summary">
                 <h2 class="section-title">Curriculum Vitae</h2>
-                <div class="cv-grid">
-                    <div class="cv-column">
-                        <h4>Education</h4>
-                        <p><strong>[Your University Name]</strong><br>
-                        Bachelor of [Your Degree], [Your Major]<br>
-                        2021 – 2025</p>
-                    </div>
-                    <div class="cv-column">
-                        <h4>Experience</h4>
-                        <p><strong>[Company Name]</strong><br>
-                        [Your Role, e.g., Data Analyst Intern]<br>
-                        Summer 2024</p>
-                    </div>
+                <div class="cv-item">
+                    <h4>Education</h4>
+                    <p><strong>[Your University Name]</strong>, Bachelor of [Your Degree] (2021-2025)</p>
                 </div>
-                 <div class="cv-download-wrapper">
-                    <a href="resume.pdf" target="_blank" class="cv-download-link">Download Full CV</a>
+                <div class="cv-item">
+                    <h4>Experience</h4>
+                    <p><strong>[Company Name]</strong>, [Your Role] (Summer 2024)</p>
                 </div>
+                <a href="resume.pdf" class="cv-download" target="_blank">Download Full CV</a>
             </section>
         </main>
         
-        <footer class="main-footer">
-            <h4>Contact</h4>
-            <p>
-                <a href="mailto:your.email@example.com">Email</a> &bull; 
-                <a href="https://linkedin.com/in/[YourLinkedInID]" target="_blank">LinkedIn</a> &bull; 
-                <a href="https://github.com/shentao-coder" target="_blank">GitHub</a>
-            </p>
+        <footer class="site-footer">
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <p>
+                    <a href="mailto:your.email@example.com">Email</a> / 
+                    <a href="https://linkedin.com/in/[YourLinkedInID]" target="_blank">LinkedIn</a> / 
+                    <a href="https://github.com/shentao-coder" target="_blank">GitHub</a>
+                </p>
+            </div>
             <p class="copyright">&copy; 2025 Shen Tao</p>
         </footer>
 
     </div>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+
+        themeToggle.addEventListener('click', () => {
+            let targetTheme = 'light';
+            if (document.documentElement.getAttribute('data-theme') === 'light') {
+                targetTheme = 'dark';
+            }
+            document.documentElement.setAttribute('data-theme', targetTheme);
+            localStorage.setItem('theme', targetTheme);
+        });
+    </script>
 </body>
 </html>
