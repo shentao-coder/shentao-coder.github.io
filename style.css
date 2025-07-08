@@ -2,135 +2,119 @@
 :root {
     --font-sans: 'Inter', sans-serif;
     --font-serif: 'Source Serif Pro', serif;
-    --transition: 300ms ease;
-    --sidebar-width: 320px;
+    --transition: 300ms ease-in-out;
 
     /* Light Theme */
-    --color-bg: #FFFFFF;
-    --color-bg-alt: #F9FAFB; /* Gray-50 */
-    --color-text: #111827; /* Gray-900 */
-    --color-text-secondary: #6B7280; /* Gray-500 */
-    --color-border: #E5E7EB; /* Gray-200 */
-    --color-accent: #0052FF;
+    --color-bg: #F8F7F4; /* Soft, warm off-white */
+    --color-text: #2C2C2C;
+    --color-text-secondary: #6B7280;
+    --color-border: #EAE8E1;
+    --color-card-bg: #FFFFFF;
+    --color-accent: #2563EB; /* A calm, confident blue */
 }
 
 [data-theme="dark"] {
-    --color-bg: #111827; /* Gray-900 */
-    --color-bg-alt: #1F2937; /* Gray-800 */
-    --color-text: #F3F4F6; /* Gray-100 */
-    --color-text-secondary: #9CA3AF; /* Gray-400 */
-    --color-border: #374151; /* Gray-700 */
-    --color-accent: #60A5FA; /* Blue-400 */
+    --color-bg: #1C1C1E;
+    --color-text: #E5E5E7;
+    --color-text-secondary: #8E8E93;
+    --color-border: #2C2C2E;
+    --color-card-bg: #2C2C2E;
+    --color-accent: #3B82F6;
 }
 
 body {
     background-color: var(--color-bg);
     color: var(--color-text);
     font-family: var(--font-sans);
+    line-height: 1.6;
     transition: background-color var(--transition), color var(--transition);
 }
 
-/* --- 2. Main Layout --- */
-.page-container {
-    display: flex;
-    max-width: 1400px;
-    margin: 0 auto;
-}
+.container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+a { color: var(--color-accent); text-decoration: none; }
 
-/* --- 3. Sidebar (Left) --- */
-.sidebar {
-    width: var(--sidebar-width);
-    height: 100vh;
-    position: sticky;
-    top: 0;
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    border-right: 1px solid var(--color-border);
-    background-color: var(--color-bg-alt);
-    transition: all var(--transition);
-}
-
-.sidebar-content {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.profile-avatar { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; }
-.profile-name { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5rem; }
-.profile-tagline { font-size: 1rem; color: var(--color-text-secondary); }
-
-.main-nav { margin: 3rem 0; }
-.nav-link {
-    display: block;
-    padding: 0.75rem 0;
-    font-weight: 500;
-    color: var(--color-text-secondary);
-    text-decoration: none;
-    transition: all var(--transition);
-}
-.nav-link.active { color: var(--color-text); }
-.nav-link:hover { color: var(--color-text); }
-
-.sidebar-footer {
-    margin-top: auto;
+/* --- 2. Header & Navigation --- */
+.site-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--color-border);
 }
-.contact-links a { color: var(--color-text-secondary); font-size: 1.5rem; margin-right: 1.5rem; }
-.contact-links a:hover { color: var(--color-text); }
-.theme-toggle-button { background: none; border: none; cursor: pointer; color: var(--color-text-secondary); font-size: 1.5rem; }
+.header-title { font-weight: 700; }
+.header-subtitle { color: var(--color-text-secondary); font-weight: 400; }
+.site-nav a { color: var(--color-text-secondary); font-weight: 500; margin-left: 1.5rem; transition: color var(--transition); }
+.site-nav a:hover { color: var(--color-text); }
+#theme-toggle { background: none; border: none; cursor: pointer; color: var(--color-text-secondary); font-size: 1.25rem; }
 
-/* --- 4. Main Content (Right) --- */
-.main-content {
-    width: calc(100% - var(--sidebar-width));
-    padding: 4rem 6%;
-}
-.content-block {
-    margin-bottom: 4rem;
-    scroll-margin-top: 2rem;
-}
-.lead { font-family: var(--font-serif); font-size: 1.25rem; line-height: 1.7; color: var(--color-text-secondary); }
-h2 {
-    font-size: 1.25rem;
+/* --- 3. Content & Garden --- */
+.hero { text-align: center; padding: 6rem 0; }
+.hero-statement {
+    font-family: var(--font-serif);
+    font-size: 2.25rem;
     font-weight: 600;
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid var(--color-border);
+    line-height: 1.4;
+    max-width: 750px;
+    margin: 0 auto;
 }
 
-.event-item {
-    padding: 1.5rem 0;
-    border-bottom: 1px solid var(--color-border);
-    transition: background-color var(--transition);
+.garden-section, .about-section {
+    padding: 4rem 0;
+    border-top: 1px solid var(--color-border);
 }
-.event-item:hover { background-color: var(--color-bg-alt); }
-.event-date { font-size: 0.8rem; color: var(--color-text-secondary); margin-bottom: 0.5rem; }
-.event-title { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.25rem; }
-.event-company { font-weight: 500; }
-.event-details { font-family: var(--font-serif); margin-top: 0.5rem; color: var(--color-text-secondary); }
+.section-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+.section-description { color: var(--color-text-secondary); margin-bottom: 3rem; }
 
-.skills-grid {
+.garden-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+.note-card {
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+.note-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px -5px rgba(0,0,0,0.07);
+}
+.note-card h3 { font-size: 1.25rem; margin-bottom: 0.75rem; }
+.note-card p { font-family: var(--font-serif); color: var(--color-text-secondary); margin-bottom: 1.5rem; }
+.note-card .note-tag {
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.25rem 0.75rem;
+    background-color: var(--color-bg);
+    border-radius: 1rem;
+}
+
+/* --- 4. About & Footer --- */
+.about-card {
+    display: flex;
+    align-items: flex-start;
     gap: 2rem;
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    padding: 2rem;
 }
-.skills-grid h4 { font-weight: 600; margin-bottom: 0.5rem; }
-.skills-grid p { font-size: 0.9rem; color: var(--color-text-secondary); }
+.about-avatar { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; }
+.about-text p { font-family: var(--font-serif); margin-bottom: 1rem; }
+.about-links a { font-weight: 500; margin-right: 1.5rem; }
 
-.site-footer { text-align: center; color: var(--color-text-secondary); font-size: 0.9rem; margin-top: 4rem; }
-.site-footer a { color: var(--color-text); text-decoration: underline; }
-
-/* Animation Initial States */
-.content-block { visibility: hidden; }
-
-/* --- 5. Responsive --- */
-@media (max-width: 1024px) {
-    .page-container { flex-direction: column; }
-    .sidebar { position: static; width: 100%; height: auto; border-right: none; border-bottom: 1px solid var(--color-border); }
-    .main-content { width: 100%; padding: 2rem; }
+.site-footer {
+    padding: 3rem 0;
+    margin-top: 4rem;
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
 }
 
-
+/* --- Animation --- */
+.note-card, .about-card {
+    visibility: hidden; /* For animation */
+}
