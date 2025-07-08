@@ -1,124 +1,135 @@
 /* --- 1. Design System & Base --- */
 :root {
-    --font-header: 'Cardo', serif;
-    --font-body: 'Inter', sans-serif;
+    --font-sans: 'Inter', sans-serif;
     --transition: 300ms ease;
 
     /* Light Theme */
-    --color-bg: #F8F7F2; /* Soft Parchment */
-    --color-text: #2C2828; /* Charcoal */
-    --color-text-light: #655E5E;
-    --color-border: #EAE8E1;
-    --color-accent: #2A4D8C; /* Academic Blue */
+    --color-bg: #FFFFFF;
+    --color-text: #222222;
+    --color-text-light: #666666;
+    --color-border: #EAEAEA;
+    --color-link: #0066CC;
 }
 
 [data-theme="dark"] {
-    --color-bg: #1C1C1C;
-    --color-text: #E5E5E5;
-    --color-text-light: #A3A3A3;
-    --color-border: #2E2E2E;
-    --color-accent: #87A3D9;
+    --color-bg: #111111;
+    --color-text: #EAEAEA;
+    --color-text-light: #999999;
+    --color-border: #333333;
+    --color-link: #3399FF;
 }
 
 body {
     background-color: var(--color-bg);
     color: var(--color-text);
-    font-family: var(--font-body);
-    font-size: 15px;
-    line-height: 1.6;
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.7;
+    padding: 3rem 1rem;
     transition: background-color var(--transition), color var(--transition);
 }
 
-.container { max-width: 1400px; margin: 0 auto; padding: 0 3rem; }
-a { color: var(--color-accent); text-decoration: none; }
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+a {
+    color: var(--color-link);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
 
 /* --- 2. Header --- */
 .site-header {
-    position: fixed;
-    top: 0; left: 0; right: 0; z-index: 1000;
-    padding: 1rem 3rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    text-align: left;
+    margin-bottom: 2rem;
 }
-.header-initials {
-    font-size: 1.25rem; font-weight: 700;
-    border: 2px solid var(--color-text);
-    width: 40px; height: 40px;
-    display: flex; justify-content: center; align-items: center;
-    border-radius: 50%;
-}
-.theme-toggle-button { background: none; border: 1px solid var(--color-border); padding: 0.5rem 1rem; border-radius: 2rem; cursor: pointer; color: var(--color-text-light); }
-
-/* --- 3. Main Layout & Intro --- */
-.main-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr; /* Golden ratio-esque */
-    gap: 5rem;
-    padding: 8rem 0 4rem 0;
-}
-.intro-section { text-align: center; margin-bottom: 4rem; }
-.profile-avatar { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; }
-.main-title { font-family: var(--font-header); font-size: 3.5rem; }
-.main-subtitle { font-size: 1.1rem; color: var(--color-text-light); max-width: 600px; margin: 1rem auto 0 auto; line-height: 1.7; }
-
-/* --- 4. Content Styling --- */
-.content-block { margin-bottom: 3rem; }
-.section-title {
-    font-family: var(--font-header);
+.name {
     font-size: 1.5rem;
-    margin-bottom: 2rem;
-    padding-bottom: 0.75rem;
+    font-weight: 700;
+    margin: 0;
+}
+.affiliation {
+    font-size: 1rem;
+    margin: 0.25rem 0;
+}
+.contact-info {
+    font-size: 1rem;
+    color: var(--color-text-light);
+    margin: 0.25rem 0 1rem 0;
+}
+.contact-info a {
+    color: var(--color-text-light);
+}
+.header-links a {
+    margin-right: 1.5rem;
+    font-weight: 500;
+}
+.theme-toggle-button {
+    background: none;
+    border: 1px solid var(--color-border);
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    color: var(--color-text-light);
+    font-size: 0.8rem;
+}
+
+
+/* --- 3. Avatar --- */
+.avatar-container {
+    text-align: center;
+    margin: 3rem 0;
+    border-top: 1px solid var(--color-border);
     border-bottom: 1px solid var(--color-border);
+    padding: 3rem 0;
+}
+.avatar {
+    width: 120px;
+    height: auto;
+    border-radius: 8px; /* Soft rectangular corners */
 }
 
-/* Main Column: Timeline */
-.timeline-item {
-    position: relative;
-    padding-left: 2.5rem;
-    margin-bottom: 2rem;
+/* --- 4. Main Content --- */
+.main-content {
+    text-align: left;
 }
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    left: 0.5rem; top: 0.5rem;
-    width: 1px;
-    height: 100%;
-    background-color: var(--color-border);
+.content-section {
+    margin-bottom: 3rem;
 }
-.timeline-item::after {
-    content: '';
-    position: absolute;
-    left: 0; top: 0.5rem;
-    width: 1rem; height: 1rem;
-    background-color: var(--color-bg);
-    border: 2px solid var(--color-accent);
-    border-radius: 50%;
-    z-index: 1;
-}
-.timeline-meta { margin-bottom: 0.5rem; }
-.timeline-meta h3 { font-size: 1.1rem; font-weight: 600; display: inline; }
-.timeline-meta p { display: inline; color: var(--color-text-light); font-size: 0.9rem; margin-left: 0.5rem; }
-.timeline-content h4 { font-size: 1rem; font-weight: 500; margin-bottom: 0.5rem; }
-.timeline-content p, .timeline-content ul { font-size: 0.95rem; color: var(--color-text-light); }
-
-/* Side Column */
-.side-list {
-    list-style: none; padding: 0;
-}
-.side-list li {
-    padding-bottom: 0.75rem;
-    margin-bottom: 0.75rem;
+.section-title {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-light);
     border-bottom: 1px solid var(--color-border);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
 }
-.side-list li:last-child { border-bottom: none; }
-.side-list li strong { font-weight: 600; color: var(--color-text); }
 
-/* --- Responsive & Animation --- */
-@media (max-width: 900px) {
-    .main-grid { grid-template-columns: 1fr; }
-    .content-side { padding-top: 4rem; border-top: 2px solid var(--color-border); }
+.list-item {
+    margin-bottom: 1.5rem;
 }
-/* Initial animation state */
-.intro-section, .content-block { visibility: hidden; }
+.list-item h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0;
+}
+.list-item strong {
+    font-weight: 700;
+}
+.item-meta {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+}
 
+p {
+    margin: 0 0 1rem 0;
+}
+p:last-child {
+    margin-bottom: 0;
+}
