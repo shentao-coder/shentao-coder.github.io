@@ -1,91 +1,102 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="day">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Richard T. Shen</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>The Shen Chronicle</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="aurora-background"></div>
+    <div class="newspaper-container">
 
-    <div class="container">
-        <header class="profile-header">
-            <div class="avatar-container">
-                <img src="profile.jpg" alt="Profile photograph of Richard T. Shen" class="profile-avatar">
+        <header class="masthead">
+            <h1 class="newspaper-title">The Shen Chronicle</h1>
+            <div class="header-meta">
+                <span>VOL. I, NO. 1</span>
+                <span id="current-date">JULY 5, 2025</span>
+                <span>SHENZHEN, GD</span>
             </div>
-            <h1 class="profile-name">Richard T. Shen</h1>
-            <p class="profile-tagline">Quantitative Analysis for Technology & Business</p>
         </header>
 
-        <main class="info-grid">
-            <div class="glass-panel experience-panel">
-                <h2>Professional Experience</h2>
-                <div class="event">
-                    <h3>CITIC Futures Co., Ltd</h3>
-                    <p>International Business Intern <span>/ Feb - May 2025</span></p>
-                    <ul>
-                        <li>Automated client data analysis with Python & VBA, reducing reporting time by 30%.</li>
-                    </ul>
-                </div>
-                <div class="event">
-                    <h3>China CITIC Bank Int'l</h3>
-                    <p>Operations Management Intern <span>/ Nov - Dec 2024</span></p>
-                </div>
-                <div class="event">
-                    <h3>Agricultural Bank of China</h3>
-                    <p>Manager's Assistant <span>/ Jul - Aug 2024</span></p>
-                </div>
-            </div>
+        <main class="main-content">
 
-            <div class="glass-panel education-panel">
-                <h2>Education</h2>
-                <div class="event">
-                    <h3>Shenzhen MSU-BIT University</h3>
-                    <p>B.S. in Economics <span>/ 2021 - 2025</span></p>
-                    <p class="gpa">GPA: 3.74 / 4.00</p>
+            <section class="lead-article">
+                <div class="article-header">
+                    <h2 class="article-title">An Analyst's Journey: Applying Quantitative Methods to Modern Challenges</h2>
+                    <p class="article-author">By Richard T. Shen</p>
                 </div>
-                <div class="event">
-                    <h3>Awards & Honors</h3>
-                    <p>First-Year Scholarship, Third Prize in Global Management Challenge.</p>
+                <div class="article-body drop-cap">
+                    <p>I am an applied econometrician from Shenzhen MSU-BIT University, with a core focus on two key areas: (1) developing computationally efficient econometric tools and (2) leveraging economic theory and big data techniques to generate actionable policy insights. My work bridges these areas by introducing an easy-to-implement method to address critical policy-relevant questions, such as how we should test for the existence and extent of interference, such as peer and spillover effects.</p>
+                    <p>My broader research interests span Econometrics, Labor Economics, Digital Economics, and Microeconomic Theory. This document chronicles my professional experiences and academic pursuits.</p>
                 </div>
-            </div>
+            </section>
 
-            <div class="glass-panel skills-panel">
-                <h2>Expertise</h2>
-                <div class="skills-category">
-                    <h4>Programming</h4>
-                    <p>Python (Pandas, Scikit-learn), R, SQL, MATLAB, VBA</p>
-                </div>
-                <div class="skills-category">
-                    <h4>Software</h4>
-                    <p>Latex, Stata, Canva, Microsoft Office</p>
-                </div>
-                 <div class="skills-category">
-                    <h4>Languages</h4>
-                    <p>Mandarin, English, Cantonese, Russian</p>
-                </div>
-            </div>
+            <hr class="section-divider">
 
-            <div class="glass-panel leadership-panel">
-                 <h2>Leadership</h2>
-                <div class="event">
-                    <h3>GAOTON ACCA Challenge</h3>
-                    <p>Team Leader <span>/ Dec 2023 - Feb 2024</span></p>
+            <section class="multi-column-section">
+                <div class="column">
+                    <article class="story">
+                        <h3>Professional Experience</h3>
+                        <div class="event">
+                            <h4>International Business Intern</h4>
+                            <p class="meta">CITIC FUTURES CO., LTD | Feb - May 2025</p>
+                            <p>Analyzed futures hedging announcements for 50+ A-share companies; automated client trading data analysis using Python (Pandas) and VBA, reducing reporting time by over 30%.</p>
+                        </div>
+                        <div class="event">
+                            <h4>Operations Management Intern</h4>
+                            <p class="meta">CHINA CITIC BANK INT'L | Nov - Dec 2024</p>
+                            <p>Conducted competitive analysis on 10+ peer banks, delivering an 8-page report that contributed to a 10% reduction in reporting errors.</p>
+                        </div>
+                        <div class="event">
+                            <h4>Manager's Assistant</h4>
+                            <p class="meta">AGRICULTURAL BANK OF CHINA | Jul - Aug 2024</p>
+                            <p>Analyzed daily transaction patterns from a customer flow of 200+ individuals to identify peak demand periods and optimize staff allocation.</p>
+                        </div>
+                    </article>
+
+                     <article class="story">
+                        <h3>Leadership & Activities</h3>
+                         <div class="event">
+                            <h4>Team Leader, Analytical Consultant</h4>
+                            <p class="meta">GAOTON ACCA ENTERPRISE CHALLENGE | Dec 2023 - Feb 2024</p>
+                            <p>Coordinated project arrangements, set overall strategic direction, and led the Case Report analysis and Slides Deck production.</p>
+                        </div>
+                    </article>
                 </div>
-            </div>
-            
-            <div class="glass-panel links-panel">
-                <a href="mailto:mr.shentao@outlook.com" class="panel-button">Email</a>
-                <a href="https://github.com/shentao-coder" target="_blank" class="panel-button">GitHub</a>
-                <a href="resume.pdf" target="_blank" class="panel-button">Full CV</a>
-            </div>
+                <div class="column">
+                    <figure class="profile-figure">
+                        <img src="profile.jpg" alt="A photograph of Richard T. Shen" class="profile-image">
+                        <figcaption>Richard T. Shen</figcaption>
+                    </figure>
+
+                    <article class="story">
+                        <h3>Education</h3>
+                        <div class="event">
+                            <h4>B.S. in Economics</h4>
+                            <p class="meta">SHENZHEN MSU-BIT UNIVERSITY | 2021 - 2025</p>
+                            <p><strong>GPA:</strong> 3.74/4.00<br><strong>Honors:</strong> First-Year Scholarship; Third Prize, The Global Management Challenge, China.</p>
+                        </div>
+                    </article>
+                    
+                    <article class="story boxed">
+                        <h3>Technical Expertise</h3>
+                        <p><strong>Programming:</strong> Python, MATLAB, R</p>
+                        <p><strong>Software:</strong> Latex, Stata, Canva</p>
+                        <p><strong>Languages:</strong> Mandarin, English, Cantonese, Russian</p>
+                    </article>
+                </div>
+            </section>
         </main>
-
-        <button id="theme-toggle" class="theme-toggle-button" title="Toggle Theme">💡</button>
+        
+        <footer class="site-footer">
+            <button id="theme-toggle">Switch to Night Edition</button>
+            <p>© 2025 The Shen Chronicle. All Rights Reserved. Designed in collaboration with Google AI.</p>
+        </footer>
     </div>
-
+    
     <script src="main.js"></script>
 </body>
 </html>
