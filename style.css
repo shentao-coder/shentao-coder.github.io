@@ -1,137 +1,98 @@
-/* --- 1. Design System & Base --- */
 :root {
-    --font-sans: 'Satoshi', 'Inter', -apple-system, sans-serif;
-    --font-serif: 'Lora', Georgia, serif;
-    --transition: 200ms cubic-bezier(0.25, 1, 0.5, 1);
-    --header-height: 60px;
-    
-    /* Light Theme (Default) */
-    --color-bg: #F9FAFB; /* Gray-50 */
-    --color-bg-alt: #FFFFFF;
-    --color-text: #1F2937; /* Gray-800 */
-    --color-text-secondary: #6B7280; /* Gray-500 */
-    --color-border: #E5E7EB; /* Gray-200 */
-    --color-accent: #0052FF;
+    /* Fonts & Colors */
+    --font-sans: 'Satoshi', sans-serif;
+    --font-serif: 'Lora', serif;
+    --transition-fast: 200ms ease;
+    --transition-slow: 400ms ease;
+
+    /* Light Theme */
+    --color-bg: #F5F5F5;
+    --color-text: #111111;
+    --color-text-secondary: #737373;
+    --color-border: #E5E5E5;
+    --color-accent: #000000;
 }
 
 [data-theme="dark"] {
-    --color-bg: #111827; /* Gray-900 */
-    --color-bg-alt: #1F2937; /* Gray-800 */
-    --color-text: #F3F4F6; /* Gray-100 */
-    --color-text-secondary: #9CA3AF; /* Gray-400 */
-    --color-border: #374151; /* Gray-700 */
-    --color-accent: #60A5FA; /* Blue-400 */
+    --color-bg: #111111;
+    --color-text: #E5E5E5;
+    --color-text-secondary: #8A8A8A;
+    --color-border: #2B2B2B;
+    --color-accent: #FFFFFF;
 }
 
+/* Base Styles */
 body {
-    font-family: var(--font-sans);
     background-color: var(--color-bg);
     color: var(--color-text);
-    font-size: 16px;
-    transition: background-color var(--transition), color var(--transition);
+    font-family: var(--font-sans);
+    transition: background-color var(--transition-slow), color var(--transition-slow);
+    cursor: none; /* Hide default cursor */
 }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+a { color: var(--color-text); text-decoration: none; }
 
-/* --- 2. Global Header --- */
-.global-header {
+/* Custom Cursor */
+.cursor {
+    width: 24px; height: 24px;
+    border: 1px solid var(--color-text-secondary);
+    border-radius: 50%;
     position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    height: var(--header-height);
-    padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--color-border);
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* Let clicks pass through */
+    transition: width var(--transition-fast), height var(--transition-fast), background-color var(--transition-fast);
+    z-index: 9999;
 }
-[data-theme="dark"] .global-header {
-    background-color: rgba(17, 24, 39, 0.8); /* Gray-900 with alpha */
-}
+.cursor-grow { background-color: var(--color-text-secondary); width: 48px; height: 48px; }
 
-.main-nav a, .utility-nav a {
-    text-decoration: none;
-    color: var(--color-text-secondary);
-    font-weight: 500;
-    font-size: 0.9rem;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    transition: color var(--transition), background-color var(--transition);
-}
-.main-nav a:hover, .utility-nav a:hover { color: var(--color-text); }
-.main-nav a.active { color: var(--color-text); background-color: var(--color-border); }
-
+/* Header */
+.site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; }
+.header-content { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 2rem; }
+.site-logo { font-weight: 700; }
 .utility-nav { display: flex; align-items: center; gap: 1rem; }
-.theme-toggle-button { background: none; border: none; cursor: pointer; color: var(--color-text-secondary); font-size: 1.1rem; padding: 0.5rem; }
-.theme-toggle-button:hover { color: var(--color-text); }
-[data-theme="light"] .fa-moon { display: none; }
-[data-theme="dark"] .fa-sun { display: none; }
+.nav-button { border: 1px solid var(--color-border); padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.9rem; transition: all var(--transition-fast); }
+.nav-button:hover { background-color: var(--color-text); color: var(--color-bg); }
+.theme-toggle-button { background: none; border: none; cursor: pointer; color: var(--color-text); font-size: 1.2rem; }
+[data-theme="light"] .icon-moon { display: none; }
+[data-theme="dark"] .icon-sun { display: none; }
 
+/* Hero Section */
+.hero { padding: 10rem 0 6rem 0; text-align: center; }
+.hero-image-container { max-width: 600px; margin: 0 auto 3rem auto; }
+.hero-image { width: 100%; border-radius: 12px; display: block; }
+.hero-title { font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.2; font-weight: 500; max-width: 800px; margin: 0 auto; }
 
-/* --- 3. Main Layout --- */
-.page-container {
-    display: grid;
-    grid-template-columns: 320px 1fr;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding-top: var(--header-height); /* Offset for fixed header */
+/* Content Sections */
+.content-section { padding: 6rem 0; }
+.lead-text { font-family: var(--font-serif); font-size: 1.5rem; line-height: 1.7; max-width: 700px; color: var(--color-text-secondary); }
+.section-title { font-size: 1rem; font-weight: 500; color: var(--color-text-secondary); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 3rem; }
+
+/* Skills Section */
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+.skill-card { background-color: var(--color-bg); border: 1px solid var(--color-border); padding: 2rem; border-radius: 12px; }
+.skill-card h4 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+.skill-card p { font-family: var(--font-serif); color: var(--color-text-secondary); }
+
+/* Projects Section */
+.project-list { border-top: 1px solid var(--color-border); }
+.project-item {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 2.5rem 0; border-bottom: 1px solid var(--color-border);
+    transition: background-color var(--transition-fast);
 }
+.project-item:hover { background-color: rgba(128,128,128,0.05); }
+.project-details h3 { font-size: 2rem; font-weight: 500; margin-bottom: 0.5rem; }
+.project-details p { font-family: var(--font-serif); color: var(--color-text-secondary); }
+.project-arrow { font-size: 2rem; transition: transform var(--transition-fast); }
+.project-item:hover .project-arrow { transform: translateX(10px); }
 
-/* --- 4. Sidebar (Left) --- */
-.sidebar {
-    background-color: var(--color-bg-alt);
-    border-right: 1px solid var(--color-border);
-    height: calc(100vh - var(--header-height));
-    position: sticky;
-    top: var(--header-height);
-    padding: 3rem 2rem;
-}
+/* Footer */
+.site-footer { padding: 6rem 0 3rem 0; text-align: center; }
+.site-footer h3 { font-size: 2.5rem; font-weight: 500; margin-bottom: 2rem; }
+.footer-links a { font-size: 1.2rem; margin: 0 1rem; }
+.copyright { margin-top: 6rem; font-size: 0.9rem; color: var(--color-text-secondary); }
 
-.profile-avatar { width: 100px; height: 100px; object-fit: cover; border-radius: 8px; margin-bottom: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-.profile-name { font-size: 1.5rem; font-weight: 700; margin: 0; }
-.profile-tagline { font-size: 0.9rem; color: var(--color-text-secondary); margin-top: 0.25rem; }
-.skills-section { margin-top: 2.5rem; }
-/* other sidebar styles from previous version can be reused */
-
-
-/* --- 5. Main Content (Right) --- */
-.main-content { padding: 4rem 5%; }
-.content-block { margin-bottom: 6rem; scroll-margin-top: 80px; /* Offset for scroll-spy */ }
-.lead { font-family: var(--font-serif); font-size: 1.25rem; line-height: 1.7; color: var(--color-text); }
-h2 { font-size: 1.25rem; font-weight: 600; color: var(--color-text); margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--color-border); }
-/* Other main content styles for timeline, projects, education can be reused and refined */
-.project-card {
-    background-color: var(--color-bg-alt);
-    /* ... rest of the styles from previous version */
-}
-
-/* --- 6. Footer --- */
-.site-footer {
-    padding: 3rem 0;
-    border-top: 1px solid var(--color-border);
-}
-.footer-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-.footer-column h4 { font-size: 1rem; font-weight: 500; margin-bottom: 1rem; }
-.footer-column a { display: block; text-decoration: none; color: var(--color-text-secondary); margin-bottom: 0.5rem; }
-.footer-column a:hover { color: var(--color-accent); }
-.footer-bottom { text-align: center; font-size: 0.9rem; color: var(--color-text-secondary); }
-
-
-/* --- 7. Responsive --- */
-@media (max-width: 1100px) {
-    .page-container { grid-template-columns: 1fr; }
-    .sidebar { position: relative; height: auto; border-right: none; border-bottom: 1px solid var(--color-border); top: 0; }
-    .global-header { background-color: rgba(255, 255, 255, 0.95); } /* More opaque on mobile */
-    [data-theme="dark"] .global-header { background-color: rgba(17, 24, 39, 0.95); }
-}
-
-@media (max-width: 768px) {
-    .global-header { padding: 0 1rem; }
-    .main-nav { display: none; } /* Hide text nav on small screens */
-    .main-content { padding: 3rem 1.5rem; }
+/* Animation Initial States (for ScrollReveal) */
+.hero-image, .hero-title, .lead-text, .section-title, .skill-card, .project-item {
+    visibility: hidden; /* Hide before animation */
 }
