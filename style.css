@@ -1,121 +1,123 @@
 /* --- 1. Design System & Base --- */
 :root {
-    --font-sans: 'Inter', sans-serif;
-    --font-serif: 'Source Serif Pro', serif;
-    --transition: 300ms ease-in-out;
+    --font-header: 'Cardo', serif;
+    --font-body: 'Inter', sans-serif;
+    --transition: 300ms ease;
 
     /* Light Theme */
-    --color-bg: #F8F7F4; /* Soft, warm off-white */
-    --color-text: #2C2C2C;
-    --color-text-secondary: #6B7280;
+    --color-bg: #F8F7F2; /* Soft Parchment */
+    --color-text: #2C2828; /* Charcoal */
+    --color-text-light: #655E5E;
     --color-border: #EAE8E1;
-    --color-card-bg: #FFFFFF;
-    --color-accent: #2563EB; /* A calm, confident blue */
+    --color-accent: #2A4D8C; /* Academic Blue */
 }
 
 [data-theme="dark"] {
-    --color-bg: #1C1C1E;
-    --color-text: #E5E5E7;
-    --color-text-secondary: #8E8E93;
-    --color-border: #2C2C2E;
-    --color-card-bg: #2C2C2E;
-    --color-accent: #3B82F6;
+    --color-bg: #1C1C1C;
+    --color-text: #E5E5E5;
+    --color-text-light: #A3A3A3;
+    --color-border: #2E2E2E;
+    --color-accent: #87A3D9;
 }
 
 body {
     background-color: var(--color-bg);
     color: var(--color-text);
-    font-family: var(--font-sans);
+    font-family: var(--font-body);
+    font-size: 15px;
     line-height: 1.6;
     transition: background-color var(--transition), color var(--transition);
 }
 
-.container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+.container { max-width: 1400px; margin: 0 auto; padding: 0 3rem; }
 a { color: var(--color-accent); text-decoration: none; }
 
-/* --- 2. Header & Navigation --- */
+/* --- 2. Header --- */
 .site-header {
+    position: fixed;
+    top: 0; left: 0; right: 0; z-index: 1000;
+    padding: 1rem 3rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 0;
+}
+.header-initials {
+    font-size: 1.25rem; font-weight: 700;
+    border: 2px solid var(--color-text);
+    width: 40px; height: 40px;
+    display: flex; justify-content: center; align-items: center;
+    border-radius: 50%;
+}
+.theme-toggle-button { background: none; border: 1px solid var(--color-border); padding: 0.5rem 1rem; border-radius: 2rem; cursor: pointer; color: var(--color-text-light); }
+
+/* --- 3. Main Layout & Intro --- */
+.main-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Golden ratio-esque */
+    gap: 5rem;
+    padding: 8rem 0 4rem 0;
+}
+.intro-section { text-align: center; margin-bottom: 4rem; }
+.profile-avatar { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; }
+.main-title { font-family: var(--font-header); font-size: 3.5rem; }
+.main-subtitle { font-size: 1.1rem; color: var(--color-text-light); max-width: 600px; margin: 1rem auto 0 auto; line-height: 1.7; }
+
+/* --- 4. Content Styling --- */
+.content-block { margin-bottom: 3rem; }
+.section-title {
+    font-family: var(--font-header);
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 0.75rem;
     border-bottom: 1px solid var(--color-border);
 }
-.header-title { font-weight: 700; }
-.header-subtitle { color: var(--color-text-secondary); font-weight: 400; }
-.site-nav a { color: var(--color-text-secondary); font-weight: 500; margin-left: 1.5rem; transition: color var(--transition); }
-.site-nav a:hover { color: var(--color-text); }
-#theme-toggle { background: none; border: none; cursor: pointer; color: var(--color-text-secondary); font-size: 1.25rem; }
 
-/* --- 3. Content & Garden --- */
-.hero { text-align: center; padding: 6rem 0; }
-.hero-statement {
-    font-family: var(--font-serif);
-    font-size: 2.25rem;
-    font-weight: 600;
-    line-height: 1.4;
-    max-width: 750px;
-    margin: 0 auto;
+/* Main Column: Timeline */
+.timeline-item {
+    position: relative;
+    padding-left: 2.5rem;
+    margin-bottom: 2rem;
 }
-
-.garden-section, .about-section {
-    padding: 4rem 0;
-    border-top: 1px solid var(--color-border);
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0.5rem; top: 0.5rem;
+    width: 1px;
+    height: 100%;
+    background-color: var(--color-border);
 }
-.section-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
-.section-description { color: var(--color-text-secondary); margin-bottom: 3rem; }
-
-.garden-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-}
-.note-card {
-    background-color: var(--color-card-bg);
-    border: 1px solid var(--color-border);
-    border-radius: 0.75rem;
-    padding: 1.5rem;
-    transition: transform var(--transition), box-shadow var(--transition);
-}
-.note-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px -5px rgba(0,0,0,0.07);
-}
-.note-card h3 { font-size: 1.25rem; margin-bottom: 0.75rem; }
-.note-card p { font-family: var(--font-serif); color: var(--color-text-secondary); margin-bottom: 1.5rem; }
-.note-card .note-tag {
-    font-size: 0.8rem;
-    font-weight: 500;
-    padding: 0.25rem 0.75rem;
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    left: 0; top: 0.5rem;
+    width: 1rem; height: 1rem;
     background-color: var(--color-bg);
-    border-radius: 1rem;
+    border: 2px solid var(--color-accent);
+    border-radius: 50%;
+    z-index: 1;
 }
+.timeline-meta { margin-bottom: 0.5rem; }
+.timeline-meta h3 { font-size: 1.1rem; font-weight: 600; display: inline; }
+.timeline-meta p { display: inline; color: var(--color-text-light); font-size: 0.9rem; margin-left: 0.5rem; }
+.timeline-content h4 { font-size: 1rem; font-weight: 500; margin-bottom: 0.5rem; }
+.timeline-content p, .timeline-content ul { font-size: 0.95rem; color: var(--color-text-light); }
 
-/* --- 4. About & Footer --- */
-.about-card {
-    display: flex;
-    align-items: flex-start;
-    gap: 2rem;
-    background-color: var(--color-card-bg);
-    border: 1px solid var(--color-border);
-    border-radius: 0.75rem;
-    padding: 2rem;
+/* Side Column */
+.side-list {
+    list-style: none; padding: 0;
 }
-.about-avatar { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; }
-.about-text p { font-family: var(--font-serif); margin-bottom: 1rem; }
-.about-links a { font-weight: 500; margin-right: 1.5rem; }
-
-.site-footer {
-    padding: 3rem 0;
-    margin-top: 4rem;
-    text-align: center;
-    border-top: 1px solid var(--color-border);
-    color: var(--color-text-secondary);
-    font-size: 0.9rem;
+.side-list li {
+    padding-bottom: 0.75rem;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid var(--color-border);
 }
+.side-list li:last-child { border-bottom: none; }
+.side-list li strong { font-weight: 600; color: var(--color-text); }
 
-/* --- Animation --- */
-.note-card, .about-card {
-    visibility: hidden; /* For animation */
+/* --- Responsive & Animation --- */
+@media (max-width: 900px) {
+    .main-grid { grid-template-columns: 1fr; }
+    .content-side { padding-top: 4rem; border-top: 2px solid var(--color-border); }
 }
-
+/* Initial animation state */
+.intro-section, .content-block { visibility: hidden; }
