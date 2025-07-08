@@ -3,113 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Richard T. Shen - Curriculum Vitae</title>
+    <title>Richard T. Shen</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cardo:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <header class="site-header">
-            <div class="header-initials">RS</div>
-            <button id="theme-toggle" class="theme-toggle-button">Toggle Theme</button>
+            <h1 class="name">Richard T. Shen</h1>
+            <p class="affiliation">B.S. in Economics, Shenzhen MSU-BIT University</p>
+            <p class="contact-info">
+                <a href="mailto:mr.shentao@outlook.com">mr.shentao@outlook.com</a> | (86) 185-2908-5521
+            </p>
+            <div class="header-links">
+                 <a href="resume.pdf" target="_blank">CV</a>
+                 <a href="https://github.com/shentao-coder" target="_blank">GitHub</a>
+                 <a href="#">LinkedIn</a>
+                 <button id="theme-toggle" class="theme-toggle-button">Toggle Theme</button>
+            </div>
         </header>
 
-        <div class="main-grid">
-            <main class="content-main">
-                <section class="intro-section">
-                    <img src="profile.jpg" alt="Photograph of Richard T. Shen" class="profile-avatar">
-                    <h1 class="main-title">Richard T. Shen</h1>
-                    <p class="main-subtitle">An aspiring analyst leveraging quantitative methods to generate actionable insights in economics and business.</p>
-                </section>
-
-                <section class="content-block" id="experience">
-                    <h2 class="section-title">Professional Experience</h2>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-meta">
-                                <h3>CITIC Futures Co., Ltd</h3>
-                                <p>Feb 2025 - May 2025</p>
-                            </div>
-                            <div class="timeline-content">
-                                <h4>International Business Intern</h4>
-                                <p>Analyzed hedging announcements for 50+ A-share companies; automated client data analysis with Python & VBA, reducing reporting time by 30%.</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-meta">
-                                <h3>China CITIC Bank Int'l</h3>
-                                <p>Nov 2024 - Dec 2024</p>
-                            </div>
-                            <div class="timeline-content">
-                                <h4>Operations Management Intern</h4>
-                                <p>Conducted competitive analysis on 10+ peer banks, delivering an 8-page report that led to a 10% reduction in reporting errors.</p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-meta">
-                                <h3>Agricultural Bank of China</h3>
-                                <p>Jul 2024 - Aug 2024</p>
-                            </div>
-                            <div class="timeline-content">
-                                <h4>Manager's Assistant</h4>
-                                <p>Analyzed daily transaction patterns to provide data-driven insights for optimizing staff allocation and streamlining workflows.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                
-                 <section class="content-block" id="leadership">
-                    <h2 class="section-title">Leadership</h2>
-                     <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-meta">
-                                <h3>GAOTON ACCA Challenge</h3>
-                                <p>Dec 2023 - Feb 2024</p>
-                            </div>
-                            <div class="timeline-content">
-                                <h4>Team Leader, Analytical Consultant</h4>
-                                <p>Coordinated project arrangements, set strategic direction, and led the case report analysis.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-            </main>
-
-            <aside class="content-side">
-                <section class="content-block" id="contact">
-                    <h2 class="section-title">Contact</h2>
-                    <ul class="side-list">
-                        <li><a href="mailto:mr.shentao@outlook.com">mr.shentao@outlook.com</a></li>
-                        <li>(86) 185-2908-5521</li>
-                        <li>Shenzhen, GD 518172</li>
-                        <li><a href="https://github.com/shentao-coder" target="_blank">GitHub Profile</a></li>
-                        <li><a href="resume.pdf" target="_blank">Download Full CV</a></li>
-                    </ul>
-                </section>
-
-                <section class="content-block" id="education">
-                    <h2 class="section-title">Education</h2>
-                    <ul class="side-list">
-                       <li><strong>B.S. in Economics</strong><br>Shenzhen MSU-BIT University<br>2021 – 2025 | GPA: 3.74/4.00</li>
-                    </ul>
-                </section>
-
-                <section class="content-block" id="skills">
-                    <h2 class="section-title">Skills</h2>
-                    <ul class="side-list">
-                        <li><strong>Programming:</strong> Python, R, MATLAB, SQL</li>
-                        <li><strong>Software:</strong> Stata, Latex, VBA, Canva</li>
-                        <li><strong>Languages:</strong> Mandarin, English, Cantonese, Russian</li>
-                    </ul>
-                </section>
-            </aside>
+        <div class="avatar-container">
+            <img src="profile.jpg" alt="Photograph of Richard T. Shen" class="avatar">
         </div>
+
+        <main class="main-content">
+            <section class="content-section">
+                <h2 class="section-title">About Me</h2>
+                <p>An applied econometrics student from Shenzhen MSU-BIT University. My research focuses on two key areas: (1) developing computationally efficient econometric tools and (2) leveraging economic theory and big data techniques to generate actionable policy insights. My broader research interests span Econometrics, Labor Economics, Digital Economics, and Microeconomic Theory.</p>
+            </section>
+            
+            <section class="content-section">
+                <h2 class="section-title">Professional Experience</h2>
+                <div class="list-item">
+                    <h3>International Business Intern, <strong>CITIC Futures Co., Ltd</strong></h3>
+                    <p class="item-meta">Shenzhen, GD | Feb 2025 - May 2025</p>
+                </div>
+                 <div class="list-item">
+                    <h3>Operations Management Intern, <strong>China CITIC Bank International</strong></h3>
+                    <p class="item-meta">Shenzhen, GD | Nov 2024 - Dec 2024</p>
+                </div>
+                 <div class="list-item">
+                    <h3>Manager's Assistant, <strong>Agricultural Bank of China</strong></h3>
+                    <p class="item-meta">Shenzhen, GD | Jul 2024 - Aug 2024</p>
+                </div>
+            </section>
+            
+             <section class="content-section">
+                <h2 class="section-title">Education</h2>
+                <div class="list-item">
+                    <h3>B.S. in Economics, <strong>Shenzhen MSU-BIT University</strong></h3>
+                    <p class="item-meta">2021 - 2025 | GPA: 3.74/4.00</p>
+                </div>
+            </section>
+
+             <section class="content-section">
+                <h2 class="section-title">Leadership & Activities</h2>
+                <div class="list-item">
+                    <h3>Team Leader, Analytical Consultant, <strong>GAOTON ACCA Enterprise Challenge</strong></h3>
+                    <p class="item-meta">Dec 2023 - Feb 2024</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title">Technical Expertise</h2>
+                <p><strong>Programming:</strong> Python, MATLAB, R, VBA, SQL, Latex</p>
+                <p><strong>Software:</strong> Stata, Microsoft Office, Canva</p>
+            </section>
+        </main>
     </div>
-    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="main.js"></script>
 </body>
 </html>
-
