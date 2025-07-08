@@ -1,10 +1,10 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
 
     // --- 1. Theme Toggle Logic ---
-    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggle = document.querySelector('.theme-toggle-button');
     if (themeToggle) {
-        // ... (Same theme toggle logic as our very last version) ...
-         const setInitialTheme = () => {
+        // ... same theme toggle logic as before ...
+        const setInitialTheme = () => {
             const preferredTheme = localStorage.getItem('theme') || 'light';
             document.documentElement.setAttribute('data-theme', preferredTheme);
         };
@@ -12,23 +12,19 @@ document.addEventListener('DOMContentLoaded', () => {
         themeToggle.addEventListener('click', () => {
             let targetTheme = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
             document.documentElement.setAttribute('data-theme', targetTheme);
-            localStorage.setItem('theme', targetTheme);
+            themeToggle.textContent = targetTheme === 'light' ? 'Night Edition' : 'Day Edition';
         });
     }
 
-    // --- 2. Scroll Reveal for a gentle entrance ---
-    // We are adding this back, but in a very subtle way
-    if (typeof ScrollReveal !== 'undefined') {
-        const sr = ScrollReveal({
-            distance: '20px',
-            duration: 800,
-            easing: 'ease-out',
-            reset: false,
-            viewFactor: 0.2
-        });
-        sr.reveal('.note-card', { origin: 'bottom', interval: 100 });
-        sr.reveal('.about-card', { origin: 'bottom' });
-        sr.reveal('.hero-statement', { origin: 'top' });
-    }
+    // --- 2. Scroll Reveal Animations ---
+    const sr = ScrollReveal({
+        origin: 'bottom',
+        distance: '20px',
+        duration: 800,
+        easing: 'cubic-bezier(0.5, 0, 0, 1)',
+        reset: false,
+    });
 
+    sr.reveal('.intro-section');
+    sr.reveal('.content-block', { interval: 150 });
 });
