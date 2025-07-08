@@ -3,11 +3,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- 1. Custom Cursor Logic ---
     const cursor = document.querySelector('.cursor');
     const interactiveElements = document.querySelectorAll('a, button');
-
     document.addEventListener('mousemove', e => {
-        cursor.setAttribute("style", `top: ${e.pageY}px; left: ${e.pageX}px;`);
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
     });
-
     interactiveElements.forEach(el => {
         el.addEventListener('mouseover', () => cursor.classList.add('cursor-grow'));
         el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-grow'));
@@ -22,8 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (themeToggle) {
         setInitialTheme();
         themeToggle.addEventListener('click', () => {
-            let currentTheme = document.documentElement.getAttribute('data-theme');
-            let targetTheme = currentTheme === 'light' ? 'dark' : 'light';
+            let targetTheme = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
             document.documentElement.setAttribute('data-theme', targetTheme);
             localStorage.setItem('theme', targetTheme);
         });
@@ -32,20 +30,22 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- 3. Scroll Reveal Animations ---
     const sr = ScrollReveal({
         origin: 'bottom',
-        distance: '30px',
-        duration: 800,
-        delay: 200,
+        distance: '20px',
+        duration: 700,
         easing: 'cubic-bezier(0.5, 0, 0, 1)',
-        reset: false, // Animations only happen once
-        viewFactor: 0.2 // Start animation when 20% of the element is visible
+        reset: false,
+        viewFactor: 0.2
     });
 
-    // Animate elements
-    sr.reveal('.hero-image', { delay: 300 });
-    sr.reveal('.hero-title', { delay: 500, origin: 'top', distance: '50px' });
-    sr.reveal('.lead-text', { delay: 600 });
-    sr.reveal('.section-title', { delay: 300 });
-    // Staggered animations for lists/grids
-    sr.reveal('.skill-card', { interval: 150 });
-    sr.reveal('.project-item', { interval: 150, distance: '0px', opacity: 0.5 });
+    sr.reveal('.profile-avatar', { delay: 100 });
+    sr.reveal('.sidebar-name', { delay: 200 });
+    sr.reveal('.sidebar-tagline', { delay: 300 });
+    sr.reveal('.sidebar-section', { delay: 400, interval: 100 });
+    
+    sr.reveal('.lead', { delay: 200 });
+    sr.reveal('h2', { delay: 300 });
+    // Add reveals for .timeline-item, .project-card, etc. as you add them
+    // sr.reveal('.timeline-item', { interval: 150 }); 
+    // sr.reveal('.project-card', { interval: 100 });
+    sr.reveal('.site-footer', { distance: '10px' });
 });
