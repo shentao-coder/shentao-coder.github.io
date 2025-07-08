@@ -3,53 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shentao Coder - Personal Portfolio</title>
+    <title>Shentao Coder - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Shentao Coder</h1>
-        <p>Dartmouth MEM Applicant | Data Analytics | Applied Econometrics</p>
-        <p>Email: your.email@example.com | <a href="https://www.linkedin.com/in/your-linkedin-id/">LinkedIn</a> | <a href="https://github.com/shentao-coder">GitHub</a></p>
+
+    <header class="main-header">
+        <nav>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
     </header>
 
-    <hr>
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <img src="profile.jpg" alt="Profile Picture of Shentao Coder" class="profile-pic">
+                <h1 class="hero-name">Shentao Coder</h1>
+                <p class="hero-tagline">Dartmouth MEM Applicant | Data Analytics | Applied Econometrics</p>
+                <div class="hero-buttons">
+                    <a href="resume.pdf" target="_blank" class="btn btn-primary">View My CV</a>
+                    <a href="#projects" class="btn btn-secondary">See My Work</a>
+                </div>
+            </div>
+        </section>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            I am a student passionate about leveraging data to solve complex challenges at the intersection of engineering and business. 
-            My undergraduate thesis focused on applied econometrics, where I analyzed [Your thesis topic here]. 
-            I am eager to further develop my data-driven decision-making and engineering leadership skills within the Dartmouth MEM program.
-        </p>
-    </section>
+        <section id="about" class="content-section">
+            <h2>About Me</h2>
+            <p>I am a student passionate about leveraging data to solve complex challenges at the intersection of engineering and business. My undergraduate thesis focused on applied econometrics, where I analyzed [Your thesis topic here]. I am eager to further develop my data-driven decision-making and engineering leadership skills within the Dartmouth MEM program.</p>
+        </section>
 
-    <section id="projects">
-        <h2>Quantitative Projects</h2>
+        <section id="skills" class="content-section-colored">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item"><i class="fa-brands fa-python"></i> Python & Pandas</div>
+                <div class="skill-item"><i class="fa-solid fa-chart-simple"></i> R</div>
+                <div class="skill-item"><i class="fa-solid fa-calculator"></i> Stata / SPSS</div>
+                <div class="skill-item"><i class="fa-solid fa-database"></i> SQL</div>
+                <div class="skill-item"><i class="fa-solid fa-brain"></i> Machine Learning</div>
+                <div class="skill-item"><i class="fa-solid fa-magnifying-glass-chart"></i> Causal Inference</div>
+            </div>
+        </section>
+
+        <section id="projects" class="content-section">
+            <h2>Quantitative Projects</h2>
+            <div class="project-container">
+                <article class="project-card">
+                    <h3>Undergraduate Thesis: [Your Thesis Title]</h3>
+                    <p>A deep dive into [briefly describe the problem] using advanced econometric models to derive causal insights. This project honed my skills in rigorous data analysis and hypothesis testing.</p>
+                    <div class="project-tags">
+                        <span>Stata</span>
+                        <span>Causal Inference</span>
+                        <span>Panel Data</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="btn-project">Read Paper (Coming Soon)</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <h3>Project: [Kaggle House Price Prediction]</h3>
+                    <p>Developed a predictive model using Python and Scikit-learn to forecast housing prices. Employed feature engineering, model selection, and cross-validation techniques to optimize performance.</p>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>Machine Learning</span>
+                        <span>Regression</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="[Link to your project on GitHub]" target="_blank" class="btn-project">View on GitHub <i class="fa-brands fa-github"></i></a>
+                    </div>
+                </article>
+            </div>
+        </section>
         
-        <article>
-            <h3>Project 1: Undergraduate Thesis - [Your Thesis Title Here]</h3>
-            <p>
-                <strong>Skills:</strong> Stata, Panel Data Analysis, Causal Inference <br>
-                <strong>Description:</strong> Provide a detailed description of your thesis here. What problem did you investigate? What data and models (e.g., Difference-in-Differences) did you use? 
-                What were the key findings? How did this project demonstrate your quantitative analysis capabilities?
-            </p>
-        </article>
+        <section id="experience" class="content-section-colored">
+            <h2>Experience & Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2021 - 2025</div>
+                    <div class="timeline-content">
+                        <h3>[Your University Name]</h3>
+                        <p>Bachelor of [Your Degree], Major in [Your Major]</p>
+                        <p>Key Coursework: Econometrics, Linear Algebra, Advanced Statistics, Operations Research.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Summer 2024</div>
+                    <div class="timeline-content">
+                        <h3>[Company Name] - [Your Role, e.g., Data Analyst Intern]</h3>
+                        <p>Analyzed customer data to identify key trends, resulting in a 10% improvement in marketing campaign targeting. Developed automated reports using SQL and Python.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <article>
-            <h3>Project 2: [Your Other Project Title, e.g., Kaggle House Price Prediction]</h3>
-            <p>
-                <strong>Skills:</strong> Python (Pandas, Scikit-learn), Machine Learning, Data Visualization <br>
-                <strong>Description:</strong> Describe another project you completed. What was the objective? How did you clean the data, perform feature engineering, train the model, and evaluate the results? 
-                If possible, include a link to the project's GitHub repository.
-            </p>
-            </article>
-    </section>
+    </main>
 
-    <hr>
-
-    <footer>
-        <p>&copy; 2025 Shentao Coder</p>
+    <footer id="contact">
+        <h2>Get In Touch</h2>
+        <p>I'm currently seeking admission to top Engineering Management programs and am always open to connecting with professionals and academics.</p>
+        <a href="mailto:your.email@example.com" class="btn btn-primary">Say Hello</a>
+        <div class="social-links">
+            <a href="https://github.com/shentao-coder" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="[Your LinkedIn URL]" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p class="copyright">&copy; 2025 Shentao Coder. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
