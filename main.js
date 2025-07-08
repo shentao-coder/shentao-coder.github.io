@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    // --- 1. Theme Toggle Logic ---
+    // --- Theme Toggle Logic ---
     const themeToggle = document.querySelector('.theme-toggle-button');
     if (themeToggle) {
         const setInitialTheme = () => {
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- 2. Spotlight Focus Interaction ---
+    // --- Spotlight Focus Interaction ---
     const listContainers = document.querySelectorAll('.list-container');
 
     listContainers.forEach(container => {
