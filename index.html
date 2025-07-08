@@ -3,44 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shen Tao - Personal Portfolio</title>
+    <title>Shen Tao - Academic Portfolio</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="site-wrapper">
-        <header class="main-header">
-            <div class="name-logo">Tao, Shen</div>
-            <nav>
-                <a href="index.html" class="nav-link active">Home</a>
-                <a href="portfolio.html" class="nav-link">Portfolio</a>
-            </nav>
+    <div class="container">
+        <header class="page-header">
+            <h1>Shen Tao</h1>
+            <p class="tagline">Data-driven solutions for Engineering and Management</p>
         </header>
 
-        <main class="main-content">
-            <section class="intro-section">
-                <img src="profile.jpg" alt="Profile photograph of Shen Tao" class="profile-pic">
-                <h1 class="intro-name">Shen Tao</h1>
-                <p class="intro-tagline">
-                    Aspiring Engineering Management scholar with a foundation in Applied Econometrics.
-                </p>
-                <p class="intro-bio">
-                    Welcome. I am a student dedicated to applying rigorous quantitative methods to solve complex engineering and business problems. This website serves as a curated collection of my academic work and professional experiences.
-                </p>
-                <a href="portfolio.html" class="btn">Explore My Portfolio</a>
-            </section>
-        </main>
+        <div class="main-grid">
+            <main class="main-content">
+                <section>
+                    <h2>Statement</h2>
+                    <p>I am a dedicated student with a strong foundation in applied econometrics, focused on leveraging rigorous quantitative analysis to address complex challenges at the intersection of technology and business strategy. My objective is to pursue advanced studies in Engineering Management, where I can apply and expand my skills in data-driven decision-making to optimize systems and lead innovative projects.</p>
+                </section>
 
-        <footer class="main-footer">
-            <p>&copy; 2025 Tao, Shen. All Rights Reserved.</p>
-            <p>
-                <a href="mailto:your.email@example.com">Email</a> &bull; 
-                <a href="[Your LinkedIn URL]" target="_blank">LinkedIn</a> &bull; 
-                <a href="https://github.com/shentao-coder" target="_blank">GitHub</a>
-            </p>
+                <hr class="separator">
+
+                <section>
+                    <h2>Selected Projects</h2>
+                    <article class="publication-item">
+                        <h3>Undergraduate Thesis: [Your Thesis Title Here]</h3>
+                        <p class="publication-meta">Thesis, [Your University Name], 2025</p>
+                        <p>This research investigates [briefly describe the core problem or question]. By employing a [mention your model, e.g., Difference-in-Differences] model on a panel dataset, the study provides causal evidence of [mention your key finding]. This project demonstrates a robust capability in econometric modeling, causal inference, and academic writing.</p>
+                    </article>
+                    <article class="publication-item">
+                        <h3>Predictive Modeling: [Kaggle House Price Prediction]</h3>
+                        <p class="publication-meta">Personal Project</p>
+                        <p>Developed a predictive model to forecast housing prices with a high degree of accuracy. The project involved comprehensive data cleaning, advanced feature engineering, and a comparative analysis of multiple regression algorithms, including Gradient Boosting and Random Forests. The full process is documented and available on GitHub.</p>
+                    </article>
+                </section>
+
+                <hr class="separator">
+
+                <section>
+                    <h2>Education & Experience</h2>
+                     <div class="experience-item">
+                        <h3>[Your University Name]</h3>
+                        <p><strong>Bachelor of [Your Degree], [Your Major]</strong> | 2021 - 2025</p>
+                        <p><em>Relevant Coursework: Advanced Econometrics, Operations Research, Statistical Modeling, Machine Learning.</em></p>
+                    </div>
+                     <div class="experience-item">
+                        <h3>[Company Name]</h3>
+                        <p><strong>[Your Role, e.g., Data Analyst Intern]</strong> | Summer 2024</p>
+                        <p><em>[Concisely describe your main achievement. e.g., "Led a project to analyze customer churn, building a logistic regression model that identified key drivers and informed retention strategy."]</em></p>
+                    </div>
+                </section>
+            </main>
+
+            <aside class="sidebar">
+                <img src="profile.jpg" alt="A rectangular profile photograph of Shen Tao" class="profile-pic">
+                
+                <div class="sidebar-section">
+                    <h4>Contact</h4>
+                    <ul class="contact-list">
+                        <li><a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i> Email</a></li>
+                        <li><a href="https://linkedin.com/in/[YourLinkedInID]" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                        <li><a href="https://github.com/shentao-coder" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h4>Research Interests</h4>
+                    <ul class="interest-list">
+                        <li>Causal Inference</li>
+                        <li>Operations Management</li>
+                        <li>Predictive Analytics</li>
+                        <li>Technology Strategy</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <a href="resume.pdf" target="_blank" class="cv-button">Download Full CV (PDF)</a>
+                </div>
+            </aside>
+        </div>
+
+        <footer class="page-footer">
+            <p>&copy; 2025 Shen Tao</p>
         </footer>
     </div>
 
