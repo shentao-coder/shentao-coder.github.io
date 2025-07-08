@@ -1,18 +1,6 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
 
-    // --- 1. Custom Cursor Logic ---
-    const cursor = document.querySelector('.cursor');
-    const interactiveElements = document.querySelectorAll('a, button');
-    document.addEventListener('mousemove', e => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
-    });
-    interactiveElements.forEach(el => {
-        el.addEventListener('mouseover', () => cursor.classList.add('cursor-grow'));
-        el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-grow'));
-    });
-
-    // --- 2. Theme Toggle Logic ---
+    // --- 1. Theme Toggle Logic ---
     const themeToggle = document.getElementById('theme-toggle');
     const setInitialTheme = () => {
         const preferredTheme = localStorage.getItem('theme') || 'light';
@@ -27,25 +15,43 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- 3. Scroll Reveal Animations ---
-    const sr = ScrollReveal({
-        origin: 'bottom',
-        distance: '20px',
-        duration: 700,
-        easing: 'cubic-bezier(0.5, 0, 0, 1)',
-        reset: false,
-        viewFactor: 0.2
-    });
+    // --- 2. Live Clock Logic ---
+    const timeElement = document.getElementById('time');
+    function updateClock() {
+        if (timeElement) {
+            const now = new Date();
+            const options = { timeZone: 'Asia/Shanghai', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            timeElement.textContent = new Intl.DateTimeFormat('en-GB', options).format(now);
+        }
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
 
-    sr.reveal('.profile-avatar', { delay: 100 });
-    sr.reveal('.sidebar-name', { delay: 200 });
-    sr.reveal('.sidebar-tagline', { delay: 300 });
-    sr.reveal('.sidebar-section', { delay: 400, interval: 100 });
-    
-    sr.reveal('.lead', { delay: 200 });
-    sr.reveal('h2', { delay: 300 });
-    // Add reveals for .timeline-item, .project-card, etc. as you add them
-    // sr.reveal('.timeline-item', { interval: 150 }); 
-    // sr.reveal('.project-card', { interval: 100 });
-    sr.reveal('.site-footer', { distance: '10px' });
+    // --- 3. Loading Animation ---
+    const grid = document.querySelector('.dashboard-grid');
+    if (grid) {
+        // Use a short timeout to allow the page to render first
+        setTimeout(() => {
+            grid.classList.add('loaded');
+        }, 100);
+    }
+
+    // --- 4. 3D Hover Effect for Widgets ---
+    const widgets = document.querySelectorAll('.widget');
+    widgets.forEach(widget => {
+        widget.addEventListener('mousemove', (e) => {
+            const rect = widget.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+
+            const rotateX = -y / 20; // Adjust divisor for sensitivity
+            const rotateY = x / 20;
+
+            widget.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+        });
+
+        widget.addEventListener('mouseleave', () => {
+            widget.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+        });
+    });
 });
