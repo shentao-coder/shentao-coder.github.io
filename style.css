@@ -1,92 +1,140 @@
 /* --- 1. Design System & Base --- */
 :root {
     --font-sans: 'Inter', sans-serif;
-    --font-serif: 'Lora', serif;
-    --transition: 300ms ease;
+    --transition: 300ms cubic-bezier(0.25, 1, 0.5, 1);
 
     /* Light Theme */
-    --color-bg: #FFFFFF;
-    --color-text: #111827;
-    --color-text-secondary: #6B7280;
-    --color-border: #F3F4F6;
-    --color-accent: #0052FF;
+    --color-text: #0a0a0a;
+    --color-text-secondary: rgba(10, 10, 10, 0.6);
+    --panel-bg: rgba(255, 255, 255, 0.5);
+    --panel-border: rgba(255, 255, 255, 0.7);
+    --panel-glow: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0) 70%);
 }
 
 [data-theme="dark"] {
-    --color-bg: #111827;
-    --color-text: #F3F4F6;
-    --color-text-secondary: #9CA3AF;
-    --color-border: #1F2937;
-    --color-accent: #60A5FA;
+    --color-text: #f0f0f0;
+    --color-text-secondary: rgba(240, 240, 240, 0.6);
+    --panel-bg: rgba(20, 20, 20, 0.4);
+    --panel-border: rgba(255, 255, 255, 0.1);
+    --panel-glow: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0) 70%);
+}
+
+@keyframes aurora-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 body {
-    background-color: var(--color-bg);
-    color: var(--color-text);
     font-family: var(--font-sans);
-    font-size: 15px; /* Slightly smaller base font */
-    line-height: 1.6;
-    transition: background-color var(--transition), color var(--transition);
-}
-
-.container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
-a { color: var(--color-accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-/* --- 2. Header & Intro --- */
-.site-header { /* Styles from previous version can be reused */ }
-.intro-block {
+    min-height: 100vh;
+    overflow: hidden; /* No scrollbars */
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 3rem;
-    padding: 6rem 0 4rem 0;
-    border-bottom: 2px solid var(--color-border);
-    margin-bottom: 4rem;
+    color: var(--color-text);
+    background-color: #000;
 }
-.intro-image { width: 150px; height: auto; border-radius: 8px; }
-.intro-name { font-family: var(--font-serif); font-size: 2.5rem; font-weight: 600; }
-.intro-contact { color: var(--color-text-secondary); line-height: 1.7; margin: 1rem 0; }
-.cv-download-button { display: inline-block; background-color: var(--color-accent); color: white; padding: 0.75rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: 500; margin-top: 1rem; }
-.cv-download-button:hover { background-color: var(--color-text); text-decoration: none; }
+.aurora-background {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: -1;
+    background: linear-gradient(125deg, #0052FF, #AB5BFF, #FF5B5B, #FFB800);
+    background-size: 400% 400%;
+    animation: aurora-animation 15s ease infinite;
+}
 
+/* --- 2. Main Layout & Header --- */
+.container { width: 100%; max-width: 1200px; padding: 2rem; }
+.profile-header { text-align: center; margin-bottom: 2rem; opacity: 0; animation: fadeIn 1s 0.2s forwards; }
+.avatar-container {
+    width: 130px; height: 130px;
+    margin: 0 auto;
+    mask-image: radial-gradient(circle, black 50%, rgba(0, 0, 0, 0) 80%);
+}
+.profile-avatar { width: 100%; height: 100%; object-fit: cover; }
+.profile-name { font-size: 2rem; font-weight: 700; margin-top: 1rem; }
+.profile-tagline { font-size: 1rem; font-weight: 400; color: var(--color-text-secondary); }
 
-/* --- 3. Main Grid Layout --- */
-.main-grid {
+/* --- 3. Info Grid & Glass Panels --- */
+.info-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr; /* Main column is wider */
-    gap: 4rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: min-content;
+    gap: 1.5rem;
 }
-.content-block { margin-bottom: 3rem; } /* Reduced margin */
-h2 { font-size: 1.1rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-text-secondary); margin-bottom: 2rem; }
-
-/* --- 4. Content Styling --- */
-.event-item { margin-bottom: 2rem; } /* Reduced margin */
-.event-title { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600; margin-bottom: 0.1rem; }
-.event-meta { font-size: 0.9rem; color: var(--color-text-secondary); margin-bottom: 0.75rem; }
-.event-details { list-style: none; padding-left: 1.25rem; }
-.event-details li { position: relative; margin-bottom: 0.5rem; font-family: var(--font-serif); color: var(--color-text-secondary); }
-.event-details li::before { content: '•'; position: absolute; left: -1.25rem; color: var(--color-accent); }
-.side-details { font-family: var(--font-serif); color: var(--color-text-secondary); line-height: 1.8; }
-.side-details strong { color: var(--color-text); font-weight: 500; }
-
-
-/* --- 5. Footer --- */
-.site-footer {
-    margin-top: 4rem;
-    padding: 3rem 2rem;
-    background-color: var(--color-border);
-    border-radius: 12px;
+.glass-panel {
+    background: var(--panel-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--panel-border);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUpFadeIn 0.8s forwards;
 }
-.footer-content { max-width: 1200px; margin: 0 auto; text-align: center; }
-.footer-contact { margin-bottom: 2rem; }
-.footer-contact h4 { font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; }
-.footer-contact a { margin: 0 1rem; font-weight: 500; }
-.footer-note { font-size: 0.8rem; color: var(--color-text-secondary); }
 
-/* --- Responsive & Animation --- */
+/* Panel-specific animations */
+.experience-panel { animation-delay: 0.4s; grid-row: span 2; }
+.education-panel { animation-delay: 0.5s; }
+.skills-panel { animation-delay: 0.6s; grid-row: span 2;}
+.leadership-panel { animation-delay: 0.7s; }
+.links-panel { animation-delay: 0.8s; grid-column: span 2; display: flex; justify-content: space-around; align-items: center; }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUpFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Panel Content */
+.glass-panel h2 { font-size: 0.8rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-secondary); margin-bottom: 1.5rem; }
+.event { margin-bottom: 1.25rem; }
+.event:last-child { margin-bottom: 0; }
+.event h3 { font-size: 1.1rem; font-weight: 500; margin-bottom: 0.25rem; }
+.event p { font-size: 0.9rem; color: var(--color-text-secondary); margin: 0; line-height: 1.5; }
+.event .gpa { margin-top: 0.5rem; font-weight: 500; }
+.event p span { font-style: italic; }
+.event ul { list-style: none; padding-left: 0; margin-top: 0.5rem; }
+.event ul li { font-size: 0.9rem; color: var(--color-text-secondary); margin-bottom: 0.25rem; }
+
+.skills-category { margin-bottom: 1rem; }
+.skills-category h4 { font-weight: 500; margin-bottom: 0.5rem; }
+
+.panel-button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--panel-border);
+    border-radius: 0.75rem;
+    padding: 1rem 1.5rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--color-text);
+    transition: all var(--transition);
+}
+.panel-button:hover { background: rgba(255, 255, 255, 0.3); transform: scale(1.05); }
+[data-theme="dark"] .panel-button:hover { background: rgba(0, 0, 0, 0.3); }
+
+/* --- 4. Theme Toggle --- */
+.theme-toggle-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    backdrop-filter: blur(10px);
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    cursor: pointer; font-size: 1.25rem;
+}
+[data-theme="light"] .fa-moon { display: none; }
+[data-theme="dark"] .fa-sun { display: none; }
+
+/* --- Responsive --- */
 @media (max-width: 900px) {
-    .main-grid { grid-template-columns: 1fr; }
-    .intro-block { flex-direction: column; text-align: center; }
+    body { overflow: auto; padding: 0; }
+    .container { padding: 6rem 1rem 2rem 1rem; }
+    .info-grid { grid-template-columns: 1fr; }
+    .glass-panel { grid-column: auto !important; grid-row: auto !important; }
 }
-/* Initial state for animations */
-.content-block, .intro-block { visibility: hidden; }
