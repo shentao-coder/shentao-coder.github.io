@@ -1,203 +1,238 @@
-/* --- Global Settings & Typography --- */
+/* --- 1. Global Settings & Variables --- */
 :root {
-    --font-heading: 'Playfair Display', serif;
-    --font-body: 'Source Serif Pro', serif;
-    --text-color: #2c2c2c;
-    --primary-color: #003366; /* Deep, academic navy blue for links */
-    --border-color: #e0e0e0;
-    --bg-color: #ffffff;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-serif: 'Source Serif Pro', Georgia, serif;
+    
+    --color-text: #222222;
+    --color-text-secondary: #666666;
+    --color-bg: #ffffff;
+    --color-border: #EAEAEA;
+    --color-link: #000000;
 }
 
-html {
-    font-size: 16px; /* Base font size */
-}
-
+/* --- 2. Base & Typography --- */
 body {
-    font-family: var(--font-body);
-    color: var(--text-color);
-    background-color: var(--bg-color);
-    line-height: 1.75;
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-size: 16px;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 3rem 2rem;
+    padding: 4rem 2rem;
 }
 
-/* --- Header --- */
-.page-header {
-    text-align: left;
-    padding-bottom: 2rem;
-    margin-bottom: 3rem;
-    border-bottom: 2px solid var(--text-color);
-}
-
-.page-header h1 {
-    font-family: var(--font-heading);
-    font-size: 4rem;
+h1, h2, h3 {
+    font-family: var(--font-sans);
     font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-text);
+}
+
+p {
+    font-family: var(--font-serif);
+    margin: 0 0 1rem 0;
+}
+
+a {
+    color: var(--color-link);
+    text-decoration: none;
+    background-image: linear-gradient(var(--color-border), var(--color-border));
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 1px;
+    transition: background-size 0.3s;
+}
+
+a:hover {
+    background-size: 0% 1px;
+}
+
+
+/* --- 3. Page Structure & Header --- */
+.intro {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.intro h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.intro .subtitle {
+    font-family: var(--font-sans);
+    font-size: 1.25rem;
+    color: var(--color-text-secondary);
     margin: 0;
 }
 
-.page-header .tagline {
-    font-size: 1.1rem;
-    color: #666;
-    margin-top: 0.5rem;
+.profile-image-container {
+    margin-bottom: 4rem;
 }
 
-/* --- Two-Column Grid Layout --- */
-.main-grid {
-    display: grid;
-    grid-template-columns: 2.5fr 1fr; /* Main content is wider */
-    gap: 4rem;
-}
-
-/* --- Main Content (Left Column) --- */
-.main-content h2 {
-    font-family: var(--font-heading);
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 0.5rem;
-}
-
-.main-content p {
-    margin-bottom: 1rem;
-    text-align: justify; /* Justified text for a print feel */
-}
-
-.main-content a {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 600;
-    border-bottom: 1px solid transparent;
-    transition: border-bottom 0.3s ease;
-}
-
-.main-content a:hover {
-    border-bottom: 1px solid var(--primary-color);
-}
-
-.separator {
-    border: 0;
-    height: 1px;
-    background-color: var(--border-color);
-    margin: 3rem 0;
-}
-
-.publication-item, .experience-item {
-    margin-bottom: 2rem;
-}
-
-.publication-item h3, .experience-item h3 {
-    font-family: var(--font-body);
-    font-weight: 600;
-    font-size: 1.2rem;
-    margin-bottom: 0.25rem;
-}
-
-.publication-meta {
-    font-size: 0.9rem;
-    color: #777;
-    margin-bottom: 0.5rem;
-}
-
-/* --- Sidebar (Right Column) --- */
-.sidebar {
-    position: relative; /* For potential future sticky behavior */
-}
-
-.profile-pic {
-    width: 100%; /* Fills the sidebar width */
-    height: auto; /* Maintains aspect ratio */
-    display: block;
-    margin-bottom: 2rem;
-    /* NO BORDER as requested */
-}
-
-.sidebar-section {
-    margin-bottom: 2.5rem;
-}
-
-.sidebar-section h4 {
-    font-family: var(--font-body);
-    font-weight: 600;
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.contact-list, .interest-list {
-    list-style: none;
-    padding: 0;
-    font-size: 1rem;
-}
-
-.contact-list li, .interest-list li {
-    margin-bottom: 0.5rem;
-}
-
-.contact-list a {
-    color: var(--text-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.contact-list a:hover {
-    color: var(--primary-color);
-}
-
-.contact-list i {
-    margin-right: 0.75rem;
-    color: #999;
-    width: 20px; /* Aligns the text */
-}
-
-.cv-button {
+.profile-image-container img {
     display: block;
     width: 100%;
-    padding: 0.8rem 1rem;
-    background-color: var(--text-color);
-    color: var(--bg-color);
-    text-align: center;
-    text-decoration: none;
-    font-family: var(--font-body);
+    height: auto;
+    /* No border, as requested */
+}
+
+.content-section {
+    margin-bottom: 6rem;
+}
+
+.lead {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    text-align: left;
+}
+
+.section-title {
+    font-size: 1rem;
     font-weight: 600;
-    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-secondary);
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--color-border);
 }
 
-.cv-button:hover {
-    background-color: var(--primary-color);
+
+/* --- 4. Project Items --- */
+.project-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 4rem;
 }
 
-/* --- Footer --- */
-.page-footer {
+.project-number {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    flex-shrink: 0;
+}
+
+.project-content h3 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-content p {
+    max-width: 60ch; /* Optimal character count per line */
+}
+
+.project-meta {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    margin-top: 1rem;
+}
+
+.project-meta span {
+    margin-right: 1rem;
+}
+
+.project-link {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    color: var(--color-text);
+}
+
+
+/* --- 5. CV & Footer --- */
+.cv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.cv-column h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+.cv-column p {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+.cv-column p strong {
+    font-weight: 600;
+}
+
+.cv-download-wrapper {
     text-align: center;
     margin-top: 4rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--border-color);
-    font-size: 0.9rem;
-    color: #888;
+}
+.cv-download-link {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 1rem;
+    border: 1px solid var(--color-text);
+    padding: 0.8rem 2rem;
+    background-size: 0 0; /* remove underline */
+}
+.cv-download-link:hover {
+    background-color: var(--color-text);
+    color: var(--color-bg);
 }
 
-/* --- Responsive Design for Mobile --- */
-@media (max-width: 850px) {
-    .main-grid {
-        grid-template-columns: 1fr; /* Stack columns */
+.main-footer {
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+    padding-top: 3rem;
+}
+.main-footer h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-secondary);
+    margin-bottom: 1.5rem;
+}
+.main-footer p {
+    font-family: var(--font-sans);
+    margin-bottom: 1.5rem;
+}
+.main-footer a {
+    font-weight: 600;
+    margin: 0 0.75rem;
+    background-image: linear-gradient(var(--color-text), var(--color-text));
+}
+.main-footer .copyright {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+}
+
+/* --- 6. Responsive Design --- */
+@media (max-width: 600px) {
+    body {
+        font-size: 15px;
     }
-    .page-header {
-        text-align: center;
+    .container {
+        padding: 2rem 1.5rem;
     }
-    .sidebar {
-       grid-row: 1; /* Move sidebar (with pic) to the top on mobile */
-       margin-bottom: 3rem;
+    .intro h1 {
+        font-size: 2.5rem;
     }
-    .main-content p {
-        text-align: left; /* Justify is bad on narrow screens */
+    .intro .subtitle {
+        font-size: 1.1rem;
+    }
+    .content-section {
+        margin-bottom: 4rem;
+    }
+    .project-item {
+        flex-direction: column;
+        gap: 1rem;
     }
 }
