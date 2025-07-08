@@ -7,79 +7,66 @@
     
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="cursor"></div>
 
-    <header class="site-header">
+    <header class="global-header">
         <div class="header-content">
             <a href="#" class="site-logo">Shen Tao</a>
             <div class="utility-nav">
                 <a href="resume.pdf" target="_blank" class="nav-button">View CV</a>
                 <button id="theme-toggle" class="theme-toggle-button" title="Toggle Theme">
-                    <span class="icon-sun">☀️</span>
-                    <span class="icon-moon">🌙</span>
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
                 </button>
             </div>
         </div>
     </header>
 
-    <div class="container">
-        <main>
-            <section class="hero">
-                <div class="hero-image-container">
-                    <img src="profile.jpg" alt="Rectangular profile photograph of Shen Tao" class="hero-image">
+    <div class="page-container">
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <img src="profile.jpg" alt="Rectangular profile photograph of Shen Tao" class="profile-avatar">
+                <h2 class="sidebar-name">Shen Tao</h2>
+                <p class="sidebar-tagline">Quantitative Analysis for Technology & Business</p>
+                
+                <div class="sidebar-section">
+                    <h4>Contact</h4>
+                    <a href="mailto:your.email@example.com" class="contact-link">Email</a>
+                    <a href="https://linkedin.com/in/[YourLinkedInID]" target="_blank" class="contact-link">LinkedIn</a>
+                    <a href="https://github.com/shentao-coder" target="_blank" class="contact-link">GitHub</a>
                 </div>
-                <h1 class="hero-title">A data-driven approach to solving complex problems in engineering and management.</h1>
-            </section>
 
-            <section class="content-section about">
-                <p class="lead-text">My work focuses on the intersection of data science, technology strategy, and operations management. I apply rigorous quantitative methods, from causal inference to predictive analytics, to generate actionable insights and optimize complex systems.</p>
-            </section>
-
-            <section class="content-section skills">
-                <h2 class="section-title">Core Competencies</h2>
-                <div class="skills-grid">
-                    <div class="skill-card"><h4>Programming & Data</h4><p>Python (Pandas, Scikit-learn), R, SQL</p></div>
-                    <div class="skill-card"><h4>Econometrics</h4><p>Causal Inference, Panel Data, Time Series Analysis, Stata</p></div>
-                    <div class="skill-card"><h4>Tools & Platforms</h4><p>Git, Docker, AWS S3, Tableau</p></div>
+                <div class="sidebar-section">
+                    <h4>Skills</h4>
+                    <p class="skills-list">Python, R, SQL, Stata, Causal Inference, Machine Learning, Data Visualization, Git</p>
                 </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <section id="about" class="content-block">
+                <p class="lead">I am a researcher and analyst applying rigorous quantitative methods to solve complex challenges at the intersection of technology, business, and engineering. My work focuses on data-driven decision-making, from causal inference to predictive analytics, with the goal of optimizing complex systems.</p>
             </section>
 
-            <section class="content-section projects">
-                <h2 class="section-title">Selected Works</h2>
-                <div class="project-list">
-                    <a href="#" class="project-item">
-                        <div class="project-details">
-                            <h3>Undergraduate Thesis: [Your Thesis Title Here]</h3>
-                            <p>An in-depth econometric analysis providing causal evidence of [mention key finding].</p>
-                        </div>
-                        <span class="project-arrow">→</span>
-                    </a>
-                    <a href="[Link to your project on GitHub]" target="_blank" class="project-item">
-                        <div class="project-details">
-                            <h3>Predictive Modeling: [Kaggle House Price Prediction]</h3>
-                            <p>A machine learning project focused on feature engineering and model optimization for forecasting.</p>
-                        </div>
-                        <span class="project-arrow">→</span>
-                    </a>
-                </div>
-            </section>
+            <section id="experience" class="content-block">
+                <h2>Experience</h2>
+                </section>
 
+            <section id="projects" class="content-block">
+                <h2>Selected Projects</h2>
+                </section>
+
+            <section id="education" class="content-block">
+                <h2>Education</h2>
+                </section>
+            
             <footer class="site-footer">
-                <div class="footer-content">
-                    <h3>Let's Connect</h3>
-                    <div class="footer-links">
-                        <a href="mailto:your.email@example.com">Email</a>
-                        <a href="https://linkedin.com/in/[YourLinkedInID]" target="_blank">LinkedIn</a>
-                        <a href="https://github.com/shentao-coder" target="_blank">GitHub</a>
-                    </div>
-                    <p class="copyright">&copy; 2025 Shen Tao</p>
-                </div>
-            </footer>
+                </footer>
         </main>
     </div>
 
