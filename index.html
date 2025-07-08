@@ -3,81 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Richard T. Shen</title>
+    <title>Richard T. Shen - Curriculum Vitae</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <header class="site-header">
-            <h1 class="name">Richard T. Shen</h1>
-            <p class="affiliation">Shenzhen MSU-BIT University | Economics</p>
-            <nav class="header-links">
-                 <a href="resume.pdf" target="_blank">Download CV</a>
-                 <a href="https://github.com/shentao-coder" target="_blank">GitHub</a>
-                 <a href="#">LinkedIn</a>
-                 <button id="theme-toggle" class="theme-toggle-button">Toggle Theme</button>
-            </nav>
-        </header>
-
-        <main class="main-content">
             <div class="avatar-container">
                 <img src="profile.jpg" alt="Photograph of Richard T. Shen" class="avatar">
             </div>
+            <div class="header-text">
+                <h1 class="name">Richard T. Shen</h1>
+                <p class="contact-info">
+                    <a href="mailto:mr.shentao@outlook.com">mr.shentao@outlook.com</a> • (86) 185-2908-5521 • Shenzhen, GD
+                </p>
+                <nav class="header-links">
+                     <a href="resume.pdf" target="_blank">Download CV</a>
+                     <a href="https://github.com/shentao-coder" target="_blank">GitHub</a>
+                     <a href="#">LinkedIn</a>
+                </nav>
+            </div>
+        </header>
 
-            <section class="content-section">
-                <h2 class="section-title">About</h2>
-                <p>An applied econometrics student focusing on computationally efficient tools and leveraging big data techniques to generate actionable policy insights. My broader research interests span Econometrics, Labor Economics, Digital Economics, and Microeconomic Theory.</p>
-            </section>
-            
-            <section class="content-section">
+        <main class="main-content">
+            <section class="content-section" id="experience">
                 <h2 class="section-title">Professional Experience</h2>
                 <div class="list-container">
                     <div class="list-item">
-                        <h3>International Business Intern, <strong>CITIC Futures Co., Ltd</strong></h3>
-                        <p class="item-meta">Shenzhen, GD | Feb 2025 - May 2025</p>
+                        <p class="item-meta">Feb 2025 - May 2025</p>
+                        <h3>International Business Intern at <strong>CITIC Futures Co., Ltd</strong></h3>
                     </div>
                      <div class="list-item">
-                        <h3>Operations Management Intern, <strong>China CITIC Bank International</strong></h3>
-                        <p class="item-meta">Shenzhen, GD | Nov 2024 - Dec 2024</p>
+                        <p class="item-meta">Nov 2024 - Dec 2024</p>
+                        <h3>Operations Management Intern at <strong>China CITIC Bank International</strong></h3>
                     </div>
                      <div class="list-item">
-                        <h3>Manager's Assistant, <strong>Agricultural Bank of China</strong></h3>
-                        <p class="item-meta">Shenzhen, GD | Jul 2024 - Aug 2024</p>
+                        <p class="item-meta">Jul 2024 - Aug 2024</p>
+                        <h3>Manager's Assistant at <strong>Agricultural Bank of China</strong></h3>
                     </div>
                 </div>
             </section>
             
-            <section class="content-section">
+            <section class="content-section" id="education">
                 <h2 class="section-title">Education & Leadership</h2>
                 <div class="list-container">
                     <div class="list-item">
-                        <h3>B.S. in Economics, <strong>Shenzhen MSU-BIT University</strong></h3>
-                        <p class="item-meta">2021 - 2025 | GPA: 3.74/4.00</p>
+                        <p class="item-meta">2021 - 2025</p>
+                        <h3>B.S. in Economics at <strong>Shenzhen MSU-BIT University</strong></h3>
                     </div>
                     <div class="list-item">
-                        <h3>Team Leader, <strong>GAOTON ACCA Enterprise Challenge</strong></h3>
                         <p class="item-meta">Dec 2023 - Feb 2024</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="content-section">
-                <h2 class="section-title">Technical Expertise</h2>
-                 <div class="skills-grid">
-                    <div>
-                        <h4>Programming</h4>
-                        <p>Python, MATLAB, R, VBA, SQL</p>
-                    </div>
-                    <div>
-                        <h4>Software</h4>
-                        <p>Stata, Latex, Microsoft Office, Canva</p>
+                        <h3>Team Leader at <strong>GAOTON ACCA Enterprise Challenge</strong></h3>
                     </div>
                 </div>
             </section>
         </main>
+        
+        <footer class="site-footer">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Technical Expertise</h4>
+                    <p>Python, R, MATLAB, SQL, Stata, VBA, Latex, Microsoft Office</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Languages</h4>
+                    <p>Mandarin, English, Cantonese, Russian</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Interests</h4>
+                    <p>Badminton, Music, Running, Movie, Traveling</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Richard T. Shen. All Rights Reserved.</p>
+                <button id="theme-toggle" class="theme-toggle-button">Toggle Theme</button>
+            </div>
+        </footer>
     </div>
     <script src="main.js"></script>
 </body>
