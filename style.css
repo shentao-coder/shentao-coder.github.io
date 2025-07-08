@@ -132,3 +132,5 @@ h2 {
     .sidebar { position: static; width: 100%; height: auto; border-right: none; border-bottom: 1px solid var(--color-border); }
     .main-content { width: 100%; padding: 2rem; }
 }
+
+
