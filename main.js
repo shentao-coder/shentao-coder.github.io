@@ -1,16 +1,24 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    // --- 1. Theme Toggle ---
-    const themeToggle = document.getElementById('theme-toggle');
-    
-    const setInitialTheme = () => {
-        const preferredTheme = localStorage.getItem('theme');
-        // Use system preference if no user preference is stored
-        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        const currentTheme = preferredTheme || systemTheme;
-        document.documentElement.setAttribute('data-theme', currentTheme);
-    };
+    // --- 1. Custom Cursor Logic ---
+    const cursor = document.querySelector('.cursor');
+    const interactiveElements = document.querySelectorAll('a, button');
 
+    document.addEventListener('mousemove', e => {
+        cursor.setAttribute("style", `top: ${e.pageY}px; left: ${e.pageX}px;`);
+    });
+
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseover', () => cursor.classList.add('cursor-grow'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-grow'));
+    });
+
+    // --- 2. Theme Toggle Logic ---
+    const themeToggle = document.getElementById('theme-toggle');
+    const setInitialTheme = () => {
+        const preferredTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', preferredTheme);
+    };
     if (themeToggle) {
         setInitialTheme();
         themeToggle.addEventListener('click', () => {
@@ -21,27 +29,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- 2. Scroll-spy for Navigation ---
-    const sections = document.querySelectorAll('.content-block');
-    const navLinks = document.querySelectorAll('.main-nav a');
+    // --- 3. Scroll Reveal Animations ---
+    const sr = ScrollReveal({
+        origin: 'bottom',
+        distance: '30px',
+        duration: 800,
+        delay: 200,
+        easing: 'cubic-bezier(0.5, 0, 0, 1)',
+        reset: false, // Animations only happen once
+        viewFactor: 0.2 // Start animation when 20% of the element is visible
+    });
 
-    const onScroll = () => {
-        let currentSection = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            // Use header height as offset
-            if (pageYOffset >= sectionTop - 80) { 
-                currentSection = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').substring(1) === currentSection) {
-                link.classList.add('active');
-            }
-        });
-    };
-
-    window.addEventListener('scroll', onScroll);
+    // Animate elements
+    sr.reveal('.hero-image', { delay: 300 });
+    sr.reveal('.hero-title', { delay: 500, origin: 'top', distance: '50px' });
+    sr.reveal('.lead-text', { delay: 600 });
+    sr.reveal('.section-title', { delay: 300 });
+    // Staggered animations for lists/grids
+    sr.reveal('.skill-card', { interval: 150 });
+    sr.reveal('.project-item', { interval: 150, distance: '0px', opacity: 0.5 });
 });
