@@ -1,36 +1,39 @@
 /* --- 1. Design System & Base --- */
 :root {
     --font-sans: 'Inter', sans-serif;
-    --transition: 300ms ease;
+    --transition: 200ms ease-out;
 
     /* Light Theme */
-    --color-bg: #FFFFFF;
-    --color-text: #222222;
-    --color-text-light: #666666;
-    --color-border: #EAEAEA;
-    --color-link: #0066CC;
+    --color-bg: #F9F9F9;
+    --color-text: #1a1a1a;
+    --color-text-light: #737373;
+    --color-border: #E5E5E5;
+    --color-link: #007AFF;
 }
 
 [data-theme="dark"] {
-    --color-bg: #111111;
-    --color-text: #EAEAEA;
-    --color-text-light: #999999;
-    --color-border: #333333;
-    --color-link: #3399FF;
+    --color-bg: #1a1a1a;
+    --color-text: #F0F0F0;
+    --color-text-light: #8A8A8A;
+    --color-border: #2B2B2B;
+    --color-link: #0A84FF;
 }
 
 body {
     background-color: var(--color-bg);
     color: var(--color-text);
     font-family: var(--font-sans);
-    font-size: 16px;
-    line-height: 1.7;
-    padding: 3rem 1rem;
+    font-size: 14px; /* Reduced base font size */
+    line-height: 1.6; /* Reduced line height */
+    padding: 2rem 1rem;
     transition: background-color var(--transition), color var(--transition);
 }
 
 .container {
-    max-width: 700px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -44,94 +47,123 @@ a:hover {
 
 /* --- 2. Header --- */
 .site-header {
-    text-align: left;
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--color-border);
     margin-bottom: 2rem;
 }
 .name {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 700;
     margin: 0;
 }
 .affiliation {
-    font-size: 1rem;
-    margin: 0.25rem 0;
-}
-.contact-info {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: var(--color-text-light);
-    margin: 0.25rem 0 1rem 0;
+    margin: 0;
 }
-.contact-info a {
-    color: var(--color-text-light);
+.header-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
 }
 .header-links a {
-    margin-right: 1.5rem;
+    font-size: 0.9rem;
     font-weight: 500;
+    color: var(--color-text-light);
 }
 .theme-toggle-button {
     background: none;
-    border: 1px solid var(--color-border);
-    padding: 0.25rem 0.75rem;
-    border-radius: 4px;
+    border: none;
     cursor: pointer;
     color: var(--color-text-light);
     font-size: 0.8rem;
+    font-weight: 500;
 }
 
 
-/* --- 3. Avatar --- */
+/* --- 3. Main Content Layout --- */
+.main-content {
+    grid-column: 3 / 11; /* Centered content within the 12-column grid */
+}
 .avatar-container {
     text-align: center;
-    margin: 3rem 0;
-    border-top: 1px solid var(--color-border);
-    border-bottom: 1px solid var(--color-border);
-    padding: 3rem 0;
+    margin-bottom: 2rem;
 }
 .avatar {
-    width: 120px;
+    width: 100px;
     height: auto;
-    border-radius: 8px; /* Soft rectangular corners */
+    border-radius: 0; /* Right angles */
 }
 
-/* --- 4. Main Content --- */
-.main-content {
-    text-align: left;
-}
+/* --- 4. Content Styling --- */
 .content-section {
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem; /* Reduced margin */
 }
 .section-title {
-    font-size: 1rem;
-    font-weight: 700;
+    font-size: 0.9rem;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: var(--color-text-light);
-    border-bottom: 1px solid var(--color-border);
-    padding-bottom: 0.5rem;
     margin-bottom: 1.5rem;
 }
 
 .list-item {
-    margin-bottom: 1.5rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--color-border);
+    transition: opacity var(--transition);
+}
+.list-container:hover .list-item.is-faded {
+    opacity: 0.4;
 }
 .list-item h3 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 500;
-    margin: 0;
+    margin: 0 0 0.25rem 0;
 }
 .list-item strong {
     font-weight: 700;
+    color: var(--color-text);
 }
 .item-meta {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--color-text-light);
 }
 
-p {
-    margin: 0 0 1rem 0;
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
 }
-p:last-child {
-    margin-bottom: 0;
+.skills-grid h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.skills-grid p {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    line-height: 1.5;
 }
 
+/* --- 5. Responsive --- */
+@media (max-width: 900px) {
+    .main-content {
+        grid-column: 2 / 12;
+    }
+}
 
+@media (max-width: 600px) {
+    .container {
+        display: block;
+    }
+    .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+}
