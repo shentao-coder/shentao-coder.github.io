@@ -3,97 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Richard T. Shen - Portfolio</title>
+    <title>Richard T. Shen - A Digital Garden</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="page-container">
-        <aside class="sidebar">
-            <div class="sidebar-content">
-                <div class="profile-main">
-                    <img src="profile.jpg" alt="Photograph of Richard T. Shen" class="profile-avatar">
-                    <h1 class="profile-name">Richard T. Shen</h1>
-                    <p class="profile-tagline">Economics & Data Science</p>
-                </div>
-                
-                <nav class="main-nav">
-                    <a href="#experience" class="nav-link">Experience</a>
-                    <a href="#education" class="nav-link">Education</a>
-                    <a href="#skills" class="nav-link">Skills</a>
-                </nav>
-
-                <div class="sidebar-footer">
-                    <div class="contact-links">
-                        <a href="mailto:mr.shentao@outlook.com" title="Email">✉️</a>
-                        <a href="https://github.com/shentao-coder" target="_blank" title="GitHub">🐙</a>
-                        <a href="#" target="_blank" title="LinkedIn">🔗</a>
-                    </div>
-                    <button id="theme-toggle" class="theme-toggle-button">◐</button>
-                </div>
+    <div class="container">
+        <header class="site-header">
+            <div class="header-title">
+                Richard T. Shen
+                <span class="header-subtitle">A Digital Garden</span>
             </div>
-        </aside>
+            <nav class="site-nav">
+                <a href="#cornerstones">Cornerstones</a>
+                <a href="#about-link">About</a>
+                <button id="theme-toggle" title="Toggle Theme">◐</button>
+            </nav>
+        </header>
 
-        <main class="main-content">
-            <section id="about" class="content-block">
-                <p class="lead">Applied econometrics student focusing on computationally efficient tools and leveraging big data to generate actionable policy insights. My broader interests span Labor Economics, Digital Economics, and Microeconomic Theory.</p>
-            </section>
-
-            <section id="experience" class="content-block">
-                <h2>Professional Experience</h2>
-                <div class="event-item">
-                    <p class="event-date">Feb 2025 - May 2025</p>
-                    <h3 class="event-title">International Business Intern</h3>
-                    <p class="event-company">CITIC FUTURES CO., LTD</p>
-                </div>
-                <div class="event-item">
-                    <p class="event-date">Nov 2024 - Dec 2024</p>
-                    <h3 class="event-title">Operations Management Intern</h3>
-                    <p class="event-company">CHINA CITIC BANK INTERNATIONAL</p>
-                </div>
-                <div class="event-item">
-                    <p class="event-date">Jul 2024 - Aug 2024</p>
-                    <h3 class="event-title">Manager's Assistant</h3>
-                    <p class="event-company">AGRICULTURAL BANK OF CHINA</p>
-                </div>
+        <main>
+            <section class="hero">
+                <h1 class="hero-statement">Cultivating ideas at the intersection of economics, technology, and business strategy.</h1>
             </section>
             
-            <section id="leadership" class="content-block">
-                <h2>Leadership & Activities</h2>
-                <div class="event-item">
-                     <p class="event-date">Dec 2023 - Feb 2024</p>
-                     <h3 class="event-title">Team Leader, Analytical Consultant</h3>
-                     <p class="event-company">GAOTON ACCA ENTERPRISE CHALLENGE</p>
+            <section id="cornerstones" class="garden-section">
+                <h2 class="section-title">Cornerstones</h2>
+                <p class="section-description">Core projects and experiences that shape my thinking.</p>
+                
+                <div class="garden-grid">
+                    <div class="note-card">
+                        <h3>Experience: CITIC Futures</h3>
+                        <p>A case study in automating financial data analysis. Applied Python (Pandas) and VBA to reduce manual reporting time by over 30%, identifying key trends in corporate risk management.</p>
+                        <span class="note-tag">Industry</span>
+                    </div>
+
+                    <div class="note-card">
+                        <h3>Experience: China CITIC Bank</h3>
+                        <p>Focused on operational risk and strategy. Conducted competitive analysis on 10+ peer banks, contributing to a significant reduction in reporting errors through data-driven recommendations.</p>
+                        <span class="note-tag">Industry</span>
+                    </div>
+
+                    <div class="note-card">
+                        <h3>Project: Econometrics Thesis</h3>
+                        <p>An academic deep-dive into [Your Thesis Topic]. Developed computationally efficient tools and leveraged big data techniques to generate actionable insights.</p>
+                        <span class="note-tag">Academic</span>
+                    </div>
+
+                     <div class="note-card">
+                        <h3>Leadership: ACCA Challenge</h3>
+                        <p>Led a team as an Analytical Consultant, setting strategic direction and coordinating project milestones in a high-pressure business competition environment.</p>
+                        <span class="note-tag">Leadership</span>
+                    </div>
                 </div>
             </section>
 
-            <section id="education" class="content-block">
-                <h2>Education</h2>
-                <div class="event-item">
-                    <p class="event-date">2021 – 2025</p>
-                    <h3 class="event-title">B.S. in Economics</h3>
-                    <p class="event-company">SHENZHEN MSU-BIT UNIVERSITY</p>
-                    <p class="event-details">GPA: 3.74/4.00</p>
-                </div>
+            <section id="about-link" class="about-section">
+                 <h2 class="section-title">About This Gardener</h2>
+                 <div class="about-card">
+                     <img src="profile.jpg" alt="Richard T. Shen" class="about-avatar">
+                     <div class="about-text">
+                         <p>I am a B.S. in Economics from Shenzhen MSU-BIT University (2021-2025). This digital garden is a space where I explore my interests in econometrics, data science, and technology's impact on business. It's a collection of notes, projects, and evolving ideas.</p>
+                         <div class="about-links">
+                            <a href="mailto:mr.shentao@outlook.com">Email</a>
+                            <a href="https://github.com/shentao-coder" target="_blank">GitHub</a>
+                            <a href="resume.pdf" target="_blank">Full CV</a>
+                         </div>
+                     </div>
+                 </div>
             </section>
-
-            <section id="skills" class="content-block">
-                <h2>Skills & Interests</h2>
-                 <div class="skills-grid">
-                    <div><h4>Programming</h4><p>Python, R, MATLAB, SQL</p></div>
-                    <div><h4>Software</h4><p>Latex, Stata, Canva, VBA</p></div>
-                    <div><h4>Languages</h4><p>Mandarin, English, Cantonese, Russian</p></div>
-                    <div><h4>Interests</h4><p>Badminton, Music, Running, Traveling</p></div>
-                </div>
-            </section>
-            
-            <footer class="site-footer">
-                <p>Designed in collaboration with Google AI, coded by Richard T. Shen. <a href="resume.pdf" target="_blank">View Full CV</a>.</p>
-            </footer>
         </main>
+        
+        <footer class="site-footer">
+            <p>© 2025 Richard T. Shen. All thoughts are my own.</p>
+        </footer>
     </div>
-
-    <script src="https://unpkg.com/scrollreveal"></script>
+    
     <script src="main.js"></script>
 </body>
 </html>
