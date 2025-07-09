@@ -1,4 +1,4 @@
-// script.js - Final Top-Tier Logic
+// script.js - Final Version Logic
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -20,12 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
         applyTheme(newTheme);
     });
     
-    // --- Staggered Animation on Load ---
-    const animatedElements = document.querySelectorAll('.hero-section, .research-card, .timeline-item, .content-section > .section-title');
-    animatedElements.forEach((el, index) => {
-        el.style.animationDelay = `${index * 100}ms`;
-    });
-
     // --- Copyright Year ---
     const copyrightYearSpan = document.getElementById('copyright-year');
     if (copyrightYearSpan) {
