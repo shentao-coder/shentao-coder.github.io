@@ -3,109 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shen Tao - Personal Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Richard T. SHEN - Curriculum Vitae</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="page-container">
+        <header class="page-header">
+            <h1>Curriculum Vitae</h1>
+            <button id="theme-switcher" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun" style="display: none;"></i>
+            </button>
+        </header>
 
-    <header class="header">
-        <nav class="container">
-            <a href="#" class="logo">Shen Tao</a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section id="hero" class="hero container">
-            <div class="hero-text">
-                <h1 class="hero-title">Hi, I'm Shen Tao</h1>
-                <p class="hero-subtitle">A Passionate Developer & Tech Enthusiast</p>
-                <p class="hero-description">
-                    I build modern, responsive, and user-friendly web applications. Welcome to my personal space on the web.
-                </p>
-                <div class="hero-buttons">
-                    <a href="resume.pdf" class="btn btn-primary" target="_blank">Download Resume</a>
-                    <a href="#projects" class="btn">View My Work</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="profile.jpg" alt="A portrait of Shen Tao">
-            </div>
-        </section>
-
-        <section id="about" class="about">
-            <div class="container">
-                <h2 class="section-title">About Me</h2>
-                <div class="about-content">
-                    <p>
-                        Hello! I'm Shen Tao, a developer with a passion for creating elegant solutions in the least amount of time. I have experience with front-end and back-end technologies, and I'm always eager to learn new things and take on challenging projects. My goal is to leverage my skills to build high-quality software that solves real-world problems.
-                    </p>
-                    <p>
-                        When I'm not coding, I enjoy reading tech blogs, contributing to open-source projects, and exploring the latest advancements in technology.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="projects">
-            <div class="container">
-                <h2 class="section-title">My Projects</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <h3>Project One Title</h3>
-                        <p>A brief description of the project, highlighting the technologies used and its purpose.</p>
-                        <div class="project-links">
-                            <a href="#" target="_blank">Live Demo</a>
-                            <a href="#" target="_blank">Source Code</a>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <h3>Project Two Title</h3>
-                        <p>A brief description of the project, highlighting the technologies used and its purpose.</p>
-                        <div class="project-links">
-                            <a href="#" target="_blank">Live Demo</a>
-                            <a href="#" target="_blank">Source Code</a>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <h3>Project Three Title</h3>
-                        <p>A brief description of the project, highlighting the technologies used and its purpose.</p>
-                        <div class="project-links">
-                            <a href="#" target="_blank">Live Demo</a>
-                            <a href="#" target="_blank">Source Code</a>
-                        </div>
+        <div class="cv-grid">
+            <aside class="cv-aside">
+                <div class="profile-section">
+                    <div class="profile-pic-container">
+                        <img src="profile.jpg" alt="Richard T. SHEN">
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2 class="section-title">Get In Touch</h2>
-                <p>I'm currently open to new opportunities. Feel free to send me an email or connect with me on social media!</p>
-                <a href="mailto:your-email@example.com" class="contact-email">your-email@example.com</a>
-                <div class="social-links">
-                    <a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-        </section>
-    </main>
+                <section class="aside-section">
+                    <h3 class="aside-title">Contact</h3>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-map-marker-alt"></i>Shanghai, China</li>
+                        <li><i class="fas fa-phone"></i>(86) 185-2908-5521</li>
+                        <li><i class="fas fa-envelope"></i><a href="mailto:mr.shentao@outlook.com">mr.shentao@outlook.com</a></li>
+                    </ul>
+                </section>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Shen Tao. All Rights Reserved.</p>
+                <section class="aside-section">
+                    <h3 class="aside-title">Education</h3>
+                    [cite_start]<p><strong>B.S. in Economics</strong> [cite: 5]</p>
+                    [cite_start]<p>Shenzhen MSU-BIT University [cite: 4]</p>
+                    [cite_start]<p>2021 - 2025 [cite: 8]</p>
+                    [cite_start]<p>GPA: 3.74 / 4.00 [cite: 7]</p>
+                </section>
+
+                <section class="aside-section">
+                    <h3 class="aside-title">Technical Skills</h3>
+                    <ul class="skills-list">
+                        [cite_start]<li>Python (Pandas) [cite: 16]</li>
+                        [cite_start]<li>R, MATLAB [cite: 37]</li>
+                        [cite_start]<li>Excel (VBA), LaTeX [cite: 16, 37]</li>
+                        [cite_start]<li>Machine Learning [cite: 10]</li>
+                        [cite_start]<li>Econometrics [cite: 10]</li>
+                    </ul>
+                </section>
+
+                <section class="aside-section">
+                    <h3 class="aside-title">Languages</h3>
+                    [cite_start]<p>Mandarin, English, Cantonese, Russian [cite: 37]</p>
+                </section>
+            </aside>
+
+            <main class="cv-main">
+                <header class="main-header">
+                    [cite_start]<h2 class="main-name">Richard T. SHEN [cite: 1]</h2>
+                    <p class="main-tagline">Analytical Economics & Finance Professional with Expertise in Data-Driven Strategy and Risk Management</p>
+                </header>
+
+                <section class="main-section">
+                    <h3 class="main-title"><i class="fas fa-user-tie"></i>Professional Profile</h3>
+                    [cite_start]<p>A results-oriented Economics graduate from Shenzhen MSU-BIT University with a strong foundation in quantitative analysis, financial modeling, and international trade[cite: 5, 6, 10]. [cite_start]Proven ability to leverage technical skills in Python and advanced data analysis to automate processes and derive actionable insights, as demonstrated through internships at CITIC Futures and major banking institutions[cite: 12, 18, 23]. Seeking to apply my expertise in economic theory and financial markets to a challenging role in a dynamic environment.</p>
+                </section>
+
+                <section class="main-section">
+                    <h3 class="main-title"><i class="fas fa-briefcase"></i>Professional Experience</h3>
+                    <div class="experience-item">
+                        <h4>International Business Intern</h4>
+                        <p><strong>CITIC FUTURES CO., LTD</strong> | Shenzhen, GD | [cite_start]Feb 2025 - May 2025 [cite: 12, 13, 14]</p>
+                        <ul>
+                            [cite_start]<li>Analyzed futures hedging announcements for over 50 A-share companies to identify corporate risk management trends[cite: 15].</li>
+                            [cite_start]<li>Automated client data analysis using Python (Pandas) and Excel (VBA), reducing manual reporting time by over 30%[cite: 16].</li>
+                            [cite_start]<li>Supported institutional strategy reports by analyzing 20+ sell-side research papers to identify alpha-generating factors[cite: 17].</li>
+                        </ul>
+                    </div>
+                    <div class="experience-item">
+                        <h4>Operations Management Intern</h4>
+                        <p><strong>CHINA CITIC BANK INTERNATIONAL</strong> | Shenzhen, GD | [cite_start]Nov 2024 - Dec 2024 [cite: 18, 19, 20]</p>
+                         <ul>
+                            [cite_start]<li>Delivered an 8-page competitive analysis on 10+ peer banks, contributing to a 10% reduction in reporting errors[cite: 21].</li>
+                        </ul>
+                    </div>
+                    <div class="experience-item">
+                        <h4>Manager's Assistant</h4>
+                        <p><strong>AGRICULTURAL BANK OF CHINA</strong> | Shenzhen, GD | [cite_start]Jul 2024 - Aug 2024 [cite: 23, 25, 26]</p>
+                        <ul>
+                            [cite_start]<li>Proposed a streamlined client service workflow that contributed to a 10% increase in client satisfaction scores[cite: 28].</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="main-section">
+                    <h3 class="main-title"><i class="fas fa-trophy"></i>Leadership & Activities</h3>
+                     <div class="experience-item">
+                        <h4>Team Leader, Analytical Consultant</h4>
+                        <p><strong>GAOTON ACCA ENTERPRISE CHALLENGE</strong> | [cite_start]Dec 2023 - Feb 2024 [cite: 30, 32]</p>
+                        <ul>
+                            [cite_start]<li>Led team in case analysis and strategic planning, coordinating project milestones and assigning tasks to ensure efficient execution[cite: 33, 34, 35].</li>
+                        </ul>
+                    </div>
+                </section>
+            </main>
         </div>
-    </footer>
 
+        <footer class="page-footer">
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#" aria-label="WeChat"><i class="fab fa-weixin"></i></a>
+                <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <div id="location-map"></div>
+            <p>&copy; 2025 Richard T. SHEN. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="script.js"></script>
 </body>
 </html>
