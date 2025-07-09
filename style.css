@@ -1,190 +1,143 @@
-/* ===== 全局样式和背景 ===== */
-body {
-    font-family: 'Inter', sans-serif;
-    color: #fff;
+/* --- 全局样式和重置 --- */
+* {
     margin: 0;
-    padding: 2rem;
-    min-height: 100vh;
+    padding: 0;
     box-sizing: border-box;
-    background: #111827; /* 深色背景 */
-    background-image: 
-        radial-gradient(circle at 25% 30%, rgba(0, 86, 179, 0.3) 0%, transparent 40%),
-        radial-gradient(circle at 75% 70%, rgba(77, 171, 247, 0.2) 0%, transparent 40%);
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Noto Sans SC', 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f0f2f5; /* 备用背景色 */
+    overflow: hidden; /* 防止背景形状溢出 */
+}
+
+body {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative; /* 为背景形状定位 */
 }
 
-/* ===== 网格布局容器 ===== */
-.page-wrapper {
+/* --- 动态彩色背景 --- */
+.background-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 1100px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto;
-    gap: 1.5rem;
-    grid-template-areas: 
-        "profile intro timeline"
-        "skills  skills  timeline"
-        "contact map     map";
+    height: 100%;
+    z-index: -1;
 }
 
-/* ===== "玻璃"卡片统一样式 ===== */
-.card {
-    background: rgba(29, 36, 47, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    padding: 1.5rem;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(150px); /* 模糊效果，形成柔和的背景 */
 }
 
-/* ===== 各区域分配到网格 ===== */
-.profile-card { grid-area: profile; text-align: center; }
-.intro-card { grid-area: intro; }
-.timeline-card { grid-area: timeline; }
-.skills-social-card { grid-area: skills; }
-.contact-card { grid-area: contact; }
-.map-card { grid-area: map; padding: 0; border-radius: 16px; overflow: hidden; }
+.shape1 {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, #89f7fe, #66a6ff);
+    top: 10%;
+    left: 15%;
+    animation: move1 15s infinite alternate;
+}
 
-/* ===== 组件样式 ===== */
-.profile-photo {
+.shape2 {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    bottom: 10%;
+    right: 15%;
+    animation: move2 20s infinite alternate;
+}
+
+/* 背景动画 */
+@keyframes move1 {
+    from { transform: translate(0, 0) rotate(0deg); }
+    to { transform: translate(50px, 100px) rotate(360deg); }
+}
+
+@keyframes move2 {
+    from { transform: translate(0, 0) rotate(0deg); }
+    to { transform: translate(-50px, -100px) rotate(-360deg); }
+}
+
+
+/* --- 核心：雾化玻璃面板 --- */
+.glass-panel {
+    width: 90%;
+    max-width: 400px;
+    padding: 40px 30px;
+    text-align: center;
+    color: #333;
+
+    /* 关键样式 */
+    background: rgba(255, 255, 255, 0.45); /* 半透明背景 */
+    backdrop-filter: blur(12px); /* 核心！模糊背景 */
+    -webkit-backdrop-filter: blur(12px); /* 兼容 Safari */
+    border-radius: 20px; /* 圆角 */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* subtle border */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15); /* 柔和阴影 */
+}
+
+/* --- 面板内部元素 --- */
+.avatar {
     width: 120px;
     height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid rgba(77, 171, 247, 0.8);
+    border-radius: 50%; /* 圆形头像 */
+    object-fit: cover; /* 防止图片拉伸 */
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.intro-card h1 {
-    font-size: 2.2rem;
-    margin: 0 0 0.5rem 0;
-    font-weight: 600;
+h1 {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 5px;
 }
-.intro-card .tagline {
-    font-size: 1.1rem;
-    color: #d1d5db;
-    margin-bottom: 1rem;
+
+.subtitle {
+    font-size: 1em;
+    font-weight: 300;
+    color: #555;
+    margin-bottom: 30px;
 }
-.intro-card .summary {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #9ca3af;
-    margin-bottom: 1.5rem;
+
+.links {
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* 按钮间距 */
+    justify-content: center;
+}
+
+.link-button, .cv-button {
+    text-decoration: none;
+    color: #333;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.link-button:hover, .cv-button:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .cv-button {
-    display: inline-block;
-    background-color: #3b82f6;
+    display: inline-block; /* 使其可设置宽高和边距 */
+    background: #4a90e2; /* 主色调，更醒目 */
     color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
-}
-.cv-button:hover { background-color: #2563eb; }
-.cv-button .fas { margin-right: 8px; }
-
-.timeline-card h2, .skills-social-card h3, .contact-card h3 {
-    margin: 0 0 1rem 0;
-    font-weight: 500;
-    color: #e5e7eb;
+    font-weight: bold;
+    border: none;
 }
 
-.timeline {
-    list-style: none;
-    padding: 0;
-    position: relative;
-}
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 8px; top: 5px; bottom: 5px;
-    width: 2px;
-    background: rgba(255, 255, 255, 0.15);
-}
-.timeline li {
-    padding-left: 30px;
-    margin-bottom: 1rem;
-    position: relative;
-}
-.timeline li:last-child { margin-bottom: 0; }
-.timeline li::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 5px;
-    width: 18px; height: 18px;
-    border-radius: 50%;
-    background-color: #111827;
-    border: 3px solid #3b82f6;
-}
-.timeline-content h3 { font-size: 1rem; font-weight: 500; margin: 0; }
-.timeline-content p { font-size: 0.85rem; color: #9ca3af; margin: 0.25rem 0 0 0; }
-
-.skills-social-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.skills span {
-    display: inline-block;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 5px 12px;
-    margin: 0 5px 5px 0;
-    border-radius: 15px;
-    font-size: 0.85rem;
-}
-.social-links a {
-    color: #9ca3af;
-    font-size: 1.5rem;
-    margin-left: 1rem;
-    transition: color 0.3s ease;
-}
-.social-links a:hover { color: #3b82f6; }
-
-.contact-card p {
-    font-size: 0.9rem;
-    color: #d1d5db;
-    margin: 0.5rem 0;
-}
-.contact-card .fas { margin-right: 10px; color: #3b82f6; }
-
-#map { width: 100%; height: 100%; min-height: 150px; }
-
-.copyright {
-    text-align: center;
-    padding: 1rem;
-    font-size: 0.8rem;
-    color: #4b5563;
-}
-
-/* ===== 响应式设计 ===== */
-@media (max-width: 960px) {
-    body { padding: 1rem; }
-    .page-wrapper {
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: 
-            "profile intro"
-            "timeline timeline"
-            "skills skills"
-            "contact map";
-    }
-}
-
-@media (max-width: 640px) {
-    .page-wrapper {
-        grid-template-columns: 1fr;
-        grid-template-areas: 
-            "profile"
-            "intro"
-            "timeline"
-            "skills"
-            "contact"
-            "map";
-    }
-    .profile-card, .intro-card, .contact-card { text-align: center; }
-    .skills-social-card { flex-direction: column; gap: 1.5rem; }
+.cv-button:hover {
+    background: #357ABD;
 }
