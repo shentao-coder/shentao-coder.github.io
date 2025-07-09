@@ -1,25 +1,22 @@
 /* --- 1. Design System & Base --- */
 :root {
     --font-sans: 'Inter', sans-serif;
-    --transition: 200ms ease-out;
-    --sidebar-width: 280px;
+    --transition: 300ms ease;
 
     /* Light Theme */
-    --color-bg: #F9FAFB;
-    --color-bg-alt: #FFFFFF;
-    --color-text: #111827;
-    --color-text-secondary: #6B7280;
-    --color-border: #E5E7EB;
-    --color-accent: #2563EB;
+    --color-bg: #FFFFFF;
+    --color-text: #000000;
+    --color-text-secondary: #666666;
+    --color-border: #EAEAEA;
+    --color-accent: #007AFF;
 }
 
 [data-theme="dark"] {
-    --color-bg: #111827;
-    --color-bg-alt: #1F2937;
-    --color-text: #F9FAFB;
-    --color-text-secondary: #9CA3AF;
-    --color-border: #374151;
-    --color-accent: #60A5FA;
+    --color-bg: #000000;
+    --color-text: #FFFFFF;
+    --color-text-secondary: #888888;
+    --color-border: #222222;
+    --color-accent: #0A84FF;
 }
 
 body {
@@ -27,130 +24,108 @@ body {
     color: var(--color-text);
     font-family: var(--font-sans);
     font-size: 15px;
-    line-height: 1.6;
-    transition: background-color var(--transition), color var(--transition);
+    margin: 0;
+    overflow-x: hidden; /* Hide horizontal scrollbar from body */
 }
 
-.page-container {
-    display: flex;
-    max-width: 1280px;
-    margin: 0 auto;
-}
-
-/* --- 2. Sidebar (Left) --- */
-.sidebar {
-    width: var(--sidebar-width);
+/* --- 2. Horizontal Scroll Layout --- */
+.scroll-container {
+    width: 100vw;
     height: 100vh;
-    position: sticky;
-    top: 0;
-    padding: 2.5rem;
-    display: flex;
-    flex-direction: column;
-    border-right: 1px solid var(--color-border);
-    background-color: var(--color-bg-alt);
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
-.sidebar-content {
+.timeline-track {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     height: 100%;
+    width: max-content; /* Allow content to expand horizontally */
+    padding: 0 5vw;
 }
 
-.profile-block { text-align: center; }
-.profile-avatar { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem; }
-.profile-name { font-size: 1.5rem; font-weight: 700; }
-.profile-tagline { font-size: 0.9rem; color: var(--color-text-secondary); }
-
-.main-nav { margin: 2.5rem 0; }
-.nav-link {
-    display: block;
-    padding: 0.6rem 1rem;
-    margin: 0.25rem 0;
-    font-weight: 500;
-    border-radius: 6px;
-    color: var(--color-text-secondary);
-    text-decoration: none;
-    transition: all var(--transition);
-}
-.nav-link.active { color: var(--color-text); background-color: var(--color-bg); }
-.nav-link:hover { color: var(--color-text); }
-
-.sidebar-footer {
-    margin-top: auto;
+/* --- 3. Timeline Section Styling --- */
+.timeline-section {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem;
+    height: 100%;
+    flex-shrink: 0;
+    position: relative;
+    border-right: 1px solid var(--color-border);
+}
+
+.intro-section {
+    width: 80vw; /* Wider intro section */
+    max-width: 600px;
+    text-align: center;
     align-items: center;
 }
-.cv-button {
-    font-size: 0.9rem;
-    font-weight: 500;
-    padding: 0.6rem 1.2rem;
-    border-radius: 6px;
-    background-color: var(--color-accent);
-    color: white;
-    text-decoration: none;
-    transition: opacity var(--transition);
-}
-.cv-button:hover { opacity: 0.8; text-decoration: none; }
-.theme-toggle-button { background: none; border: none; cursor: pointer; color: var(--color-text-secondary); font-size: 1.5rem; }
+.avatar { width: 100px; height: 100px; object-fit: cover; border-radius: 0; margin-bottom: 1.5rem; }
+.name { font-size: 2rem; font-weight: 700; margin: 0; }
+.tagline { font-size: 1rem; color: var(--color-text-secondary); margin: 0.5rem 0 1.5rem 0; }
+.contact-info a { font-weight: 500; margin: 0 1rem; color: var(--color-text); }
+.contact-info a:hover { color: var(--color-accent); }
 
-/* --- 3. Main Content (Right) --- */
-.main-content {
-    width: calc(100% - var(--sidebar-width));
-    padding: 4rem 5%;
+.event-section {
+    width: auto;
+    min-width: 400px;
 }
-.content-block {
-    margin-bottom: 3.5rem;
-    scroll-margin-top: 4rem; /* Offset for scroll-spy */
+.year-marker {
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-border);
+    z-index: -1;
 }
-.lead {
-    font-family: var(--font-serif, serif);
-    font-size: 1.25rem;
-    line-height: 1.7;
-    color: var(--color-text-secondary);
-}
-.section-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 2rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid var(--color-border);
-}
+[data-theme="dark"] .year-marker { color: #111; }
 
-.event-item {
-    position: relative;
-    padding: 1.25rem 0;
-    border-bottom: 1px solid var(--color-border);
+.event-card {
+    background: transparent;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    width: 320px;
+    transition: all var(--transition);
 }
-.event-item:first-of-type { padding-top: 0; }
-.event-date { font-size: 0.8rem; color: var(--color-text-secondary); margin-bottom: 0.5rem; }
-.event-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.25rem; }
-.event-company { font-weight: 500; }
-.event-details { font-size: 0.9rem; margin-top: 0.5rem; color: var(--color-text-secondary); }
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem 2rem;
+.event-card:hover {
+    background-color: rgba(128, 128, 128, 0.05);
+    border-color: var(--color-border);
+    transform: translateY(-5px);
 }
-.skills-grid h4 { font-weight: 600; margin-bottom: 0.5rem; }
-.skills-grid p { font-size: 0.9rem; color: var(--color-text-secondary); }
+.event-meta { font-size: 0.85rem; color: var(--color-text-secondary); }
+.event-title { font-size: 1.1rem; font-weight: 500; margin: 0.25rem 0; }
+.event-company { font-size: 0.9rem; font-weight: 500; color: var(--color-text); }
 
-.site-footer {
-    padding-top: 2rem;
+
+.final-section {
+    width: 80vw;
+    max-width: 600px;
+    align-items: center;
     text-align: center;
-    border-top: 1px solid var(--color-border);
-    font-size: 0.9rem;
-    color: var(--color-text-secondary);
 }
-.site-footer a { margin: 0 0.75rem; }
+.footer-content h4 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-secondary); margin-bottom: 1rem; }
+.footer-content p { color: var(--color-text-secondary); line-height: 1.7; }
+.footer-content hr { border: none; height: 1px; background-color: var(--color-border); margin: 2rem 0; }
+.cv-button { display: inline-block; margin-top: 2rem; padding: 0.75rem 2rem; border: 1px solid var(--color-text); color: var(--color-text); font-weight: 500; text-decoration: none; transition: all var(--transition); }
+.cv-button:hover { background-color: var(--color-text); color: var(--color-bg); }
+.copyright { font-size: 0.8rem; margin-top: 3rem; }
 
-/* Animation Initial State */
-.content-block { visibility: hidden; }
-
-/* --- 4. Responsive --- */
-@media (max-width: 1024px) {
-    .page-container { flex-direction: column; }
-    .sidebar { position: static; width: 100%; height: auto; border-right: none; border-bottom: 1px solid var(--color-border); }
-    .main-content { width: 100%; padding: 2.5rem 1.5rem; }
+/* --- Theme Toggle --- */
+.theme-toggle-button {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    background: none;
+    border: 1px solid var(--color-border);
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--color-text-secondary);
 }
