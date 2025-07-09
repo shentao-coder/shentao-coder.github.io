@@ -4,85 +4,280 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Richard T. Shen - Curriculum Vitae</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* --- 1. Design System & Base --- */
+        :root {
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --transition: 300ms ease;
+
+            /* Light Theme (Default) */
+            --color-bg: #FFFFFF;
+            --color-text: #111111;
+            --color-text-secondary: #6B7280;
+            --color-border: #E5E7EB;
+            --color-link: #007AFF;
+        }
+
+        [data-theme="dark"] {
+            --color-bg: #000000;
+            --color-text: #E5E5E5;
+            --color-text-secondary: #888888;
+            --color-border: #222222;
+            --color-link: #0A84FF;
+        }
+
+        body {
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            font-family: var(--font-sans);
+            font-size: 14px; /* Compact base font size */
+            line-height: 1.5;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            transition: background-color var(--transition), color var(--transition);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 3rem;
+            position: relative;
+        }
+
+        a {
+            color: var(--color-link);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- 2. Header & Intro --- */
+        .site-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+        .avatar {
+            width: 80px; /* Smaller avatar */
+            height: auto;
+            border-radius: 0; /* Right angles */
+            margin-bottom: 1.5rem;
+        }
+        .name {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0;
+        }
+        .contact-info {
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+        }
+        .contact-info a {
+            color: var(--color-text-secondary);
+            margin: 0 0.75rem;
+        }
+        .contact-info a:hover {
+            color: var(--color-text);
+        }
+
+        /* --- 3. Main Grid Layout --- */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr; /* Main content is wider */
+            gap: 3rem;
+        }
+
+        .section-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-text-secondary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        /* --- 4. Content Styling --- */
+        .event-item {
+            margin-bottom: 1.5rem;
+        }
+        .event-item:last-child {
+            margin-bottom: 0;
+        }
+        .event-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 0 0 0.1rem 0;
+        }
+        .item-meta {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 0.5rem;
+        }
+        .event-details {
+            list-style: none;
+            padding-left: 1rem;
+            margin: 0;
+        }
+        .event-details li {
+            position: relative;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+        }
+        .event-details li::before {
+            content: '–';
+            position: absolute;
+            left: -1rem;
+            color: var(--color-text-secondary);
+        }
+        
+        .side-list p {
+            margin: 0 0 0.75rem 0;
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+        }
+        .side-list strong {
+            color: var(--color-text);
+            font-weight: 500;
+        }
+
+
+        /* --- 5. Theme Toggle --- */
+        .theme-toggle-button {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: 1px solid var(--color-border);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+        }
+
+        /* --- 6. Responsive --- */
+        @media (max-width: 900px) {
+            body {
+                padding: 1rem;
+                display: block;
+            }
+            .main-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+    </style>
 </head>
 <body>
+
     <div class="container">
         <header class="site-header">
-            <h1 class="name">Richard T. Shen</h1>
-            <p class="tagline">Quantitative Analysis for Economics, Business, and Technology</p>
-            <div class="contact-info">
-                <a href="mailto:mr.shentao@outlook.com"><i class="fas fa-envelope"></i> mr.shentao@outlook.com</a>
-                <span><i class="fas fa-phone"></i> (86) 185-2908-5521</span>
-                <a href="https://github.com/shentao-coder" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                <a href="resume.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Download CV</a>
-            </div>
+            <img src="profile.jpg" alt="Photograph of Richard T. Shen" class="avatar">
+            <h1 class="name">Richard T. SHEN</h1>
+            <p class="contact-info">
+                <span>Shenzhen, GD 518172</span> |
+                <a href="mailto:mr.shentao@outlook.com">mr.shentao@outlook.com</a> |
+                <span>(86) 185-2908-5521</span>
+            </p>
         </header>
 
-        <div class="profile-image-container">
-            <img src="profile.jpg" alt="Rectangular photograph of Richard T. Shen" class="profile-image">
+        <div class="main-grid">
+            <div class="column-main">
+                <section id="experience">
+                    <h2 class="section-title">Professional Experience</h2>
+                    <div class="event-item">
+                        <h3 class="event-title">International Business Intern, <strong>CITIC FUTURES CO., LTD</strong></h3>
+                        <p class="item-meta">Shenzhen, GD | February 2025 - May 2025</p>
+                        <ul class="event-details">
+                            <li>Analyzed futures hedging announcements for 50+ A-share companies to identify trends in corporate risk management.</li>
+                            <li>Automated client trading data analysis using Python (Pandas) and Excel (VBA), reducing manual reporting time by over 30%.</li>
+                            <li>Supported institutional client investment strategy reports by analyzing 20+ sell-side research papers.</li>
+                        </ul>
+                    </div>
+                    <div class="event-item">
+                        <h3 class="event-title">Operations Management Intern, <strong>CHINA CITIC BANK INTERNATIONAL</strong></h3>
+                        <p class="item-meta">Shenzhen, GD | November 2024 - December 2024</p>
+                         <ul class="event-details">
+                            <li>Conducted competitive analysis on 10+ peer banks, delivering an 8-page report that contributed to a 10% reduction in reporting errors.</li>
+                            <li>Analyzed client survey feedback to present insights on customer needs at departmental strategy meetings.</li>
+                        </ul>
+                    </div>
+                    <div class="event-item">
+                        <h3 class="event-title">Manager's Assistant, <strong>AGRICULTURAL BANK OF CHINA</strong></h3>
+                        <p class="item-meta">Shenzhen, GD | July 2024 - August 2024</p>
+                        <ul class="event-details">
+                           <li>Analyzed daily transaction patterns from a customer flow of 200+ individuals for optimizing staff allocation.</li>
+                           <li>Mapped and streamlined client service workflow, contributing to a 10% increase in client satisfaction scores.</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <div class="column-side">
+                 <section id="education">
+                    <h2 class="section-title">Education</h2>
+                    <div class="side-list">
+                        <p><strong>B.S. in Economics</strong><br>
+                        SHENZHEN MSU-BIT UNIVERSITY<br>
+                        2021 – 2025 | GPA: 3.74/4.00</p>
+                        <p><strong>Awards:</strong> First-Year Scholarship; Third Prize, Global Management Challenge.</p>
+                    </div>
+                </section>
+                <section id="leadership">
+                    <h2 class="section-title">Leadership</h2>
+                     <div class="side-list">
+                        <p><strong>Team Leader, GAOTON ACCA Enterprise Challenge</strong><br>
+                        2023 - 2024</p>
+                    </div>
+                </section>
+                <section id="skills">
+                     <h2 class="section-title">Technical Expertise</h2>
+                     <div class="side-list">
+                        <p><strong>Programming:</strong> Python, MATLAB, R, Latex</p>
+                        <p><strong>Software:</strong> Microsoft Office, Canva</p>
+                        <p><strong>Languages:</strong> Mandarin, English, Cantonese, Russian</p>
+                    </div>
+                </section>
+            </div>
         </div>
-
-        <main class="main-content">
-            <section class="content-section">
-                <h2 class="section-title">Professional Experience</h2>
-                <div class="list-item">
-                    <h3>International Business Intern, <strong>CITIC Futures Co., Ltd</strong></h3>
-                    <p class="item-meta">Feb 2025 - May 2025 | Shenzhen, GD</p>
-                    <p class="item-description">Analyzed hedging announcements for 50+ companies using Wind Terminal; automated data analysis with Python (Pandas) & VBA, reducing reporting time by over 30%.</p>
-                </div>
-                 <div class="list-item">
-                    <h3>Operations Management Intern, <strong>China CITIC Bank International</strong></h3>
-                    <p class="item-meta">Nov 2024 - Dec 2024 | Shenzhen, GD</p>
-                     <p class="item-description">Conducted competitive analysis on 10+ peer banks, contributing to a 10% reduction in reporting errors via a detailed 8-page report.</p>
-                </div>
-                 <div class="list-item">
-                    <h3>Manager's Assistant, <strong>Agricultural Bank of China</strong></h3>
-                    <p class="item-meta">Jul 2024 - Aug 2024 | Shenzhen, GD</p>
-                    <p class="item-description">Analyzed daily transaction patterns of 200+ customers to provide data-driven insights for optimizing staff allocation.</p>
-                </div>
-            </section>
-            
-            <section class="content-section">
-                <h2 class="section-title">Education & Leadership</h2>
-                <div class="grid-container">
-                    <div class="list-item">
-                        <h3>B.S. in Economics</h3>
-                        <p class="item-meta"><strong>Shenzhen MSU-BIT University</strong> | 2021 - 2025</p>
-                        <p class="item-description">GPA: 3.74/4.00. Honors: First-Year Scholarship, Third Prize in Global Management Challenge.</p>
-                    </div>
-                    <div class="list-item">
-                        <h3>Team Leader, Analytical Consultant</h3>
-                        <p class="item-meta"><strong>GAOTON ACCA Enterprise Challenge</strong> | 2023 - 2024</p>
-                         <p class="item-description">Coordinated project strategy, led case report analysis, and managed team execution.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="content-section">
-                <h2 class="section-title">Technical Expertise</h2>
-                <div class="grid-container">
-                    <div>
-                        <h4>Programming & Data</h4>
-                        <p>Python (Pandas, Scikit-learn), R, SQL, MATLAB, VBA</p>
-                    </div>
-                    <div>
-                        <h4>Software & Languages</h4>
-                        <p>Stata, Latex, Canva | Mandarin, English, Cantonese, Russian</p>
-                    </div>
-                </div>
-            </section>
-        </main>
-        
-        <footer class="site-footer">
-            <p>© 2025 Richard T. Shen. Designed in collaboration with Google AI.</p>
-            <button id="theme-toggle" class="theme-toggle-button">Toggle Theme</button>
-        </footer>
+        <button id="theme-toggle" class="theme-toggle-button">Toggle Theme</button>
     </div>
-    <script src="main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggle = document.querySelector('.theme-toggle-button');
+            if (themeToggle) {
+                const setInitialTheme = () => {
+                    const preferredTheme = localStorage.getItem('theme') || 'light';
+                    document.documentElement.setAttribute('data-theme', preferredTheme);
+                };
+                setInitialTheme();
+                themeToggle.addEventListener('click', () => {
+                    let currentTheme = document.documentElement.getAttribute('data-theme');
+                    let targetTheme = currentTheme === 'light' ? 'dark' : 'light';
+                    document.documentElement.setAttribute('data-theme', targetTheme);
+                    localStorage.setItem('theme', targetTheme);
+                });
+            }
+        });
+    </script>
 </body>
 </html>
