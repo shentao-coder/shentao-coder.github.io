@@ -159,6 +159,3 @@ a:hover { text-decoration: underline; color: var(--accent-hover); }
 .contact-info p { margin: 0.25rem 0; font-family: var(--font-heading); font-size: 0.9rem; }
 .map-container { flex: 1.5; min-height: 200px; border: 1px solid var(--border-color); }
 .copyright { text-align: center; font-family: var(--font-heading); font-size: 0.8rem; color: var(--text-secondary); }
-
-
-
