@@ -1,134 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Richard T. SHEN - Personal Portfolio</title>
+    <title>Richard T. SHEN | Quantitative Analyst Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Syne:wght@600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header class="main-header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">Richard T. SHEN</div>
+    <div id="cursor-dot"></div>
+    <div id="cursor-outline"></div>
+
+    <div class="portfolio-container">
+        <aside class="portfolio-sidebar">
+            <div class="sidebar-content">
+                <div class="profile-info">
+                    <div class="profile-image">
+                        <img src="profile.jpg" alt="Richard T. SHEN">
+                    </div>
+                    <h1 class="profile-name">Richard T. SHEN</h1>
+                    <p class="profile-title">Quantitative Analyst & Researcher</p>
+                </div>
+
                 <nav class="main-nav">
                     <ul>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#research">Research</a></li>
-                        <li><a href="#experience">Experience</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#about"><span>01</span>About</a></li>
+                        <li><a href="#research"><span>02</span>Research</a></li>
+                        <li><a href="#experience"><span>03</span>Experience</a></li>
                     </ul>
                 </nav>
-                <div class="header-actions">
-                    <a href="resume.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Curriculum Vitae</a>
+
+                <div class="sidebar-footer">
+                    <div class="social-icons">
+                         <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z"></path></svg></a>
+                         <a href="#" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" title="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
+                         <a href="#" target="_blank" rel="noopener noreferrer" aria-label="WeChat" title="WeChat"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.96 15.3c-1.8 0-3.59.39-3.59 1.32 0 .94 1.79 1.33 3.59 1.33s3.59-.39 3.59-1.33c0-.93-1.8-1.32-3.59-1.32zm-5.46-3.61c-.49 0-.87-.39-.87-.88 0-.48.38-.88.87-.88s.87.4.87.88c0 .49-.39.88-.87.88zm10.92 0c-.48 0-.87-.39-.87-.88 0-.48.39-.88.87-.88s.87.4.87.88c0 .49-.38.88-.87.88zM22.92 12c0 5.1-4.74 9.24-10.59 9.24-1.64 0-3.2-.33-4.57-.92L2 22l1.9-5.18C2.8 15.1 2.16 13.05 2.16 10.92 2.16 5.82 6.9 1.68 12.75 1.68S23.34 5.82 23.34 10.92c0 .35-.02.69-.05 1.03h-.37z"/></svg></a>
+                    </div>
                     <button id="theme-switcher" class="theme-btn" aria-label="Toggle theme">
-                        <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.106a.75.75 0 010 1.06l-1.591 1.59a.75.75 0 11-1.06-1.06l1.59-1.59a.75.75 0 011.06 0zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5h2.25a.75.75 0 01.75.75zM17.894 17.894a.75.75 0 01-1.06 0l-1.59-1.591a.75.75 0 111.06-1.06l1.59 1.59a.75.75 0 010 1.061zM12 18.75a.75.75 0 01-.75.75v2.25a.75.75 0 011.5 0v-2.25a.75.75 0 01-.75-.75zM5.106 17.894a.75.75 0 010-1.06l1.591-1.59a.75.75 0 111.06 1.06l-1.59 1.59a.75.75 0 01-1.06 0zM4.5 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H5.25a.75.75 0 01-.75-.75zM6.106 5.106a.75.75 0 011.06 0l1.59 1.591a.75.75 0 01-1.06 1.06L6.106 6.166a.75.75 0 010-1.06z"/></svg>
-                        <svg class="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 004.472-.948.75.75 0 01.818.162l-2.071 3.674A10.5 10.5 0 019.528 1.718z" clip-rule="evenodd" /></svg>
+                        <span class="light-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.106a.75.75 0 010 1.06l-1.591 1.59a.75.75 0 11-1.06-1.06l1.59-1.59a.75.75 0 011.06 0zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5h2.25a.75.75 0 01.75.75zM17.894 17.894a.75.75 0 01-1.06 0l-1.59-1.591a.75.75 0 111.06-1.06l1.59 1.59a.75.75 0 010 1.061zM12 18.75a.75.75 0 01-.75.75v2.25a.75.75 0 011.5 0v-2.25a.75.75 0 01-.75-.75zM5.106 17.894a.75.75 0 010-1.06l1.591-1.59a.75.75 0 111.06 1.06l-1.59 1.59a.75.75 0 01-1.06 0zM4.5 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H5.25a.75.75 0 01-.75-.75zM6.106 5.106a.75.75 0 011.06 0l1.59 1.591a.75.75 0 01-1.06 1.06L6.106 6.166a.75.75 0 010-1.06z"/></svg></span>
+                        <span class="dark-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 004.472-.948.75.75 0 01.818.162l-2.071 3.674A10.5 10.5 0 019.528 1.718z" clip-rule="evenodd" /></svg></span>
                     </button>
                 </div>
             </div>
-        </div>
-    </header>
+        </aside>
 
-    <main>
-        <div class="container">
-            <section id="about" class="about-section">
-                <div class="about-content">
-                    <div class="about-text">
-                        <h1>Richard T. SHEN</h1>
-                        <p class="subtitle">B.S. in Economics | Aspiring Quantitative Analyst</p>
-                        <p>A detail-oriented graduate from Shenzhen MSU-BIT University with a strong foundation in economics, econometrics, and data analytics. Experienced in corporate risk management and investment strategy through internships at leading financial institutions. Eager to apply rigorous quantitative methods to solve complex financial challenges.</p>
+        <main class="portfolio-main-content">
+            <section id="about" class="content-section">
+                <p class="section-intro">A detail-oriented graduate from Shenzhen MSU-BIT University (GPA: 3.74/4.00), with a strong foundation in economics and data analytics. Seeking to leverage rigorous quantitative methods to solve complex financial challenges.</p>
+                <a href="resume.pdf" class="btn-cv" target="_blank" rel="noopener noreferrer">View Full Curriculum Vitae</a>
+            </section>
+            
+            <section id="research" class="content-section">
+                <h2 class="section-title">Research Focus</h2>
+                <div class="quant-card">
+                    <div class="quant-card-header">
+                        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                        <span class="quant-card-title">Volatility Modeling & Risk</span>
                     </div>
-                    <div class="about-image">
-                        <img src="profile.jpg" alt="Richard T. SHEN">
+                    <div class="quant-card-body">
+<pre><code class="language-python"><span class="token comment"># Econometric Modeling of Market Volatility</span>
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">from</span> arch <span class="token keyword">import</span> arch_model
+
+<span class="token comment"># Fit a GARCH(1,1) model to forecast asset volatility</span>
+garch_model = arch_model(returns, vol=<span class="token string">'Garch'</span>, p=<span class="token number">1</span>, q=<span class="token number">1</span>)
+results = garch_model.fit(update_freq=<span class="token number">5</span>)
+<span class="token keyword">print</span>(results.summary())
+</code></pre>
+                    </div>
+                </div>
+                 <div class="quant-card">
+                    <div class="quant-card-header">
+                        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                        <span class="quant-card-title">Factor Analysis with ML</span>
+                    </div>
+                    <div class="quant-card-body">
+<pre><code class="language-python"><span class="token comment"># Machine Learning for Alpha Factor Identification</span>
+<span class="token keyword">from</span> sklearn.ensemble <span class="token keyword">import</span> RandomForestClassifier
+
+<span class="token comment"># Use feature importance to identify predictive factors</span>
+model = RandomForestClassifier(n_estimators=<span class="token number">100</span>, random_state=<span class="token number">42</span>)
+model.fit(X_train, y_train)
+feature_importances = pd.Series(model.feature_importances_, index=X.columns)
+</code></pre>
                     </div>
                 </div>
             </section>
-            
-            <section id="research" class="research-feature-section">
-                <h2>Research Focus</h2>
-                <div class="research-grid">
-                    <div class="research-card">
-                        <div class="research-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-3.75-2.25M21 12l-3.75 2.25" /></svg>
-                        </div>
-                        <h3>Econometric Modeling of Market Volatility</h3>
-                        <div class="research-tags">
-                            <span>Time-Series Analysis</span>
-                            <span>GARCH Models</span>
-                            <span>MATLAB</span>
-                        </div>
-                        <p>Developing and backtesting advanced econometric models to forecast asset volatility, leveraging conditional heteroskedasticity frameworks to capture market dynamics.</p>
-                    </div>
-                    <div class="research-card">
-                        <div class="research-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 15.75V18m-7.5-6.75h.008v.008H8.25v-.008zm0 3h.008v.008H8.25v-.008zm0 3h.008v.008H8.25v-.008zm3-6h.008v.008H11.25v-.008zm0 3h.008v.008H11.25v-.008zm0 3h.008v.008H11.25v-.008zM12 6.75h.008v.008H12v-.008zm-3.75 0h.008v.008H8.25v-.008zm0 9h.008v.008H8.25v-.008zm3.75 0h.008v.008H12v-.008zm0-9h.008v.008H12V6.75zm3 0h.008v.008H15v-.008zm0 9h.008v.008H15v-.008z" /></svg>
-                        </div>
-                        <h3>Algorithmic Corporate Risk Assessment</h3>
-                        <div class="research-tags">
-                            <span>Risk Management</span>
-                            <span>Python (Pandas)</span>
-                            <span>VBA</span>
-                        </div>
-                        <p>Designing automated systems to analyze corporate financial statements and market data, identifying key risk indicators and generating quantitative risk profiles.</p>
-                    </div>
-                    <div class="research-card">
-                        <div class="research-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0021 18V6a2.25 2.25 0 00-2.25-2.25H5.25A2.25 2.25 0 003 6v12a2.25 2.25 0 002.25 2.25z" /></svg>
-                        </div>
-                        <h3>Machine Learning in Trade Analysis</h3>
-                        <div class="research-tags">
-                            <span>Machine Learning</span>
-                            <span>Factor Analysis</span>
-                            <span>R</span>
-                        </div>
-                        <p>Applying supervised and unsupervised learning techniques to identify and validate alpha-generating factors from historical market and alternative datasets.</p>
-                    </div>
-                </div>
-            </section>
-            
-            <section id="experience" class="experience-section">
-                <h2>Professional Experience</h2>
+
+            <section id="experience" class="content-section">
+                <h2 class="section-title">Professional Experience</h2>
                 <div class="timeline">
-                    </div>
-            </section>
-            
-            <section id="contact" class="contact-section">
-                <h2>Get In Touch</h2>
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <p>I'm currently seeking new opportunities and would love to connect. Feel free to reach out via email. I am based in Shanghai, China.</p>
-                        <p><strong>Email:</strong> mr.shentao@outlook.com</p>
-                        <p><strong>Phone:</strong> (86) 185-2908-5521</p>
-                        <div class="social-icons">
-                            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z"></path></svg></a>
-                            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" title="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
-                            <a href="#" target="_blank" rel="noopener noreferrer" aria-label="WeChat" title="WeChat"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.96 15.3c-1.8 0-3.59.39-3.59 1.32 0 .94 1.79 1.33 3.59 1.33s3.59-.39 3.59-1.33c0-.93-1.8-1.32-3.59-1.32zm-5.46-3.61c-.49 0-.87-.39-.87-.88 0-.48.38-.88.87-.88s.87.4.87.88c0 .49-.39.88-.87.88zm10.92 0c-.48 0-.87-.39-.87-.88 0-.48.39-.88.87-.88s.87.4.87.88c0 .49-.38.88-.87.88zM22.92 12c0 5.1-4.74 9.24-10.59 9.24-1.64 0-3.2-.33-4.57-.92L2 22l1.9-5.18C2.8 15.1 2.16 13.05 2.16 10.92 2.16 5.82 6.9 1.68 12.75 1.68S23.34 5.82 23.34 10.92c0 .35-.02.69-.05 1.03h-.37z"/></svg></a>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <p class="timeline-date">2025.02 - 2025.05</p>
+                            <h3 class="timeline-title">International Business Intern</h3>
+                            <div class="timeline-company">
+                                <img src="https://i.postimg.cc/ZYF34YLX/logo-icon-cc04deb0.png" alt="CITIC Futures" class="company-logo">
+                                <span>CITIC Futures Co., Ltd.</span>
+                            </div>
+                            <p class="timeline-desc">Automated client trading data analysis using Python (Pandas) and VBA, creating dashboards that reduced manual reporting time by over 30%.</p>
                         </div>
                     </div>
-                    <div class="map-container">
-                        <iframe src="https://www.amap.com/marker?position=121.473662,31.230378&name=上海市&src=Amap_ppoint&coordinate=gaode&callnative=0" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Shanghai, China"></iframe>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <p class="timeline-date">2024.11 - 2024.12</p>
+                            <h3 class="timeline-title">Operations Management Intern</h3>
+                            <div class="timeline-company">
+                                <img src="https://i.postimg.cc/y853vDV3/China-CITICBank-International-logo-2022-svg.png" alt="China CITIC Bank International" class="company-logo">
+                                <span>China CITIC Bank Int'l</span>
+                            </div>
+                            <p class="timeline-desc">Conducted competitive analysis on 10+ peer banks, delivering an 8-page report contributing to a 10% reduction in reporting errors.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <p class="timeline-date">2024.07 - 2024.08</p>
+                            <h3 class="timeline-title">Manager's Assistant</h3>
+                            <div class="timeline-company">
+                                <img src="https://i.postimg.cc/XvCGhnJH/Agricultural-Bank-of-China-logo-svg.png" alt="Agricultural Bank of China" class="company-logo">
+                                <span>Agricultural Bank of China</span>
+                            </div>
+                            <p class="timeline-desc">Mapped client service workflow and proposed a streamlined procedure that contributed to a 10% increase in client satisfaction scores.</p>
+                        </div>
                     </div>
                 </div>
             </section>
 
-        </div>
-    </main>
-
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-content">
-                <p class="copyright-text">© <span id="copyright-year"></span> Richard T. SHEN. All Rights Reserved.</p>
-                <p class="footer-disclaimer">This website is a personal portfolio. The views expressed are my own and do not necessarily represent those of any past or present employers. All content is for informational purposes only.</p>
-            </div>
-        </div>
-    </footer>
+            <footer class="main-footer">
+                <div class="map-container">
+                    <iframe src="https://www.amap.com/marker?position=121.473662,31.230378&name=上海市&src=Amap_ppoint&coordinate=gaode&callnative=0" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Shanghai, China"></iframe>
+                </div>
+                <p>© <span id="copyright-year"></span> Richard T. SHEN. Built with precision and dedication. All rights reserved.</p>
+            </footer>
+        </main>
+    </div>
 
     <script src="script.js"></script>
 </body>
 </html>
-
