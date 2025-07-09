@@ -5,18 +5,18 @@
 
     /* Light Theme */
     --color-bg: #FFFFFF;
-    --color-text: #000000;
-    --color-text-secondary: #666666;
-    --color-border: #EAEAEA;
-    --color-accent: #007AFF;
+    --color-text: #111111;
+    --color-text-secondary: #555555;
+    --color-border: #E5E5E5;
+    --color-link: #007AFF;
 }
 
 [data-theme="dark"] {
     --color-bg: #000000;
-    --color-text: #FFFFFF;
+    --color-text: #E5E5E5;
     --color-text-secondary: #888888;
     --color-border: #222222;
-    --color-accent: #0A84FF;
+    --color-link: #0A84FF;
 }
 
 body {
@@ -24,108 +24,148 @@ body {
     color: var(--color-text);
     font-family: var(--font-sans);
     font-size: 15px;
-    margin: 0;
-    overflow-x: hidden; /* Hide horizontal scrollbar from body */
+    line-height: 1.6;
+    padding: 2rem 1.5rem;
+    transition: background-color var(--transition), color var(--transition);
 }
 
-/* --- 2. Horizontal Scroll Layout --- */
-.scroll-container {
-    width: 100vw;
-    height: 100vh;
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.timeline-track {
-    display: flex;
-    flex-direction: row;
-    height: 100%;
-    width: max-content; /* Allow content to expand horizontally */
-    padding: 0 5vw;
+a {
+    color: var(--color-link);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+a:hover {
+    text-decoration: underline;
 }
 
-/* --- 3. Timeline Section Styling --- */
-.timeline-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 3rem;
-    height: 100%;
-    flex-shrink: 0;
-    position: relative;
-    border-right: 1px solid var(--color-border);
-}
-
-.intro-section {
-    width: 80vw; /* Wider intro section */
-    max-width: 600px;
+/* --- 2. Header & Intro --- */
+.site-header {
     text-align: center;
-    align-items: center;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--color-border);
 }
-.avatar { width: 100px; height: 100px; object-fit: cover; border-radius: 0; margin-bottom: 1.5rem; }
-.name { font-size: 2rem; font-weight: 700; margin: 0; }
-.tagline { font-size: 1rem; color: var(--color-text-secondary); margin: 0.5rem 0 1.5rem 0; }
-.contact-info a { font-weight: 500; margin: 0 1rem; color: var(--color-text); }
-.contact-info a:hover { color: var(--color-accent); }
-
-.event-section {
-    width: auto;
-    min-width: 400px;
-}
-.year-marker {
-    position: absolute;
-    top: 3rem;
-    left: 3rem;
-    font-size: 2rem;
+.name {
+    font-size: 2.25rem;
     font-weight: 700;
-    color: var(--color-border);
-    z-index: -1;
+    margin: 0;
 }
-[data-theme="dark"] .year-marker { color: #111; }
+.tagline {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    margin: 0.5rem 0 1.5rem 0;
+}
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem 2rem;
+    font-size: 0.9rem;
+}
+.contact-info a, .contact-info span {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+.contact-info a:hover {
+    color: var(--color-text);
+    text-decoration: none;
+}
+.contact-info i {
+    margin-right: 0.5rem;
+}
 
-.event-card {
-    background: transparent;
-    padding: 1.25rem;
+/* --- 3. Avatar --- */
+.profile-image-container {
+    padding-bottom: 3rem;
+}
+.profile-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0; /* Sharp corners */
+}
+
+/* --- 4. Main Content --- */
+.content-section {
+    margin-bottom: 3rem;
+}
+.section-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-secondary);
     margin-bottom: 1.5rem;
-    border: 1px solid transparent;
-    border-radius: 8px;
-    width: 320px;
-    transition: all var(--transition);
 }
-.event-card:hover {
-    background-color: rgba(128, 128, 128, 0.05);
-    border-color: var(--color-border);
-    transform: translateY(-5px);
+
+.list-item {
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid var(--color-border);
 }
-.event-meta { font-size: 0.85rem; color: var(--color-text-secondary); }
-.event-title { font-size: 1.1rem; font-weight: 500; margin: 0.25rem 0; }
-.event-company { font-size: 0.9rem; font-weight: 500; color: var(--color-text); }
+.list-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+.list-item h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 0.25rem 0;
+}
+.list-item strong {
+    font-weight: 700;
+}
+.item-meta {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.5rem;
+}
+.item-description {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+.grid-container h4 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.grid-container p {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+}
 
 
-.final-section {
-    width: 80vw;
-    max-width: 600px;
+/* --- 5. Footer --- */
+.site-footer {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
 }
-.footer-content h4 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-secondary); margin-bottom: 1rem; }
-.footer-content p { color: var(--color-text-secondary); line-height: 1.7; }
-.footer-content hr { border: none; height: 1px; background-color: var(--color-border); margin: 2rem 0; }
-.cv-button { display: inline-block; margin-top: 2rem; padding: 0.75rem 2rem; border: 1px solid var(--color-text); color: var(--color-text); font-weight: 500; text-decoration: none; transition: all var(--transition); }
-.cv-button:hover { background-color: var(--color-text); color: var(--color-bg); }
-.copyright { font-size: 0.8rem; margin-top: 3rem; }
-
-/* --- Theme Toggle --- */
 .theme-toggle-button {
-    position: fixed;
-    top: 2rem;
-    right: 2rem;
     background: none;
     border: 1px solid var(--color-border);
-    width: 40px; height: 40px;
-    border-radius: 50%;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     color: var(--color-text-secondary);
 }
