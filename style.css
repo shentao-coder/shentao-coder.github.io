@@ -128,7 +128,7 @@ body {
     border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 1.75rem;
-    transition: transform var(--transition);
+    transition: transform var(--transition-fast);
 }
 .research-card:hover { transform: translateY(-5px); }
 .research-card h3 { font-size: 1.2rem; margin: 0 0 0.75rem 0; }
@@ -154,6 +154,3 @@ body {
     .section-title { font-size: 2rem; }
     .contact-grid { grid-template-columns: 1fr; }
 }
-
-
-
