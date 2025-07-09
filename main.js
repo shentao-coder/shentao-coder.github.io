@@ -7,9 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const preferredTheme = localStorage.getItem('theme') || 'light';
             document.documentElement.setAttribute('data-theme', preferredTheme);
         };
-        
         setInitialTheme();
-
         themeToggle.addEventListener('click', () => {
             let currentTheme = document.documentElement.getAttribute('data-theme');
             let targetTheme = currentTheme === 'light' ? 'dark' : 'light';
@@ -18,15 +16,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- 2. Scroll-spy for Navigation ---
-    const sections = document.querySelectorAll('.content-section');
-    const navLinks = document.querySelectorAll('.nav-link');
+    // --- 2. Scroll Reveal Animations ---
+    if (typeof ScrollReveal !== 'undefined') {
+        const sr = ScrollReveal({
+            origin: 'bottom',
+            distance: '20px',
+            duration: 500, // Faster animation
+            easing: 'ease-out',
+            reset: false,
+        });
+        sr.reveal('.content-block', { interval: 80 });
+    }
 
+    // --- 3. Scroll-spy for Navigation ---
+    const sections = document.querySelectorAll('.content-block');
+    const navLinks = document.querySelectorAll('.nav-link');
     const onScroll = () => {
         let current = '';
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            if (window.pageYOffset >= sectionTop - 70) {
+            if (window.pageYOffset >= sectionTop - 100) {
                 current = section.getAttribute('id');
             }
         });
@@ -38,20 +47,5 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     };
-
     window.addEventListener('scroll', onScroll);
-
-    // --- 3. Smooth Scrolling for Nav Links ---
-    navLinks.forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
 });
-
-
-
-
