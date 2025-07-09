@@ -17,27 +17,4 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.setItem('theme', targetTheme);
         });
     }
-
-    // --- Spotlight Focus Interaction ---
-    const listContainers = document.querySelectorAll('.list-container');
-
-    listContainers.forEach(container => {
-        const listItems = container.querySelectorAll('.list-item');
-        
-        listItems.forEach(item => {
-            item.addEventListener('mouseenter', () => {
-                listItems.forEach(sibling => {
-                    if (sibling !== item) {
-                        sibling.classList.add('is-faded');
-                    }
-                });
-            });
-
-            item.addEventListener('mouseleave', () => {
-                listItems.forEach(sibling => {
-                    sibling.classList.remove('is-faded');
-                });
-            });
-        });
-    });
 });
