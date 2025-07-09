@@ -188,3 +188,5 @@ body {
     .profile-card, .intro-card, .contact-card { text-align: center; }
     .skills-social-card { flex-direction: column; gap: 1.5rem; }
 }
+
+
