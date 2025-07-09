@@ -3,133 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Richard T. SHEN - Curriculum Vitae</title>
+    <title>Richard T. SHEN - Portfolio</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-
+    
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="dark-theme"> <div class="background-shapes"></div>
+
     <div class="page-container">
         <header class="page-header">
-            <h1>Curriculum Vitae</h1>
+            <a href="#" class="logo">Richard T. SHEN</a>
             <button id="theme-switcher" aria-label="Toggle theme">
-                <i class="fas fa-moon"></i>
-                <i class="fas fa-sun" style="display: none;"></i>
+                <i class="fas fa-moon" style="display: none;"></i>
+                <i class="fas fa-sun"></i>
             </button>
         </header>
 
-        <div class="cv-grid">
-            <aside class="cv-aside">
-                <div class="profile-section">
+        <main>
+            <section class="hero-section">
+                <div class="hero-text">
+                    <h1 class="hero-title">Analytical Economics & Finance Professional</h1>
+                    <p class="hero-subtitle">Expertise in Data-Driven Strategy and Risk Management.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="mailto:mr.shentao@outlook.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="resume.pdf" class="btn btn-primary" download>
+                            <i class="fas fa-download"></i> Curriculum Vitae
+                        </a>
+                        <a href="#location" class="btn"><i class="fas fa-map-marker-alt"></i> View My Location</a>
+                    </div>
+                </div>
+                <div class="hero-image-container">
                     <div class="profile-pic-container">
                         <img src="profile.jpg" alt="Richard T. SHEN">
                     </div>
                 </div>
+            </section>
 
-                <section class="aside-section">
-                    <h3 class="aside-title">Contact</h3>
-                    <ul class="contact-list">
-                        <li><i class="fas fa-map-marker-alt"></i>Shanghai, China</li>
-                        <li><i class="fas fa-phone"></i>(86) 185-2908-5521</li>
-                        <li><i class="fas fa-envelope"></i><a href="mailto:mr.shentao@outlook.com">mr.shentao@outlook.com</a></li>
-                    </ul>
-                </section>
-
-                <section class="aside-section">
-                    <h3 class="aside-title">Education</h3>
-                    [cite_start]<p><strong>B.S. in Economics</strong> [cite: 5]</p>
-                    [cite_start]<p>Shenzhen MSU-BIT University [cite: 4]</p>
-                    [cite_start]<p>2021 - 2025 [cite: 8]</p>
-                    [cite_start]<p>GPA: 3.74 / 4.00 [cite: 7]</p>
-                </section>
-
-                <section class="aside-section">
-                    <h3 class="aside-title">Technical Skills</h3>
-                    <ul class="skills-list">
-                        [cite_start]<li>Python (Pandas) [cite: 16]</li>
-                        [cite_start]<li>R, MATLAB [cite: 37]</li>
-                        [cite_start]<li>Excel (VBA), LaTeX [cite: 16, 37]</li>
-                        [cite_start]<li>Machine Learning [cite: 10]</li>
-                        [cite_start]<li>Econometrics [cite: 10]</li>
-                    </ul>
-                </section>
-
-                <section class="aside-section">
-                    <h3 class="aside-title">Languages</h3>
-                    [cite_start]<p>Mandarin, English, Cantonese, Russian [cite: 37]</p>
-                </section>
-            </aside>
-
-            <main class="cv-main">
-                <header class="main-header">
-                    [cite_start]<h2 class="main-name">Richard T. SHEN [cite: 1]</h2>
-                    <p class="main-tagline">Analytical Economics & Finance Professional with Expertise in Data-Driven Strategy and Risk Management</p>
-                </header>
-
-                <section class="main-section">
-                    <h3 class="main-title"><i class="fas fa-user-tie"></i>Professional Profile</h3>
-                    [cite_start]<p>A results-oriented Economics graduate from Shenzhen MSU-BIT University with a strong foundation in quantitative analysis, financial modeling, and international trade[cite: 5, 6, 10]. [cite_start]Proven ability to leverage technical skills in Python and advanced data analysis to automate processes and derive actionable insights, as demonstrated through internships at CITIC Futures and major banking institutions[cite: 12, 18, 23]. Seeking to apply my expertise in economic theory and financial markets to a challenging role in a dynamic environment.</p>
-                </section>
-
-                <section class="main-section">
-                    <h3 class="main-title"><i class="fas fa-briefcase"></i>Professional Experience</h3>
-                    <div class="experience-item">
-                        <h4>International Business Intern</h4>
-                        <p><strong>CITIC FUTURES CO., LTD</strong> | Shenzhen, GD | [cite_start]Feb 2025 - May 2025 [cite: 12, 13, 14]</p>
-                        <ul>
-                            [cite_start]<li>Analyzed futures hedging announcements for over 50 A-share companies to identify corporate risk management trends[cite: 15].</li>
-                            [cite_start]<li>Automated client data analysis using Python (Pandas) and Excel (VBA), reducing manual reporting time by over 30%[cite: 16].</li>
-                            [cite_start]<li>Supported institutional strategy reports by analyzing 20+ sell-side research papers to identify alpha-generating factors[cite: 17].</li>
-                        </ul>
+            <section class="content-section" id="experience">
+                <h2 class="section-title">Professional Experience</h2>
+                <div class="experience-grid">
+                    <div class="card experience-card">
+                        <div class="card-header">
+                            <img src="https://www.citicsf.com/static/img/logo_en.241e57a9.png" alt="CITIC Futures Logo" class="company-logo">
+                            <div class="card-title">
+                                <h4>International Business Intern</h4>
+                                <p>CITIC FUTURES CO., LTD</p>
+                            </div>
+                        </div>
+                        <p>Analyzed futures hedging for 50+ A-share companies and automated client data analysis with Python, reducing reporting time by over 30%.</p>
                     </div>
-                    <div class="experience-item">
-                        <h4>Operations Management Intern</h4>
-                        <p><strong>CHINA CITIC BANK INTERNATIONAL</strong> | Shenzhen, GD | [cite_start]Nov 2024 - Dec 2024 [cite: 18, 19, 20]</p>
-                         <ul>
-                            [cite_start]<li>Delivered an 8-page competitive analysis on 10+ peer banks, contributing to a 10% reduction in reporting errors[cite: 21].</li>
-                        </ul>
+                    <div class="card experience-card">
+                         <div class="card-header">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/China_CITIC_Bank_logo.svg/2560px-China_CITIC_Bank_logo.svg.png" alt="China CITIC Bank Logo" class="company-logo">
+                            <div class="card-title">
+                                <h4>Operations Management Intern</h4>
+                                <p>CHINA CITIC BANK INT'L</p>
+                            </div>
+                        </div>
+                        <p>Conducted competitive analysis on 10+ peer banks, contributing to a 10% reduction in reporting errors.</p>
                     </div>
-                    <div class="experience-item">
-                        <h4>Manager's Assistant</h4>
-                        <p><strong>AGRICULTURAL BANK OF CHINA</strong> | Shenzhen, GD | [cite_start]Jul 2024 - Aug 2024 [cite: 23, 25, 26]</p>
-                        <ul>
-                            [cite_start]<li>Proposed a streamlined client service workflow that contributed to a 10% increase in client satisfaction scores[cite: 28].</li>
-                        </ul>
+                    <div class="card experience-card">
+                         <div class="card-header">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8d/Agricultural_Bank_of_China_logo.svg/1280px-Agricultural_Bank_of_China_logo.svg.png" alt="Agricultural Bank of China Logo" class="company-logo">
+                            <div class="card-title">
+                                <h4>Manager's Assistant</h4>
+                                <p>AGRICULTURAL BANK OF CHINA</p>
+                            </div>
+                        </div>
+                        <p>Streamlined client service workflow, contributing to a 10% increase in client satisfaction scores.</p>
                     </div>
-                </section>
-
-                <section class="main-section">
-                    <h3 class="main-title"><i class="fas fa-trophy"></i>Leadership & Activities</h3>
-                     <div class="experience-item">
-                        <h4>Team Leader, Analytical Consultant</h4>
-                        <p><strong>GAOTON ACCA ENTERPRISE CHALLENGE</strong> | [cite_start]Dec 2023 - Feb 2024 [cite: 30, 32]</p>
-                        <ul>
-                            [cite_start]<li>Led team in case analysis and strategic planning, coordinating project milestones and assigning tasks to ensure efficient execution[cite: 33, 34, 35].</li>
-                        </ul>
-                    </div>
-                </section>
-            </main>
-        </div>
-
-        <footer class="page-footer">
-            <div class="social-links">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#" aria-label="WeChat"><i class="fab fa-weixin"></i></a>
-                <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-            </div>
-            <div id="location-map"></div>
-            <p>&copy; 2025 Richard T. SHEN. All Rights Reserved.</p>
-        </footer>
+                </div>
+            </section>
+            
+            <section class="content-section" id="location">
+                <h2 class="section-title">Current Location</h2>
+                <div class="card map-card">
+                    <div id="location-map"></div>
+                </div>
+            </section>
+        </main>
     </div>
-
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <script type="text/javascript">
+        window._AMapSecurityConfig = {
+            securityJsCode: 'd1526c365a8c0457effac2f456faf199',
+        }
+    </script>
+    
+    <script type="text/javascript" src="https://webapi.amap.com/loader.js"></script>
+    
     <script src="script.js"></script>
 </body>
 </html>
