@@ -10,98 +10,109 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="background-glow"></div>
     <div class="page-container">
         <header class="main-header">
-            <div class="header-logo">
-                <img src="profile.jpg" alt="Richard T. SHEN" class="profile-avatar">
-                <div>
-                    <h1 class="profile-name">Richard T. SHEN</h1>
-                    <p class="profile-title">Quantitative Analyst & Researcher</p>
-                </div>
-            </div>
+            <a class="header-logo" href="#">
+                <img src="profile.jpg" alt="Richard T. SHEN">
+                <span>Richard T. SHEN</span>
+            </a>
             <nav class="main-nav">
                 <a href="#research">Research</a>
                 <a href="#experience">Experience</a>
                 <a href="#contact">Contact</a>
             </nav>
             <div class="header-actions">
-                <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="btn-cv">View CV</a>
+                <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="btn">View CV</a>
                 <button id="theme-switcher" title="Toggle Theme">
-                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.106a.75.75 0 010 1.06l-1.591 1.59a.75.75 0 11-1.06-1.06l1.59-1.59a.75.75 0 011.06 0zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5h2.25a.75.75 0 01.75.75zM17.894 17.894a.75.75 0 01-1.06 0l-1.59-1.591a.75.75 0 111.06-1.06l1.59 1.59a.75.75 0 010 1.061zM12 18.75a.75.75 0 01-.75.75v2.25a.75.75 0 011.5 0v-2.25a.75.75 0 01-.75-.75zM5.106 17.894a.75.75 0 010-1.06l1.591-1.59a.75.75 0 111.06 1.06l-1.59 1.59a.75.75 0 01-1.06 0zM4.5 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H5.25a.75.75 0 01-.75-.75zM6.106 5.106a.75.75 0 011.06 0l1.59 1.591a.75.75 0 01-1.06 1.06L6.106 6.166a.75.75 0 010-1.06z"/></svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.106a.75.75 0 010 1.06l-1.591 1.59a.75.75 0 11-1.06-1.06l1.59-1.59a.75.75 0 011.06 0zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5h2.25a.75.75 0 01.75-.75zM17.894 17.894a.75.75 0 01-1.06 0l-1.59-1.591a.75.75 0 111.06-1.06l1.59 1.59a.75.75 0 010 1.061zM12 18.75a.75.75 0 01-.75.75v2.25a.75.75 0 011.5 0v-2.25a.75.75 0 01-.75-.75zM5.106 17.894a.75.75 0 010-1.06l1.591-1.59a.75.75 0 111.06 1.06l-1.59 1.59a.75.75 0 01-1.06 0zM4.5 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H5.25a.75.75 0 01-.75-.75zM6.106 5.106a.75.75 0 011.06 0l1.59 1.591a.75.75 0 01-1.06 1.06L6.106 6.166a.75.75 0 010-1.06z"/></svg>
                     <svg class="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 004.472-.948.75.75 0 01.818.162l-2.071 3.674A10.5 10.5 0 019.528 1.718z" clip-rule="evenodd" /></svg>
                 </button>
             </div>
         </header>
 
         <main class="main-content">
-            <section id="about" class="about-section">
-                <p class="about-text">A recent graduate from Shenzhen MSU-BIT University (GPA: 3.74) with a B.S. in Economics. My work centers on the intersection of econometric theory and computational analysis to model financial markets. I am passionate about developing robust, data-driven strategies for risk management and alpha generation.</p>
-                <div class="stats">
-                    <div class="stat-item">
-                        <h4>Education</h4>
-                        <p>B.S. in Economics</p>
-                    </div>
-                    <div class="stat-item">
-                        <h4>Core Skills</h4>
-                        <p>Python, MATLAB, R</p>
-                    </div>
-                    <div class="stat-item">
-                        <h4>Languages</h4>
-                        <p>Mandarin, English, Cantonese</p>
-                    </div>
-                </div>
+            <section id="hero" class="hero-section">
+                <h1 class="hero-title">Quantitative Analyst & Researcher</h1>
+                <p class="hero-subtitle">Applying rigorous econometric and machine learning models to decipher financial markets, focusing on risk management and alpha generation.</p>
             </section>
             
-            <section id="research" class="research-section">
+            <section id="research" class="content-section">
                 <h2 class="section-title">Research Highlights</h2>
                 <div class="research-grid">
                     <div class="research-card">
-                        <div class="card-content">
-                            <h3 class="card-title">Econometric Volatility Modeling</h3>
-                            <p class="card-desc">Developing and backtesting GARCH-family models to forecast asset volatility and improve risk assessments.</p>
-                            <div class="card-footer">
-                                <span class="tag">Time-Series</span>
-                                <span class="tag">MATLAB</span>
-                            </div>
-                        </div>
+                        <h3>Econometric Volatility Modeling</h3>
+                        <p>Developed and backtested GARCH-family models to forecast asset volatility, providing significant improvements in risk assessment accuracy over traditional methods.</p>
+                        <div class="tags"><span>Time-Series</span><span>GARCH</span><span>MATLAB</span></div>
                     </div>
                     <div class="research-card">
-                        <div class="card-content">
-                            <h3 class="card-title">Algorithmic Risk Profiling</h3>
-                            <p class="card-desc">Designing automated protocols using Python to analyze corporate financials and generate quantitative risk profiles.</p>
-                            <div class="card-footer">
-                                <span class="tag">Risk Management</span>
-                                <span class="tag">Python</span>
-                            </div>
-                        </div>
+                        <h3>Algorithmic Risk Profiling</h3>
+                        <p>Designed an automated Python protocol to analyze corporate financials, generating quantitative risk profiles that led to a 10% reduction in reporting errors during internship.</p>
+                        <div class="tags"><span>Risk Management</span><span>Python</span><span>Pandas</span></div>
                     </div>
                     <div class="research-card">
-                         <div class="card-content">
-                            <h3 class="card-title">ML-Based Factor Analysis</h3>
-                            <p class="card-desc">Applying machine learning techniques to identify and validate novel alpha-generating factors from market data.</p>
-                            <div class="card-footer">
-                                <span class="tag">Machine Learning</span>
-                                <span class="tag">R</span>
-                            </div>
-                        </div>
+                        <h3>ML-Based Factor Analysis</h3>
+                        <p>Utilized supervised and unsupervised learning in R to identify and validate novel alpha-generating factors from high-frequency market data.</p>
+                        <div class="tags"><span>Machine Learning</span><span>R</span><span>Factor Analysis</span></div>
                     </div>
                 </div>
             </section>
 
-            <section id="experience" class="experience-section">
+            <section id="experience" class="content-section">
                 <h2 class="section-title">Professional Experience</h2>
                 <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-logo-container">
+                            <img src="https://i.postimg.cc/ZYF34YLX/logo-icon-cc04deb0.png" alt="CITIC Futures Logo">
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">International Business Intern</h3>
+                            <p class="timeline-company">CITIC Futures Co., Ltd.</p>
+                            <p class="timeline-date">Feb 2025 - May 2025</p>
+                            <ul class="timeline-desc">
+                                <li>Automated client trading data analysis using Python (Pandas) and VBA, creating dashboards that reduced manual reporting time by over 30%.</li>
+                                <li>Contributed to a weekly market analysis report on commodity futures, providing insights on hedging strategies for institutional clients.</li>
+                            </ul>
+                        </div>
                     </div>
+                    <div class="timeline-item">
+                        <div class="timeline-logo-container">
+                           <img src="https://i.postimg.cc/y853vDV3/China-CITICBank-International-logo-2022-svg.png" alt="China CITIC Bank International Logo">
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Operations Management Intern</h3>
+                            <p class="timeline-company">China CITIC Bank International</p>
+                            <p class="timeline-date">Nov 2024 - Dec 2024</p>
+                            <ul class="timeline-desc">
+                                <li>Conducted competitive analysis on 10+ peer banks' cross-border settlement systems, delivering an 8-page report that contributed to a 10% reduction in reporting errors.</li>
+                                <li>Analyzed client survey feedback to identify key needs, influencing the feature roadmap for new derivative products.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-logo-container">
+                             <img src="https://i.postimg.cc/XvCGhnJH/Agricultural-Bank-of-China-logo-svg.png" alt="Agricultural Bank of China Logo">
+                        </div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Manager's Assistant</h3>
+                            <p class="timeline-company">Agricultural Bank of China</p>
+                            <p class="timeline-date">Jul 2024 - Aug 2024</p>
+                            <ul class="timeline-desc">
+                                <li>Mapped the client service workflow and proposed a streamlined procedure that was adopted and contributed to a 10% increase in client satisfaction scores.</li>
+                                <li>Analyzed daily transaction patterns of 200+ customers to provide data-driven insights for optimizing staff allocation and reducing wait times.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </section>
-
         </main>
 
         <footer id="contact" class="main-footer">
-            <div class="footer-grid">
-                <div class="footer-contact">
-                    <h3 class="footer-title">Contact</h3>
-                    <p>Available for opportunities in Shanghai, China.</p>
-                    <a href="mailto:mr.shentao@outlook.com" class="contact-link">mr.shentao@outlook.com</a>
+            <div class="footer-content">
+                <div class="footer-text">
+                    <h2 class="footer-title">Let's Connect</h2>
+                    <p>I'm currently seeking new opportunities and am open to discussing how my skills in quantitative analysis can bring value to your team. Feel free to reach out.</p>
+                    <a href="mailto:mr.shentao@outlook.com" class="email-link">mr.shentao@outlook.com</a>
                     <div class="social-icons">
                          <a href="#" target="_blank" rel="noopener noreferrer" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z"></path></svg></a>
                          <a href="#" target="_blank" rel="noopener noreferrer" title="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
@@ -117,7 +128,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
