@@ -16,36 +16,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- 2. Scroll Reveal Animations ---
-    if (typeof ScrollReveal !== 'undefined') {
-        const sr = ScrollReveal({
-            origin: 'bottom',
-            distance: '20px',
-            duration: 500, // Faster animation
-            easing: 'ease-out',
-            reset: false,
+    // --- 2. Horizontal Scroll with Mouse Wheel ---
+    const scrollContainer = document.querySelector('.scroll-container');
+    if (scrollContainer) {
+        scrollContainer.addEventListener('wheel', (evt) => {
+            // Prevent default vertical scroll
+            evt.preventDefault();
+            // Scroll horizontally instead
+            scrollContainer.scrollLeft += evt.deltaY;
         });
-        sr.reveal('.content-block', { interval: 80 });
     }
 
-    // --- 3. Scroll-spy for Navigation ---
-    const sections = document.querySelectorAll('.content-block');
-    const navLinks = document.querySelectorAll('.nav-link');
-    const onScroll = () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            if (window.pageYOffset >= sectionTop - 100) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').substring(1) === current) {
-                link.classList.add('active');
-            }
-        });
-    };
-    window.addEventListener('scroll', onScroll);
 });
