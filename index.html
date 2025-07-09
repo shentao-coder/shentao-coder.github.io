@@ -3,62 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Richard T. SHEN | Academic & Professional Portfolio</title>
+    <title>Richard T. SHEN | Quantitative Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <div class="page-container">
         <header class="main-header">
-            <div class="header-content">
-                <h1 class="author-name">Richard T. SHEN</h1>
-                <p class="author-title">B.S. in Economics, Shenzhen MSU-BIT University | Quantitative Researcher</p>
-                <nav class="main-nav">
-                    <a href="#about">About</a>
-                    <a href="#research">Research</a>
-                    <a href="#experience">Experience</a>
-                    <a href="resume.pdf" target="_blank" rel="noopener noreferrer">Curriculum Vitae (PDF)</a>
-                </nav>
+            <div class="header-logo">
+                <img src="profile.jpg" alt="Richard T. SHEN" class="profile-avatar">
+                <div>
+                    <h1 class="profile-name">Richard T. SHEN</h1>
+                    <p class="profile-title">Quantitative Analyst & Researcher</p>
+                </div>
             </div>
-            <button id="theme-switcher" title="Toggle Theme">
-                <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.106a.75.75 0 010 1.06l-1.591 1.59a.75.75 0 11-1.06-1.06l1.59-1.59a.75.75 0 011.06 0zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5h2.25a.75.75 0 01.75.75zM17.894 17.894a.75.75 0 01-1.06 0l-1.59-1.591a.75.75 0 111.06-1.06l1.59 1.59a.75.75 0 010 1.061zM12 18.75a.75.75 0 01-.75.75v2.25a.75.75 0 011.5 0v-2.25a.75.75 0 01-.75-.75zM5.106 17.894a.75.75 0 010-1.06l1.591-1.59a.75.75 0 111.06 1.06l-1.59 1.59a.75.75 0 01-1.06 0zM4.5 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H5.25a.75.75 0 01-.75-.75zM6.106 5.106a.75.75 0 011.06 0l1.59 1.591a.75.75 0 01-1.06 1.06L6.106 6.166a.75.75 0 010-1.06z"/></svg>
-                <svg class="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 004.472-.948.75.75 0 01.818.162l-2.071 3.674A10.5 10.5 0 019.528 1.718z" clip-rule="evenodd" /></svg>
-            </button>
+            <nav class="main-nav">
+                <a href="#research">Research</a>
+                <a href="#experience">Experience</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="btn-cv">View CV</a>
+                <button id="theme-switcher" title="Toggle Theme">
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.106a.75.75 0 010 1.06l-1.591 1.59a.75.75 0 11-1.06-1.06l1.59-1.59a.75.75 0 011.06 0zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5h2.25a.75.75 0 01.75.75zM17.894 17.894a.75.75 0 01-1.06 0l-1.59-1.591a.75.75 0 111.06-1.06l1.59 1.59a.75.75 0 010 1.061zM12 18.75a.75.75 0 01-.75.75v2.25a.75.75 0 011.5 0v-2.25a.75.75 0 01-.75-.75zM5.106 17.894a.75.75 0 010-1.06l1.591-1.59a.75.75 0 111.06 1.06l-1.59 1.59a.75.75 0 01-1.06 0zM4.5 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H5.25a.75.75 0 01-.75-.75zM6.106 5.106a.75.75 0 011.06 0l1.59 1.591a.75.75 0 01-1.06 1.06L6.106 6.166a.75.75 0 010-1.06z"/></svg>
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 004.472-.948.75.75 0 01.818.162l-2.071 3.674A10.5 10.5 0 019.528 1.718z" clip-rule="evenodd" /></svg>
+                </button>
+            </div>
         </header>
 
         <main class="main-content">
-            <section id="about">
-                <h2 class="section-title">About</h2>
-                <div class="prose">
-                    <p>A recent graduate from Shenzhen MSU-BIT University (GPA: 3.74/4.00) with a Bachelor of Science in Economics. My academic and practical experiences have cultivated a strong foundation in econometric analysis, quantitative modeling, and financial market research. I am driven by a passion for applying rigorous, data-driven methods to understand and solve complex economic and financial challenges. My objective is to contribute to a research-oriented or analytical role where I can leverage my skills in a professional setting.</p>
-                </div>
-            </section>
-
-            <section id="research">
-                <h2 class="section-title">Research & Projects</h2>
-                <div class="publication-list">
-                    <article class="publication-item">
-                        <h3 class="publication-title">Econometric Modeling of Financial Market Volatility</h3>
-                        <p class="publication-meta"><i>Technologies: MATLAB, Time-Series Analysis, GARCH Models</i></p>
-                        <p class="publication-abstract">This project focused on developing and backtesting advanced econometric models to forecast asset volatility. It leveraged conditional heteroskedasticity frameworks (GARCH) to capture the nuances of market dynamics and provide more accurate risk assessments.</p>
-                    </article>
-                    <article class="publication-item">
-                        <h3 class="publication-title">Algorithmic Corporate Risk Assessment Protocol</h3>
-                        <p class="publication-meta"><i>Technologies: Python (Pandas, Scikit-learn), Financial Statement Analysis, VBA</i></p>
-                        <p class="publication-abstract">Designed and implemented an automated system to analyze corporate financial statements and market data. The protocol identifies key risk indicators through quantitative metrics, generating objective and scalable risk profiles for A-share companies.</p>
-                    </article>
-                    <article class="publication-item">
-                        <h3 class="publication-title">Alpha Factor Identification via Machine Learning</h3>
-                        <p class="publication-meta"><i>Technologies: R, Factor Analysis, Supervised & Unsupervised Learning</i></p>
-                        <p class="publication-abstract">Applied a suite of machine learning techniques to a large dataset of historical market data. The research aimed to identify and validate novel alpha-generating factors, moving beyond traditional linear models to uncover more complex patterns.</p>
-                    </article>
+            <section id="about" class="about-section">
+                <p class="about-text">A recent graduate from Shenzhen MSU-BIT University (GPA: 3.74) with a B.S. in Economics. My work centers on the intersection of econometric theory and computational analysis to model financial markets. I am passionate about developing robust, data-driven strategies for risk management and alpha generation.</p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <h4>Education</h4>
+                        <p>B.S. in Economics</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>Core Skills</h4>
+                        <p>Python, MATLAB, R</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>Languages</h4>
+                        <p>Mandarin, English, Cantonese</p>
+                    </div>
                 </div>
             </section>
             
-            <section id="experience">
+            <section id="research" class="research-section">
+                <h2 class="section-title">Research Highlights</h2>
+                <div class="research-grid">
+                    <div class="research-card">
+                        <div class="card-content">
+                            <h3 class="card-title">Econometric Volatility Modeling</h3>
+                            <p class="card-desc">Developing and backtesting GARCH-family models to forecast asset volatility and improve risk assessments.</p>
+                            <div class="card-footer">
+                                <span class="tag">Time-Series</span>
+                                <span class="tag">MATLAB</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="research-card">
+                        <div class="card-content">
+                            <h3 class="card-title">Algorithmic Risk Profiling</h3>
+                            <p class="card-desc">Designing automated protocols using Python to analyze corporate financials and generate quantitative risk profiles.</p>
+                            <div class="card-footer">
+                                <span class="tag">Risk Management</span>
+                                <span class="tag">Python</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="research-card">
+                         <div class="card-content">
+                            <h3 class="card-title">ML-Based Factor Analysis</h3>
+                            <p class="card-desc">Applying machine learning techniques to identify and validate novel alpha-generating factors from market data.</p>
+                            <div class="card-footer">
+                                <span class="tag">Machine Learning</span>
+                                <span class="tag">R</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience" class="experience-section">
                 <h2 class="section-title">Professional Experience</h2>
                 <div class="timeline">
                     </div>
@@ -66,22 +96,24 @@
 
         </main>
 
-        <footer class="main-footer">
-            <div class="footer-content">
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <p>Shanghai, China</p>
-                    <p>Email: <a href="mailto:mr.shentao@outlook.com">mr.shentao@outlook.com</a></p>
-                    <p>Phone: (86) 185-2908-5521</p>
+        <footer id="contact" class="main-footer">
+            <div class="footer-grid">
+                <div class="footer-contact">
+                    <h3 class="footer-title">Contact</h3>
+                    <p>Available for opportunities in Shanghai, China.</p>
+                    <a href="mailto:mr.shentao@outlook.com" class="contact-link">mr.shentao@outlook.com</a>
+                    <div class="social-icons">
+                         <a href="#" target="_blank" rel="noopener noreferrer" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z"></path></svg></a>
+                         <a href="#" target="_blank" rel="noopener noreferrer" title="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
+                    </div>
                 </div>
                 <div class="map-container">
-                    <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=121.40,31.18,121.54,31.28&layer=mapnik"></iframe>
+                    <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=121.40,31.18,121.54,31.28&layer=mapnik&marker=31.23,121.47"></iframe>
                 </div>
             </div>
-            <p class="copyright">Copyright © <span id="copyright-year"></span> Richard T. SHEN. All rights reserved.</p>
+            <p class="copyright">© <span id="copyright-year"></span> Richard T. SHEN</p>
         </footer>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
