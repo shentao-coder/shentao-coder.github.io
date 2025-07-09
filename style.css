@@ -144,3 +144,5 @@ a:hover { color: var(--text-primary); }
     .main-header { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
     .footer-grid { grid-template-columns: 1fr; }
 }
+
+
