@@ -1,137 +1,68 @@
-/* --- Google Fonts: Inter --- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
-
-/* --- CSS Variables for Theming --- */
-:root {
-    --bg-color: #f8f8f8;
-    --text-color: #333333;
-    --heading-color: #111111;
-    --accent-color: #004080;
-    --border-color: #e0e0e0;
-    --sidebar-bg-color: #ffffff;
-    --sidebar-width: 320px;
-}
-
-body.dark-mode {
-    --bg-color: #1a1a1a;
-    --text-color: #c0c0c0;
-    --heading-color: #ffffff;
-    --accent-color: #58a6ff;
-    --border-color: #333333;
-    --sidebar-bg-color: #242424;
-}
-
-/* --- Global Styles --- */
-* { box-sizing: border-box; }
-
+/* General Styles */
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    margin: 0;
-    transition: background-color 0.3s, color 0.3s;
-    line-height: 1.6;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
 }
 
-/* --- Main Layout --- */
-.page-wrapper {
-    display: flex;
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: var(--sidebar-bg-color);
-    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
 }
 
-.sidebar {
-    width: var(--sidebar-width);
-    padding: 40px;
-    border-right: 1px solid var(--border-color);
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    overflow-y: auto;
-    flex-shrink: 0;
-    transition: border-color 0.3s, background-color 0.3s;
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
 }
 
-.main-content {
-    flex-grow: 1;
-    padding: 40px;
+nav ul li {
+  margin: 0 20px;
 }
 
-/* --- Sidebar Content --- */
-.profile-pic {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-    border: 3px solid var(--accent-color);
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
-.sidebar h1 {
-    font-size: 2rem;
-    margin: 0 0 10px 0;
-}
-.sidebar h2 { font-size: 1.2rem; }
-.sidebar p { font-size: 0.95rem; }
-.contact-links { list-style: none; padding: 0; margin: 20px 0; }
-.contact-links a { text-decoration: none; color: var(--text-color); font-weight: 500; }
-.contact-links a:hover { color: var(--accent-color); }
 
-/* --- Main Content Typography --- */
-h1, h2 { color: var(--heading-color); }
-h2 { font-size: 1.8rem; margin-top: 0; padding-bottom: 10px; border-bottom: 1px solid var(--border-color); }
-h3 { font-size: 1.1rem; font-weight: 700; margin: 25px 0 5px 0; color: var(--heading-color); }
-p { margin: 0 0 15px 0; }
-a { color: var(--accent-color); text-decoration: none; font-weight: 500; }
-a:hover { text-decoration: underline; }
+section {
+  padding: 40px 20px;
+  margin: 20px 0;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-/* --- Entry Styling (Research/Projects) --- */
-.entry-meta { font-size: 0.85rem; color: var(--text-color); opacity: 0.7; }
-.section { margin-bottom: 40px; }
+#home .intro {
+  text-align: center;
+}
 
-/* --- Dark Mode Toggle --- */
-.theme-switch-wrapper {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    top: 20px;
-    right: 20px;
+#home .profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
 }
-.theme-switch {
-    display: inline-block;
-    height: 24px;
-    position: relative;
-    width: 50px;
-}
-.theme-switch input { display: none; }
-.slider {
-    background-color: #ccc;
-    bottom: 0;
-    cursor: pointer;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transition: .4s;
-    border-radius: 24px;
-}
-.slider:before {
-    background-color: #fff;
-    bottom: 4px;
-    content: "";
-    height: 16px;
-    left: 4px;
-    position: absolute;
-    transition: .4s;
-    width: 16px;
-    border-radius: 50%;
-}
-input:checked + .slider { background-color: var(--accent-color); }
-input:checked + .slider:before { transform: translateX(26px); }
 
-/* --- Responsive Design --- */
-@media (max-width: 900px) {
-    .page-wrapper { flex-direction: column; }
-    .sidebar { position: static; width: 100%; height: auto; border-right: none; border-bottom: 1px solid var(--border-color); }
-    .main-content, .sidebar { padding: 30px; }
+h1, h2 {
+  text-align: center;
+}
+
+.project-item {
+  margin-bottom: 30px;
+}
+
+.project-item a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: white;
 }
