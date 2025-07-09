@@ -3,101 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Richard T. Shen - Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Richard T. Shen - Chronology</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="page-container">
-        <aside class="sidebar">
-            <div class="sidebar-content">
-                <div class="profile-block">
-                    <img src="profile.jpg" alt="Photograph of Richard T. Shen" class="profile-avatar">
-                    <h1 class="profile-name">Richard T. Shen</h1>
-                    <p class="profile-tagline">Quantitative Analysis for Economics & Business</p>
-                </div>
-                
-                <nav class="main-nav">
-                    <a href="#experience" class="nav-link">Experience</a>
-                    <a href="#education" class="nav-link">Education</a>
-                    <a href="#skills" class="nav-link">Skills</a>
-                </nav>
+    <div class="scroll-container">
+        <main class="timeline-track">
 
-                <div class="sidebar-footer">
-                    <a href="resume.pdf" class="cv-button" target="_blank">View Full CV</a>
-                    <button id="theme-toggle" class="theme-toggle-button" title="Toggle Theme">◐</button>
+            <section class="timeline-section intro-section">
+                <img src="profile.jpg" alt="Photograph of Richard T. Shen" class="avatar">
+                <h1 class="name">Richard T. Shen</h1>
+                <p class="tagline">Quantitative Analysis for Economics & Business</p>
+                <div class="contact-info">
+                    <a href="mailto:mr.shentao@outlook.com">Email</a>
+                    <a href="https://github.com/shentao-coder" target="_blank">GitHub</a>
+                    <a href="#">LinkedIn</a>
                 </div>
-            </div>
-        </aside>
-
-        <main class="main-content">
-            <section id="about" class="content-block">
-                <p class="lead">An applied econometrics student from Shenzhen MSU-BIT University. My work focuses on developing computationally efficient tools and leveraging big data to generate actionable insights at the intersection of technology and business strategy.</p>
             </section>
 
-            <section id="experience" class="content-block">
-                <h2 class="section-title">Professional Experience</h2>
-                <div class="event-item">
-                    <p class="event-date">Feb 2025 - May 2025</p>
+            <section class="timeline-section event-section">
+                <div class="year-marker">2025</div>
+                <div class="event-card">
+                    <p class="event-meta">Feb – May</p>
                     <h3 class="event-title">International Business Intern</h3>
-                    <p class="event-company">CITIC Futures Co., Ltd</p>
+                    <p class="event-company">CITIC FUTURES CO., LTD</p>
                 </div>
-                <div class="event-item">
-                    <p class="event-date">Nov 2024 - Dec 2024</p>
+                 <div class="event-card">
+                    <p class="event-meta">June</p>
+                    <h3 class="event-title">B.S. in Economics</h3>
+                    <p class="event-company">Shenzhen MSU-BIT University</p>
+                </div>
+            </section>
+            
+            <section class="timeline-section event-section">
+                <div class="year-marker">2024</div>
+                <div class="event-card">
+                    <p class="event-meta">Nov – Dec</p>
                     <h3 class="event-title">Operations Management Intern</h3>
                     <p class="event-company">China CITIC Bank International</p>
                 </div>
-                <div class="event-item">
-                    <p class="event-date">Jul 2024 - Aug 2024</p>
+                <div class="event-card">
+                    <p class="event-meta">Jul – Aug</p>
                     <h3 class="event-title">Manager's Assistant</h3>
                     <p class="event-company">Agricultural Bank of China</p>
                 </div>
-                 <div class="event-item">
-                    <p class="event-date">Dec 2023 - Feb 2024</p>
+                <div class="event-card">
+                    <p class="event-meta">Feb</p>
                     <h3 class="event-title">Team Leader, Analytical Consultant</h3>
                     <p class="event-company">GAOTON ACCA Enterprise Challenge</p>
                 </div>
             </section>
+            
+            <section class="timeline-section event-section">
+                <div class="year-marker">2023</div>
+                </section>
 
-            <section id="education" class="content-block">
-                <h2 class="section-title">Education</h2>
-                <div class="event-item">
-                    <p class="event-date">2021 – 2025</p>
-                    <h3 class="event-title">B.S. in Economics</h3>
-                    <p class="event-company">Shenzhen MSU-BIT University</p>
-                    <p class="event-details">GPA: 3.74/4.00 | Honors: First-Year Scholarship, Third Prize in Global Management Challenge</p>
+            <section class="timeline-section final-section">
+                <div class="footer-content">
+                    <h4>Technical Expertise</h4>
+                    <p>Python, R, MATLAB, SQL, Stata, VBA, Latex</p>
+                    <hr>
+                    <h4>Languages</h4>
+                    <p>Mandarin, English, Cantonese, Russian</p>
+                    <hr>
+                    <a href="resume.pdf" class="cv-button" target="_blank">Download Full CV</a>
+                    <p class="copyright">© 2025 Richard T. Shen. Designed in collaboration with Google AI.</p>
                 </div>
             </section>
-
-            <section id="skills" class="content-block">
-                <h2 class="section-title">Skills & Expertise</h2>
-                 <div class="skills-grid">
-                    <div>
-                        <h4>Programming</h4>
-                        <p>Python (Pandas), R, SQL, MATLAB, VBA</p>
-                    </div>
-                    <div>
-                        <h4>Econometrics & Data</h4>
-                        <p>Stata, Causal Inference, Time Series, Machine Learning</p>
-                    </div>
-                    <div>
-                        <h4>Languages</h4>
-                        <p>Mandarin, English, Cantonese, Russian</p>
-                    </div>
-                </div>
-            </section>
-
-            <footer class="site-footer">
-                <a href="mailto:mr.shentao@outlook.com">Email</a>
-                <a href="https://github.com/shentao-coder" target="_blank">GitHub</a>
-                <a href="#">LinkedIn</a>
-            </footer>
         </main>
     </div>
-
-    <script src="https://unpkg.com/scrollreveal"></script>
+    <button id="theme-toggle" class="theme-toggle-button" title="Toggle Theme">◐</button>
     <script src="main.js"></script>
 </body>
 </html>
