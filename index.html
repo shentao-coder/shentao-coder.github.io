@@ -1,65 +1,130 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Richard T. Shen - Interactive C.V.</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <title>张三 | 前端开发者</title>
+    
     <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <script src="main.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <div class="grid-container">
-            
-            <div class="info-card profile-card">
-                <img src="profile.jpg" alt="Photograph of Richard T. Shen" class="avatar">
-                <h1 class="name">Richard T. Shen</h1>
-                <p class="tagline">B.S. in Economics, Shenzhen MSU-BIT University</p>
-            </div>
-            
-            <div class="info-card contact-card">
-                <h2 class="card-title">Contact</h2>
-                <ul class="contact-list">
-                    <li><a href="mailto:mr.shentao@outlook.com">Email</a></li>
-                    <li><a href="https://github.com/shentao-coder" target="_blank">GitHub</a></li>
-                    <li><a href="#">LinkedIn</a></li>
-                    <li><a href="resume.pdf" target="_blank">Download CV</a></li>
-                </ul>
-            </div>
-            
-            <div class="info-card experience-card">
-                <h2 class="card-title">Experience</h2>
-                <div class="event">
-                    <p class="event-meta">2025</p>
-                    <p class="event-title"><strong>Intern</strong>, CITIC Futures Co., Ltd</p>
-                </div>
-                <div class="event">
-                    <p class="event-meta">2024</p>
-                    <p class="event-title"><strong>Intern</strong>, China CITIC Bank International</p>
-                </div>
-                <div class="event">
-                    <p class="event-meta">2024</p>
-                    <p class="event-title"><strong>Assistant</strong>, Agricultural Bank of China</p>
-                </div>
-            </div>
-            
-            <div class="info-card education-card">
-                <h2 class="card-title">Education</h2>
-                <div class="event">
-                     <p class="event-title"><strong>B.S. in Economics</strong></p>
-                     <p class="event-company">Shenzhen MSU-BIT University</p>
-                     <p class="event-meta">2021 - 2025 | GPA: 3.74</p>
-                </div>
-            </div>
-            
-             <div class="info-card skills-card">
-                <h2 class="card-title">Skills</h2>
-                <p>Python (Pandas) · R · SQL · MATLAB · Stata · VBA · Latex · Causal Inference · Machine Learning</p>
-            </div>
 
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">张三.</a>
+            <ul class="nav-links">
+                <li><a href="#about">关于</a></li>
+                <li><a href="#skills">技能</a></li>
+                <li><a href="#projects">项目</a></li>
+                <li><a href="#contact">联系</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="container">
+            <div class="hero-text">
+                <h1 class="fade-in">你好，我是 <span class="highlight">张三</span></h1>
+                <p class="fade-in">一位热衷于创造优雅用户体验的前端开发者。</p>
+                <div class="hero-buttons fade-in">
+                    <a href="resume.pdf" class="btn btn-primary" target="_blank">查看简历</a>
+                    <a href="#contact" class="btn btn-secondary">联系我</a>
+                </div>
+                <div class="hero-socials fade-in">
+                    <a href="https://github.com/shentao-coder" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="hero-image fade-in">
+                <img src="profile.jpg" alt="张三的头像">
+            </div>
+        </section>
+
+        <section id="about" class="container content-section">
+            <h2 class="section-title">关于我 (About Me)</h2>
+            <p>我是一名对技术充满热情的开发者，专注于前端领域。我喜欢将复杂的想法转化为美观、直观且功能强大的用户界面。我享受解决问题的过程，并坚信持续学习是成长的关键。</p>
+            <p>在团队中，我是一个积极的沟通者和协作者，乐于分享知识，也乐于向他人学习。工作之余，我喜欢探索开源项目，或者阅读一些技术博客来跟上行业趋势。</p>
+        </section>
+
+        <section id="skills" class="container content-section">
+            <h2 class="section-title">技术栈 (Skills)</h2>
+            <div class="skills-grid">
+                <div class="skill-card"><i class="fa-brands fa-html5"></i><span>HTML5</span></div>
+                <div class="skill-card"><i class="fa-brands fa-css3-alt"></i><span>CSS3</span></div>
+                <div class="skill-card"><i class="fa-brands fa-js-square"></i><span>JavaScript</span></div>
+                <div class="skill-card"><i class="fa-brands fa-react"></i><span>React</span></div>
+                <div class="skill-card"><i class="fa-brands fa-vuejs"></i><span>Vue.js</span></div>
+                <div class="skill-card"><i class="fa-brands fa-node-js"></i><span>Node.js</span></div>
+                <div class="skill-card"><i class="fa-brands fa-sass"></i><span>Sass</span></div>
+                <div class="skill-card"><i class="fa-brands fa-git-alt"></i><span>Git</span></div>
+                <div class="skill-card"><i class="fa-brands fa-figma"></i><span>Figma</span></div>
+            </div>
+        </section>
+
+        <section id="projects" class="container content-section">
+            <h2 class="section-title">我的项目 (Projects)</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/800x450" alt="项目一截图">
+                    <div class="project-info">
+                        <h3>项目名称一</h3>
+                        <p>这里是项目的简短描述，说明它的功能和解决的问题。</p>
+                        <div class="project-tags">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>CSS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" target="_blank">Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a href="#" target="_blank">GitHub <i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/800x450" alt="项目二截图">
+                    <div class="project-info">
+                        <h3>项目名称二</h3>
+                        <p>这里是项目的简短描述，说明它的功能和解决的问题。</p>
+                        <div class="project-tags">
+                            <span>Vue</span>
+                            <span>Firebase</span>
+                            <span>Tailwind</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" target="_blank">Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a href="#" target="_blank">GitHub <i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+        </section>
+
+        <section id="contact" class="container content-section">
+            <h2 class="section-title">联系我 (Get In Touch)</h2>
+            <p class="contact-text">我非常乐于接受新的工作机会和挑战。如果你觉得我是合适的人选，或者有任何问题，请随时通过邮件联系我。</p>
+            <a href="mailto:your-email@example.com" class="btn btn-primary">发送邮件</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-socials">
+                <a href="https://github.com/shentao-coder" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <p>&copy; 2025 张三. All Rights Reserved.</p>
         </div>
-    </div>
-    <button id="theme-toggle" class="theme-toggle-button" title="Toggle Theme">◐</button>
-    <script src="main.js"></script>
+    </footer>
+
 </body>
 </html>
