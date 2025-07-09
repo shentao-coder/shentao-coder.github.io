@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>张三 | 前端开发者</title>
+    <title>Richard T. SHEN | Financial & Economic Analysis</title>
     
     <link rel="stylesheet" href="style.css">
     
@@ -16,15 +16,20 @@
 
     <header>
         <nav class="container">
-            <a href="#" class="logo">张三.</a>
+            <a href="#" class="logo">Richard T. SHEN</a>
             <ul class="nav-links">
-                <li><a href="#about">关于</a></li>
-                <li><a href="#skills">技能</a></li>
-                <li><a href="#projects">项目</a></li>
-                <li><a href="#contact">联系</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="menu-toggle">
-                <i class="fa-solid fa-bars"></i>
+            <div class="nav-actions">
+                <button id="theme-toggle" title="Toggle light/dark mode">
+                    <i class="fa-solid fa-sun"></i> </button>
+                <div class="menu-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
             </div>
         </nav>
     </header>
@@ -32,97 +37,139 @@
     <main>
         <section id="hero" class="container">
             <div class="hero-text">
-                <h1 class="fade-in">你好，我是 <span class="highlight">张三</span></h1>
-                <p class="fade-in">一位热衷于创造优雅用户体验的前端开发者。</p>
+                <h1 class="fade-in">Data-Driven Economic & Financial Analysis</h1>
+                <p class="fade-in">Leveraging quantitative skills to decode market trends and inform strategic decision-making.</p>
                 <div class="hero-buttons fade-in">
-                    <a href="resume.pdf" class="btn btn-primary" target="_blank">查看简历</a>
-                    <a href="#contact" class="btn btn-secondary">联系我</a>
+                    <a href="Tao SHEN_CV-2025-07-05版1.pdf" class="btn btn-primary" target="_blank">View Resume</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
                 </div>
                 <div class="hero-socials fade-in">
-                    <a href="https://github.com/shentao-coder" target="_blank"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/shentao-coder" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
                 </div>
             </div>
             <div class="hero-image fade-in">
-                <img src="profile.jpg" alt="张三的头像">
+                <img src="profile.jpg" alt="Richard T. SHEN, professional headshot">
             </div>
         </section>
 
-        <section id="about" class="container content-section">
-            <h2 class="section-title">关于我 (About Me)</h2>
-            <p>我是一名对技术充满热情的开发者，专注于前端领域。我喜欢将复杂的想法转化为美观、直观且功能强大的用户界面。我享受解决问题的过程，并坚信持续学习是成长的关键。</p>
-            <p>在团队中，我是一个积极的沟通者和协作者，乐于分享知识，也乐于向他人学习。工作之余，我喜欢探索开源项目，或者阅读一些技术博客来跟上行业趋势。</p>
-        </section>
-
-        <section id="skills" class="container content-section">
-            <h2 class="section-title">技术栈 (Skills)</h2>
-            <div class="skills-grid">
-                <div class="skill-card"><i class="fa-brands fa-html5"></i><span>HTML5</span></div>
-                <div class="skill-card"><i class="fa-brands fa-css3-alt"></i><span>CSS3</span></div>
-                <div class="skill-card"><i class="fa-brands fa-js-square"></i><span>JavaScript</span></div>
-                <div class="skill-card"><i class="fa-brands fa-react"></i><span>React</span></div>
-                <div class="skill-card"><i class="fa-brands fa-vuejs"></i><span>Vue.js</span></div>
-                <div class="skill-card"><i class="fa-brands fa-node-js"></i><span>Node.js</span></div>
-                <div class="skill-card"><i class="fa-brands fa-sass"></i><span>Sass</span></div>
-                <div class="skill-card"><i class="fa-brands fa-git-alt"></i><span>Git</span></div>
-                <div class="skill-card"><i class="fa-brands fa-figma"></i><span>Figma</span></div>
+        <section id="experience" class="container content-section">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>International Business Intern</h3>
+                        <p class="timeline-company">CITIC Futures Co., Ltd.</p>
+                        <p class="timeline-date">Feb 2025 - May 2025</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Operations Management Intern</h3>
+                        <p class="timeline-company">China CITIC Bank International (China) Limited</p>
+                        <p class="timeline-date">Nov 2024 - Dec 2024</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Manager's Assistant</h3>
+                        <p class="timeline-company">Agricultural Bank of China</p>
+                        <p class="timeline-date">Jul 2024 - Aug 2024</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="projects" class="container content-section">
-            <h2 class="section-title">我的项目 (Projects)</h2>
+            <h2 class="section-title">Analytical Projects</h2>
             <div class="project-grid">
                 <div class="project-card">
-                    <img src="https://via.placeholder.com/800x450" alt="项目一截图">
-                    <div class="project-info">
-                        <h3>项目名称一</h3>
-                        <p>这里是项目的简短描述，说明它的功能和解决的问题。</p>
-                        <div class="project-tags">
-                            <span>React</span>
-                            <span>Node.js</span>
-                            <span>CSS</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" target="_blank">Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                            <a href="#" target="_blank">GitHub <i class="fa-brands fa-github"></i></a>
-                        </div>
+                    <h3>Corporate Hedging Trend Analysis</h3>
+                    <p>Analyzed futures hedging announcements for 50+ A-share companies to identify trends in corporate risk management amid macroeconomic shifts. Automated data analysis, reducing manual reporting time by over 30%.</p>
+                    <div class="project-tags">
+                        <span>Python (Pandas)</span>
+                        <span>Excel (VBA)</span>
+                        <span>Wind Terminal</span>
+                        <span>Risk Management</span>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <img src="https://via.placeholder.com/800x450" alt="项目二截图">
-                    <div class="project-info">
-                        <h3>项目名称二</h3>
-                        <p>这里是项目的简短描述，说明它的功能和解决的问题。</p>
-                        <div class="project-tags">
-                            <span>Vue</span>
-                            <span>Firebase</span>
-                            <span>Tailwind</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" target="_blank">Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                            <a href="#" target="_blank">GitHub <i class="fa-brands fa-github"></i></a>
-                        </div>
+                    <h3>Settlement System Vulnerability Report</h3>
+                    <p>Conducted a competitive analysis on 10+ banks, delivering an 8-page report with recommendations that contributed to a 10% reduction in cross-border settlement reporting errors.</p>
+                    <div class="project-tags">
+                        <span>Competitive Analysis</span>
+                        <span>Process Improvement</span>
+                        <span>Report Writing</span>
                     </div>
                 </div>
-
+                
+                <div class="project-card">
+                    <h3>ACCA Enterprise Challenge | Team Leader</h3>
+                    <p>Led team strategy for a business competition, coordinating tasks and milestones. Directed the case report analysis by researching literature to analyze the causes and consequences of the topic phenomenon.</p>
+                    <div class="project-tags">
+                        <span>Leadership</span>
+                        <span>Strategic Planning</span>
+                        <span>Case Analysis</span>
+                    </div>
                 </div>
+            </div>
+        </section>
+        
+        <section id="skills" class="container content-section">
+            <h2 class="section-title">Technical Expertise</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Quantitative & Software</h3>
+                    <ul>
+                        <li>Python (Pandas)</li>
+                        <li>MATLAB, R</li>
+                        <li>Statistics & Econometrics</li>
+                        <li>Microsoft Office (Advanced Excel, VBA)</li>
+                        <li>Machine Learning</li>
+                        <li>Latex</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <ul>
+                        <li>Mandarin</li>
+                        <li>English</li>
+                        <li>Cantonese</li>
+                        <li>Russian</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="container content-section">
+            <h2 class="section-title">Education</h2>
+            <div class="education-card">
+                <h3>B.S. in Economics</h3>
+                <p class="education-university">Shenzhen MSU-BIT University</p>
+                <p><strong>Concentration:</strong> International Economics and Trade</p>
+                <p><strong>GPA:</strong> 3.74 / 4.00</p>
+                <p><strong>Graduation:</strong> June 2025</p>
+            </div>
         </section>
 
         <section id="contact" class="container content-section">
-            <h2 class="section-title">联系我 (Get In Touch)</h2>
-            <p class="contact-text">我非常乐于接受新的工作机会和挑战。如果你觉得我是合适的人选，或者有任何问题，请随时通过邮件联系我。</p>
-            <a href="mailto:your-email@example.com" class="btn btn-primary">发送邮件</a>
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-text">I am currently seeking full-time opportunities in the finance and economics sectors. If my background and skills align with your needs, please feel free to reach out.</p>
+            <a href="mailto:mr.shentao@outlook.com" class="btn btn-primary">mr.shentao@outlook.com</a>
         </section>
     </main>
 
     <footer>
         <div class="container">
             <div class="footer-socials">
-                <a href="https://github.com/shentao-coder" target="_blank"><i class="fa-brands fa-github"></i></a>
-                <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/shentao-coder" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
             </div>
-            <p>&copy; 2025 张三. All Rights Reserved.</p>
+            <p>&copy; 2025 Richard T. SHEN. All Rights Reserved.</p>
         </div>
     </footer>
 
