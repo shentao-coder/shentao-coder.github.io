@@ -1,165 +1,305 @@
-/* ======================= GLOBAL STYLES & ENHANCEMENTS ======================= */
+/* ===== 全局样式和变量 ===== */
+:root {
+    --primary-color: #4a69bd; /* 一种专业的蓝色 */
+    --primary-color-dark: #3c5aa6;
+    --secondary-color: #f6f7f9;
+    --text-color-dark: #333;
+    --text-color-light: #f4f4f4;
+    --body-bg-color: #ffffff;
+    --card-bg-color: #ffffff;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Lato', sans-serif; /* A clean, highly-readable body font */
-    background-color: #f7f7f7; /* A subtle, light grey background */
-    color: #3d3d3d; /* Softer than pure black for better readability */
-    line-height: 1.7;
-    font-size: 16px;
-    -webkit-font-smoothing: antialiased;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: var(--body-bg-color);
+    color: var(--text-color-dark);
 }
 
-.resume-container {
-    max-width: 950px; /* Slightly wider for better spacing */
-    margin: 3rem auto;
-    background-color: #FFFFFF;
-    padding: 4rem; /* More generous padding */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* A more pronounced shadow */
-    border-radius: 8px;
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
-a {
-    color: #003153; /* A sophisticated, professional Prussian Blue */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    font-weight: 600;
+}
+
+/* ===== 导航栏 ===== */
+.header {
+    background-color: var(--body-bg-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
     text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color-dark);
+    font-weight: 600;
     transition: color 0.3s ease;
 }
 
-a:hover {
-    color: #005a9c;
+.nav-links a:hover {
+    color: var(--primary-color);
 }
 
-/* ======================= HEADER & TYPOGRAPHY ======================= */
-h1, h2, h3 {
-    margin: 0;
-    font-family: 'Lora', serif; /* An elegant serif font for headings */
-    color: #1a1a1a;
+/* ===== 英雄区 ===== */
+.hero {
+    min-height: calc(100vh - 80px); /* 减去导航栏高度 */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 4rem 2rem;
 }
 
-h2 {
+.hero-text {
+    flex: 1;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 400;
+    color: var(--primary-color);
     margin-bottom: 1.5rem;
-    position: relative;
-    padding-left: 1.75rem; /* Make space for the accent line */
 }
 
-/* The new, stylish accent line for titles */
-h2::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 1rem;
-    height: 4px;
-    background-color: #003153;
-    border-radius: 2px;
+.hero-description {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
 }
 
-h3 {
+.hero-buttons .btn {
+    text-decoration: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-right: 1rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.hero-buttons .btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    border: 2px solid var(--primary-color);
+}
+
+.hero-buttons .btn-primary:hover {
+    background-color: var(--primary-color-dark);
+    transform: translateY(-3px);
+}
+
+.hero-buttons .btn {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.hero-buttons .btn:hover {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    transform: translateY(-3px);
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 350px;
+    width: 100%;
+    border-radius: 50%;
+    border: 5px solid var(--primary-color);
+    box-shadow: var(--shadow);
+}
+
+/* ===== 通用区块样式 ===== */
+#about, #projects, #contact {
+    padding: 5rem 0;
+}
+
+/* ===== 关于我 ===== */
+#about {
+    background-color: var(--secondary-color);
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.about-content p {
+    margin-bottom: 1rem;
+}
+
+/* ===== 项目展示 ===== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.project-card p {
+    margin-bottom: 1.5rem;
+}
+
+.project-links a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-right: 1rem;
+}
+
+.project-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* ===== 联系方式 ===== */
+#contact {
+    background-color: var(--secondary-color);
+    text-align: center;
+}
+
+.contact-email {
+    display: inline-block;
     font-size: 1.2rem;
     font-weight: 600;
+    margin: 1.5rem 0;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: transform 0.3s;
 }
 
-.resume-header {
+.contact-email:hover {
+    transform: scale(1.05);
+}
+
+.social-links a {
+    font-size: 2rem;
+    color: var(--text-color-dark);
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+/* ===== 页脚 ===== */
+.footer {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
     text-align: center;
-    margin-bottom: 3rem;
-}
-
-.resume-header h1 {
-    font-size: 3rem;
-    font-weight: 500;
-    letter-spacing: 1px;
-}
-
-.professional-title {
-    font-size: 1.1rem;
-    color: #555;
-    margin-top: 0.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.contact-info {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.75rem 2rem;
-    font-size: 0.95rem;
-    color: #555;
-}
-
-/* ======================= LAYOUT & COLUMNS ======================= */
-.resume-body {
-    display: grid;
-    grid-template-columns: 2.5fr 1fr;
-    gap: 3rem;
-}
-
-section {
-    margin-bottom: 2rem;
-}
-
-/* ======================= MAIN COLUMN (EXPERIENCE) ======================= */
-.job {
-    margin-bottom: 2rem;
-}
-
-.job .job-meta {
-    font-size: 0.9rem;
-    color: #777;
-    margin: 0.25rem 0 1rem 0;
-}
-
-ul {
-    padding-left: 20px;
-    margin: 0;
-    list-style-type: none; /* Removing default bullet points */
-}
-
-li {
-    margin-bottom: 0.75rem;
-    position: relative;
-    padding-left: 1.2rem; /* Make space for custom bullet */
-}
-
-/* Custom list bullet points for a refined look */
-li::before {
-    content: '■';
-    position: absolute;
-    left: 0;
-    top: 1px;
-    font-size: 0.5rem;
-    color: #003153;
+    padding: 1.5rem 0;
 }
 
 
-/* ======================= SIDEBAR ======================= */
-.sidebar-column h2 {
-    font-size: 1.3rem;
-}
+/* ===== 响应式设计 ===== */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
 
-.sidebar-column p, .sidebar-column li {
-    font-size: 0.95rem;
-}
+    /* 手机导航栏 */
+    .nav-links {
+        display: none; /* 在移动端隐藏导航链接，未来可添加汉堡菜单功能 */
+    }
 
-.sidebar-column strong {
-    font-weight: 700;
-    color: #333;
-}
+    /* 英雄区堆叠 */
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        min-height: auto;
+    }
 
-/* ======================= RESPONSIVE DESIGN ======================= */
-@media (max-width: 900px) {
-    .resume-container {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .hero-buttons .btn {
+        width: 80%;
         margin: 0;
-        padding: 2rem;
-        box-shadow: none;
-        border-radius: 0;
-    }
-
-    .resume-body {
-        grid-template-columns: 1fr;
-    }
-
-    .resume-header h1 {
-        font-size: 2.2rem;
     }
 }
