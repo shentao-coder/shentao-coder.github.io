@@ -3,146 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Professional Profile</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>SANTOS - Personal Website</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <div class="page-container">
-        
-        <header class="main-header">
+    <header>
+        <div class="container">
             <div class="header-content">
-                <div class="profile-image-container">
-                    <img src="profile.jpg" alt="Your Name" class="profile-photo">
-                </div>
-                <div class="header-text">
-                    <h1>Shen Tao</h1> <div class="contact-info">
-                        <p><strong>Office:</strong> San Francisco Bay Area</p>
-                        <p><strong>Phone:</strong> (415) 123-4567</p>
-                        <p><strong>Email:</strong> <a href="mailto:s.tao.dev@example.com">s.tao.dev@example.com</a></p>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <div class="main-layout">
-            <main class="content-area">
-                <nav class="content-nav">
-                    <a href="#summary" class="nav-tab active" data-tab="summary">SUMMARY</a>
-                    <a href="#experience" class="nav-tab" data-tab="experience">EXPERIENCE</a>
-                    <a href="#projects" class="nav-tab" data-tab="projects">PROJECTS</a>
-                </nav>
-
-                <div id="summary" class="tab-content active">
-                    <p>Lead Software Architect with over a decade of experience designing and scaling resilient, high-performance systems for Fortune 500 companies. My expertise lies at the intersection of distributed systems, cloud-native architecture, and machine learning infrastructure.</p>
-                    <p>I am passionate about building robust, elegant solutions to complex technical challenges and mentoring the next generation of engineers. My work emphasizes clean code, rigorous testing, and a culture of continuous improvement. I have a proven track record of leading cross-functional teams to deliver mission-critical projects on time and under budget.</p>
-                </div>
-
-                <div id="experience" class="tab-content">
-                    <h3>Professional Experience</h3>
-                    <div class="content-entry">
-                        <h4>Lead Software Architect | Tech Solutions Inc. | 2018 - Present</h4>
-                        <p>Pioneered a new microservices architecture, improving system scalability by 200% and reducing latency by 40%. Led the migration of legacy systems to a Kubernetes-based infrastructure on AWS, resulting in a 30% reduction in operational costs.</p>
-                    </div>
-                    <div class="content-entry">
-                        <h4>Senior Software Engineer | Innovate Corp. | 2014 - 2018</h4>
-                        <p>Developed and maintained key components of a real-time data processing pipeline handling over 1 million events per second. Received the "Engineer of the Year" award in 2017 for exceptional performance and technical leadership.</p>
-                    </div>
-                </div>
-
-                <div id="projects" class="tab-content">
-                    <h3>Selected Projects</h3>
-                    <div class="content-entry">
-                        <h4>Project "Orion" - Open Source ML Platform</h4>
-                        <p>Creator and lead maintainer of an open-source platform for orchestrating machine learning workflows. The project has garnered over 5,000 stars on GitHub and is used by several major research institutions.</p>
-                    </div>
-                     <div class="content-entry">
-                        <h4>Project "QuantumLeap" - High-Frequency Trading Algorithm</h4>
-                        <p>Developed a novel predictive algorithm using reinforcement learning for a private hedge fund, outperforming existing benchmarks by 15% in back-testing.</p>
-                    </div>
-                </div>
-
-            </main>
-
-            <aside class="sidebar-area">
-                <div class="sidebar-widget">
-                    <h4>PRACTICE AREAS</h4>
+                <img src="profile.jpg" alt="Santos Profile" class="profile-img">
+                <h1>SANTOS (Shentao)</h1>
+                <p>Economist | Business Analyst | Strategic Consultant</p>
+                <nav>
                     <ul>
-                        <li>Distributed Systems Design</li>
-                        <li>Cloud Infrastructure (AWS, GCP)</li>
-                        <li>Machine Learning Engineering</li>
-                        <li>High-Performance Computing</li>
-                        <li>API Design & Security</li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#resume">Resume</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
-                </div>
-
-                <div class="sidebar-widget">
-                    <h4>EDUCATION</h4>
-                    <p><strong>Stanford University</strong><br>M.S. in Computer Science</p>
-                    <p><strong>University of California, Berkeley</strong><br>B.S. in Electrical Engineering & Computer Sciences, with high honors</p>
-                </div>
-                 <div class="sidebar-widget">
-                    <h4>PUBLICATIONS</h4>
-                    <p>Tao, S. (2022). "Scalable Architectures for Modern Data Systems." <em>ACM Tech Review.</em></p>
-                </div>
-            </aside>
+                </nav>
+            </div>
         </div>
+    </header>
 
-    </div>
+    <main>
+        <section id="about" class="section">
+            <div class="container">
+                <h2>About Me</h2>
+                <p>Hello, I’m SANTOS, an economist and business analyst with a deep focus on data-driven insights and strategic decision-making. With a strong foundation in economics and business management, I aim to leverage advanced data analysis techniques to optimize business growth and strategy.</p>
+            </div>
+        </section>
 
-    <footer class="main-footer">
-        <div class="footer-grid">
-            <div class="footer-column social-media">
-                 <a href="https://github.com/shentao-coder" target="_blank">GITHUB</a>
-                 <a href="#" target="_blank">LINKEDIN</a>
-                 <a href="#" target="_blank">TWITTER</a>
+        <section id="experience" class="section">
+            <div class="container">
+                <h2>Academic & Professional Experience</h2>
+                <div class="experience-list">
+                    <div class="experience-item">
+                        <h3>Research Lead - Economics</h3>
+                        <p>Led several academic projects analyzing economic trends and market behavior, with a focus on financial sustainability and digital currency.</p>
+                    </div>
+                    <div class="experience-item">
+                        <h3>Intern - Citic Bank International</h3>
+                        <p>Worked in business analysis and strategy development, contributing to data-driven financial decision-making and operational strategy.</p>
+                    </div>
+                </div>
             </div>
-            <div class="footer-column">
-                 <a href="resume.pdf" target="_blank">DOWNLOAD RESUME</a>
-                 <a href="#">CLIENT PORTAL</a>
+        </section>
+
+        <section id="resume" class="section">
+            <div class="container">
+                <h2>Resume</h2>
+                <p><a href="resume.pdf" target="_blank" class="btn">Download Resume (PDF)</a></p>
             </div>
-            <div class="footer-column office-info">
-                <h4>OFFICES</h4>
-                <p>SAN FRANCISCO BAY AREA</p>
-                <p>NEW YORK</p>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2>Contact</h2>
+                <p>Feel free to reach out via email or connect with me on LinkedIn or Twitter.</p>
+                <p>Email: <a href="mailto:santos@example.com">santos@example.com</a></p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/santos" target="_blank">linkedin.com/in/santos</a></p>
+                <p>Twitter: <a href="https://twitter.com/santos" target="_blank">twitter.com/santos</a></p>
             </div>
-            <div class="footer-column copyright">
-                <p>SHEN TAO &copy; 2025</p>
-                <p class="disclaimer">Prior results do not guarantee a similar outcome. This website constitutes attorney advertising.</p>
-                <a href="#">Terms of Use & Privacy Policy</a>
-            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 SANTOS. All Rights Reserved.</p>
         </div>
     </footer>
-
-<script>
-    // Simple script for tab functionality
-    document.addEventListener('DOMContentLoaded', function() {
-        const tabs = document.querySelectorAll('.nav-tab');
-        const tabContents = document.querySelectorAll('.tab-content');
-
-        tabs.forEach(tab => {
-            tab.addEventListener('click', function(event) {
-                event.preventDefault();
-
-                // Deactivate all tabs and content
-                tabs.forEach(t => t.classList.remove('active'));
-                tabContents.forEach(c => c.classList.remove('active'));
-
-                // Activate the clicked tab
-                this.classList.add('active');
-                
-                // Activate the corresponding content
-                const activeContent = document.getElementById(this.dataset.tab);
-                if (activeContent) {
-                    activeContent.classList.add('active');
-                }
-            });
-        });
-    });
-</script>
-
 </body>
 </html>
