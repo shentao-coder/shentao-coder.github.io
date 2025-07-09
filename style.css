@@ -1,113 +1,140 @@
-/* ======================= GLOBAL STYLES ======================= */
+/* ======================= GLOBAL STYLES & ENHANCEMENTS ======================= */
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: #f0f2f5; /* A very light grey to frame the white page */
-    color: #333;
-    line-height: 1.6;
+    font-family: 'Lato', sans-serif; /* A clean, highly-readable body font */
+    background-color: #f7f7f7; /* A subtle, light grey background */
+    color: #3d3d3d; /* Softer than pure black for better readability */
+    line-height: 1.7;
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
 }
 
 .resume-container {
-    max-width: 900px;
-    margin: 2rem auto;
-    background-color: #FFFFFF; /* Pure white as requested */
-    padding: 3rem;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.07);
-    border-radius: 6px;
+    max-width: 950px; /* Slightly wider for better spacing */
+    margin: 3rem auto;
+    background-color: #FFFFFF;
+    padding: 4rem; /* More generous padding */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* A more pronounced shadow */
+    border-radius: 8px;
 }
 
 a {
-    color: #0d6efd; /* A standard, professional blue for links */
+    color: #003153; /* A sophisticated, professional Prussian Blue */
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: color 0.3s ease;
 }
 
 a:hover {
-    text-decoration: underline;
+    color: #005a9c;
 }
 
+/* ======================= HEADER & TYPOGRAPHY ======================= */
 h1, h2, h3 {
     margin: 0;
-    font-weight: 600;
+    font-family: 'Lora', serif; /* An elegant serif font for headings */
+    color: #1a1a1a;
 }
 
 h2 {
-    font-size: 1.25rem;
-    color: #000;
-    border-bottom: 1.5px solid #e0e0e0;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-section {
+    font-size: 1.5rem;
+    font-weight: 600;
     margin-bottom: 1.5rem;
+    position: relative;
+    padding-left: 1.75rem; /* Make space for the accent line */
 }
 
-ul {
-    padding-left: 20px;
-    margin: 0;
+/* The new, stylish accent line for titles */
+h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1rem;
+    height: 4px;
+    background-color: #003153;
+    border-radius: 2px;
 }
 
-li {
-    margin-bottom: 0.5rem;
+h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
-
-/* ======================= HEADER ======================= */
 .resume-header {
     text-align: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
 }
 
 .resume-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    color: #000;
+    font-size: 3rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.professional-title {
+    font-size: 1.1rem;
+    color: #555;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .contact-info {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.5rem 1.5rem;
+    gap: 0.75rem 2rem;
     font-size: 0.95rem;
     color: #555;
 }
 
-.contact-info a {
-    color: #555;
-}
-
-/* ======================= LAYOUT: MAIN & SIDEBAR ======================= */
+/* ======================= LAYOUT & COLUMNS ======================= */
 .resume-body {
     display: grid;
-    grid-template-columns: 2.5fr 1fr; /* Main content is wider */
-    gap: 2.5rem;
+    grid-template-columns: 2.5fr 1fr;
+    gap: 3rem;
 }
 
-/* ======================= MAIN COLUMN STYLES ======================= */
+section {
+    margin-bottom: 2rem;
+}
+
+/* ======================= MAIN COLUMN (EXPERIENCE) ======================= */
 .job {
-    margin-bottom: 1.5rem;
-}
-
-.job h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.25rem;
+    margin-bottom: 2rem;
 }
 
 .job .job-meta {
     font-size: 0.9rem;
-    color: #666;
-    margin-bottom: 0.75rem;
-    font-style: italic;
+    color: #777;
+    margin: 0.25rem 0 1rem 0;
 }
 
-/* ======================= SIDEBAR STYLES ======================= */
+ul {
+    padding-left: 20px;
+    margin: 0;
+    list-style-type: none; /* Removing default bullet points */
+}
+
+li {
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding-left: 1.2rem; /* Make space for custom bullet */
+}
+
+/* Custom list bullet points for a refined look */
+li::before {
+    content: '■';
+    position: absolute;
+    left: 0;
+    top: 1px;
+    font-size: 0.5rem;
+    color: #003153;
+}
+
+
+/* ======================= SIDEBAR ======================= */
 .sidebar-column h2 {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
 }
 
 .sidebar-column p, .sidebar-column li {
@@ -115,32 +142,24 @@ li {
 }
 
 .sidebar-column strong {
-    font-weight: 500;
+    font-weight: 700;
+    color: #333;
 }
 
-/* ======================= RESPONSIVE DESIGN FOR SMALLER SCREENS ======================= */
-@media (max-width: 768px) {
-    body {
-        background-color: #FFFFFF; /* On mobile, the page takes the full screen */
-    }
-    
+/* ======================= RESPONSIVE DESIGN ======================= */
+@media (max-width: 900px) {
     .resume-container {
         margin: 0;
-        padding: 1.5rem;
+        padding: 2rem;
         box-shadow: none;
         border-radius: 0;
     }
 
     .resume-body {
-        grid-template-columns: 1fr; /* Stack columns on top of each other */
-    }
-    
-    .resume-header h1 {
-        font-size: 2rem;
+        grid-template-columns: 1fr;
     }
 
-    .contact-info {
-        flex-direction: column;
-        gap: 0.25rem;
+    .resume-header h1 {
+        font-size: 2.2rem;
     }
 }
