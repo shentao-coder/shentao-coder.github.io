@@ -1,94 +1,148 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>您的姓名 - 个人主页</title>
+    <title>Your Name - Professional Profile</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="container">
-        <aside class="sidebar">
-            <div class="sidebar-content">
-                <img src="profile.jpg" alt="个人头像" class="profile-pic">
-                <h2>联系方式</h2>
-                <p>
-                    <strong>邮箱:</strong><br>
-                    <a href="mailto:your.email@example.com">your.email@example.com</a>
-                </p>
-                <p>
-                    <strong>电话:</strong><br>
-                    +86 123 4567 8900
-                </p>
-                <p>
-                    <strong>地址:</strong><br>
-                    城市, 省份, 中国
-                </p>
-                
-                <a href="resume.pdf" class="btn-download" target="_blank">下载简历 (PDF)</a>
-
-                <div class="social-links">
-                    <a href="https://github.com/shentao-coder" target="_blank">GitHub</a>
-                    <a href="#" target="_blank">LinkedIn</a>
+    <div class="page-container">
+        
+        <header class="main-header">
+            <div class="header-content">
+                <div class="profile-image-container">
+                    <img src="profile.jpg" alt="Your Name" class="profile-photo">
+                </div>
+                <div class="header-text">
+                    <h1>Shen Tao</h1> <div class="contact-info">
+                        <p><strong>Office:</strong> San Francisco Bay Area</p>
+                        <p><strong>Phone:</strong> (415) 123-4567</p>
+                        <p><strong>Email:</strong> <a href="mailto:s.tao.dev@example.com">s.tao.dev@example.com</a></p>
                     </div>
+                </div>
             </div>
-        </aside>
+        </header>
 
-        <main class="main-content">
-            <header class="main-header">
-                <h1>沈涛 (Shen Tao)</h1> <p class="job-title">高级软件工程师 & 全栈开发者</p> </header>
+        <div class="main-layout">
+            <main class="content-area">
+                <nav class="content-nav">
+                    <a href="#summary" class="nav-tab active" data-tab="summary">SUMMARY</a>
+                    <a href="#experience" class="nav-tab" data-tab="experience">EXPERIENCE</a>
+                    <a href="#projects" class="nav-tab" data-tab="projects">PROJECTS</a>
+                </nav>
 
-            <section id="summary">
-                <h2>个人简介</h2>
-                <p>在这里写一段关于您自己的专业概述。例如，您可以介绍您的主要技能、工作热情以及职业目标。说明您在哪些技术领域有深入研究，以及您希望如何通过您的技能为团队或项目做出贡献。这段文字应该简洁而有力，给访问者留下深刻的第一印象。</p>
-            </section>
+                <div id="summary" class="tab-content active">
+                    <p>Lead Software Architect with over a decade of experience designing and scaling resilient, high-performance systems for Fortune 500 companies. My expertise lies at the intersection of distributed systems, cloud-native architecture, and machine learning infrastructure.</p>
+                    <p>I am passionate about building robust, elegant solutions to complex technical challenges and mentoring the next generation of engineers. My work emphasizes clean code, rigorous testing, and a culture of continuous improvement. I have a proven track record of leading cross-functional teams to deliver mission-critical projects on time and under budget.</p>
+                </div>
 
-            <section id="experience">
-                <h2>工作经历</h2>
-                <div class="job">
-                    <h3>公司名称A | 职位 (2022 - 至今)</h3>
+                <div id="experience" class="tab-content">
+                    <h3>Professional Experience</h3>
+                    <div class="content-entry">
+                        <h4>Lead Software Architect | Tech Solutions Inc. | 2018 - Present</h4>
+                        <p>Pioneered a new microservices architecture, improving system scalability by 200% and reducing latency by 40%. Led the migration of legacy systems to a Kubernetes-based infrastructure on AWS, resulting in a 30% reduction in operational costs.</p>
+                    </div>
+                    <div class="content-entry">
+                        <h4>Senior Software Engineer | Innovate Corp. | 2014 - 2018</h4>
+                        <p>Developed and maintained key components of a real-time data processing pipeline handling over 1 million events per second. Received the "Engineer of the Year" award in 2017 for exceptional performance and technical leadership.</p>
+                    </div>
+                </div>
+
+                <div id="projects" class="tab-content">
+                    <h3>Selected Projects</h3>
+                    <div class="content-entry">
+                        <h4>Project "Orion" - Open Source ML Platform</h4>
+                        <p>Creator and lead maintainer of an open-source platform for orchestrating machine learning workflows. The project has garnered over 5,000 stars on GitHub and is used by several major research institutions.</p>
+                    </div>
+                     <div class="content-entry">
+                        <h4>Project "QuantumLeap" - High-Frequency Trading Algorithm</h4>
+                        <p>Developed a novel predictive algorithm using reinforcement learning for a private hedge fund, outperforming existing benchmarks by 15% in back-testing.</p>
+                    </div>
+                </div>
+
+            </main>
+
+            <aside class="sidebar-area">
+                <div class="sidebar-widget">
+                    <h4>PRACTICE AREAS</h4>
                     <ul>
-                        <li>在这里描述您在这家公司的主要职责和成就。</li>
-                        <li>使用量化的结果来突出您的贡献，例如：“通过优化数据库查询，将页面加载时间减少了30%”。</li>
-                        <li>列出您使用的主要技术栈，例如：React, Node.js, Python, AWS。</li>
+                        <li>Distributed Systems Design</li>
+                        <li>Cloud Infrastructure (AWS, GCP)</li>
+                        <li>Machine Learning Engineering</li>
+                        <li>High-Performance Computing</li>
+                        <li>API Design & Security</li>
                     </ul>
                 </div>
-                <div class="job">
-                    <h3>公司名称B | 职位 (2020 - 2022)</h3>
-                    <ul>
-                        <li>职责描述和项目成就。</li>
-                        <li>职责描述和项目成就。</li>
-                    </ul>
-                </div>
-            </section>
 
-            <section id="projects">
-                <h2>个人项目</h2>
-                <div class="project">
-                    <h3>项目名称一</h3>
-                    <p>简要介绍这个项目，它的目标是什么，您在其中扮演的角色，以及使用了哪些技术。可以附上项目链接或GitHub仓库链接。</p>
+                <div class="sidebar-widget">
+                    <h4>EDUCATION</h4>
+                    <p><strong>Stanford University</strong><br>M.S. in Computer Science</p>
+                    <p><strong>University of California, Berkeley</strong><br>B.S. in Electrical Engineering & Computer Sciences, with high honors</p>
                 </div>
-                <div class="project">
-                    <h3>项目名称二</h3>
-                    <p>简要介绍这个项目，它的目标是什么，您在其中扮演的角色，以及使用了哪些技术。可以附上项目链接或GitHub仓库链接。</p>
+                 <div class="sidebar-widget">
+                    <h4>PUBLICATIONS</h4>
+                    <p>Tao, S. (2022). "Scalable Architectures for Modern Data Systems." <em>ACM Tech Review.</em></p>
                 </div>
-            </section>
+            </aside>
+        </div>
 
-            <section id="education">
-                <h2>教育背景</h2>
-                <p><strong>某某大学</strong> | 计算机科学硕士 (2018 - 2020)</p>
-                <p><strong>某某大学</strong> | 计算机科学学士 (2014 - 2018)</p>
-            </section>
-        </main>
     </div>
 
-    <footer class="site-footer">
-        <p>&copy; 2025 您的姓名. 保留所有权利.</p>
+    <footer class="main-footer">
+        <div class="footer-grid">
+            <div class="footer-column social-media">
+                 <a href="https://github.com/shentao-coder" target="_blank">GITHUB</a>
+                 <a href="#" target="_blank">LINKEDIN</a>
+                 <a href="#" target="_blank">TWITTER</a>
+            </div>
+            <div class="footer-column">
+                 <a href="resume.pdf" target="_blank">DOWNLOAD RESUME</a>
+                 <a href="#">CLIENT PORTAL</a>
+            </div>
+            <div class="footer-column office-info">
+                <h4>OFFICES</h4>
+                <p>SAN FRANCISCO BAY AREA</p>
+                <p>NEW YORK</p>
+            </div>
+            <div class="footer-column copyright">
+                <p>SHEN TAO &copy; 2025</p>
+                <p class="disclaimer">Prior results do not guarantee a similar outcome. This website constitutes attorney advertising.</p>
+                <a href="#">Terms of Use & Privacy Policy</a>
+            </div>
+        </div>
     </footer>
+
+<script>
+    // Simple script for tab functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const tabs = document.querySelectorAll('.nav-tab');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function(event) {
+                event.preventDefault();
+
+                // Deactivate all tabs and content
+                tabs.forEach(t => t.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+
+                // Activate the clicked tab
+                this.classList.add('active');
+                
+                // Activate the corresponding content
+                const activeContent = document.getElementById(this.dataset.tab);
+                if (activeContent) {
+                    activeContent.classList.add('active');
+                }
+            });
+        });
+    });
+</script>
 
 </body>
 </html>
