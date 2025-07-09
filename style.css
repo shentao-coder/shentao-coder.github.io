@@ -1,22 +1,22 @@
 /* --- 1. Design System & Base --- */
 :root {
     --font-sans: 'Inter', sans-serif;
-    --transition: 200ms ease-out;
+    --transition: 300ms ease-out;
 
     /* Light Theme */
     --color-bg: #FFFFFF;
-    --color-text: #212529;
-    --color-text-secondary: #6C757D;
-    --color-border: #E9ECEF;
-    --color-link: #0056B3;
+    --color-text: #111111;
+    --color-text-secondary: #666666;
+    --color-border: #EAEAEA;
+    --color-glow: rgba(0, 98, 255, 0.1);
 }
 
 [data-theme="dark"] {
-    --color-bg: #121212;
-    --color-text: #E9ECEF;
-    --color-text-secondary: #ADB5BD;
-    --color-border: #343A40;
-    --color-link: #80BFFF;
+    --color-bg: #000000;
+    --color-text: #EAEAEA;
+    --color-text-secondary: #888888;
+    --color-border: #222222;
+    --color-glow: rgba(0, 98, 255, 0.15);
 }
 
 body {
@@ -25,144 +25,96 @@ body {
     font-family: var(--font-sans);
     font-size: 15px;
     line-height: 1.6;
-    padding: 2rem;
-    transition: background-color var(--transition), color var(--transition);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color var(--transition);
 }
 
 .container {
-    max-width: 1100px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 1000px;
+    padding: 2rem;
 }
 
-a {
-    color: var(--color-link);
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
-}
-
-/* --- 2. Site Header --- */
-.site-header {
+/* --- 2. Grid & Card Layout --- */
+.grid-container {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 2rem;
-    align-items: flex-start;
-    padding-bottom: 2rem;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid var(--color-border);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    perspective: 1500px; /* For 3D effect */
 }
-.name {
-    font-size: 2.25rem;
-    font-weight: 700;
-    margin: 0 0 0.5rem 0;
+
+.info-card {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition), border-color var(--transition);
+    will-change: transform; /* Performance optimization */
 }
-.title {
-    font-size: 1rem;
+
+.info-card:hover {
+    box-shadow: 0px 30px 60px -20px rgba(0, 0, 0, 0.15);
+    border-color: var(--color-glow);
+}
+[data-theme="dark"] .info-card:hover {
+    box-shadow: 0px 30px 60px -20px var(--color-glow);
+}
+
+/* Grid item placement */
+.profile-card { grid-column: 1 / 3; grid-row: 1 / 2; text-align: center; }
+.contact-card { grid-column: 3 / 4; grid-row: 1 / 2; }
+.experience-card { grid-column: 1 / 3; grid-row: 2 / 3; }
+.education-card { grid-column: 3 / 5; grid-row: 2 / 3; }
+.skills-card { grid-column: 1 / 5; grid-row: 3 / 4; }
+
+
+/* --- 3. Content Styling --- */
+.card-title {
+    font-size: 0.9rem;
+    font-weight: 500;
     color: var(--color-text-secondary);
-    margin: 0.25rem 0;
-}
-.header-details {
-    text-align: right;
-}
-.avatar {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 4px;
-    float: right;
-    margin-left: 1rem;
     margin-bottom: 1rem;
 }
-.contact-info {
-    clear: both;
-}
-.contact-info a {
-    display: block;
-    font-size: 0.9rem;
-    margin-bottom: 0.25rem;
-}
 
-/* --- 3. Main Content Grid --- */
-.main-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 3rem;
-}
-.content-section {
-    margin-bottom: 2.5rem;
-}
-h2 {
+.avatar { width: 80px; height: 80px; object-fit: cover; border-radius: 0; margin-bottom: 1rem; }
+.name { font-size: 1.75rem; font-weight: 700; margin: 0; }
+.tagline { font-size: 1rem; color: var(--color-text-secondary); margin-top: 0.25rem; }
+
+.contact-list { list-style: none; padding: 0; margin: 0; }
+.contact-list li { margin-bottom: 0.75rem; }
+.contact-list a { font-weight: 500; text-decoration: none; color: var(--color-text); }
+.contact-list a:hover { color: var(--color-accent); }
+
+.event { margin-bottom: 1rem; }
+.event-meta { font-size: 0.8rem; color: var(--color-text-secondary); }
+.event-title { font-size: 1rem; font-weight: 500; }
+.event-company { font-size: 0.9rem; color: var(--color-text-secondary); }
+
+.skills-card p {
     font-size: 1rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--color-text-secondary);
-    border-bottom: 1px solid var(--color-border);
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.list-item {
-    margin-bottom: 1.5rem;
-    padding-left: 1rem;
-    border-left: 2px solid var(--color-border);
-    transition: border-color var(--transition);
-}
-.list-item:hover {
-    border-left-color: var(--color-link);
-}
-.list-item h3 {
-    font-size: 1.05rem;
-    font-weight: 500;
-    margin: 0 0 0.25rem 0;
-}
-.list-item strong {
-    font-weight: 700;
-}
-.item-meta {
-    font-size: 0.85rem;
+    line-height: 1.8;
     color: var(--color-text-secondary);
 }
 
-.grid-column p {
-    font-size: 0.95rem;
-    color: var(--color-text-secondary);
-}
-
-/* --- 4. Footer --- */
-.site-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 3rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--color-border);
-    font-size: 0.9rem;
-    color: var(--color-text-secondary);
-}
+/* --- 4. Theme Toggle & Responsive --- */
 .theme-toggle-button {
-    background: none;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--color-bg);
     border: 1px solid var(--color-border);
-    padding: 0.4rem 0.8rem;
-    border-radius: 4px;
     cursor: pointer;
+    font-size: 1.2rem;
     color: var(--color-text-secondary);
 }
 
-/* --- 5. Responsive --- */
 @media (max-width: 900px) {
-    .site-header, .main-grid {
-        grid-template-columns: 1fr;
-    }
-    .header-details {
-        text-align: left;
-        margin-top: 1rem;
-    }
-    .avatar {
-        float: none;
-        margin: 0 0 1rem 0;
-    }
+    body { padding: 1rem; align-items: flex-start; }
+    .grid-container { grid-template-columns: 1fr; }
+    .info-card { grid-column: auto !important; grid-row: auto !important; }
 }
-
-
