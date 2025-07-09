@@ -4,26 +4,39 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // --- Theme Switcher ---
     const themeSwitcher = document.getElementById('theme-switcher');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    let currentTheme = localStorage.getItem('theme');
+    const docElement = document.documentElement; // Target the <html> element
 
-    // Initialize theme based on saved preference or system setting
-    if (currentTheme === 'dark' || (!currentTheme && systemPrefersDark)) {
-        document.documentElement.setAttribute('data-theme', 'dark');
+    // Function to apply the theme
+    const applyTheme = (theme) => {
+        docElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+    };
+
+    // Check for saved theme in localStorage
+    const savedTheme = localStorage.getItem('theme');
+    
+    // Check for system preference
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    // Determine initial theme:
+    // 1. If a theme is saved in localStorage, use it.
+    // 2. Otherwise, if the user's system prefers dark mode, use dark.
+    // 3. Otherwise, default to light.
+    if (savedTheme) {
+        applyTheme(savedTheme);
+    } else if (prefersDark) {
+        applyTheme('dark');
     } else {
-        document.documentElement.setAttribute('data-theme', 'light');
+        applyTheme('light'); // Default
     }
-
+    
+    // Add click event listener to the switcher button
     themeSwitcher.addEventListener('click', () => {
-        let theme = document.documentElement.getAttribute('data-theme');
-        if (theme === 'dark') {
-            document.documentElement.setAttribute('data-theme', 'light');
-            localStorage.setItem('theme', 'light');
-        } else {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            localStorage.setItem('theme', 'dark');
-        }
+        const currentTheme = docElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        applyTheme(newTheme);
     });
+
 
     // --- Copyright Year ---
     const copyrightYearSpan = document.getElementById('copyright-year');
@@ -31,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         copyrightYearSpan.textContent = new Date().getFullYear();
     }
     
-    // --- Optional: Add simple scroll animations for timeline ---
+    // --- Optional: Scroll animations for timeline ---
     const timelineItems = document.querySelectorAll('.timeline-item');
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -45,11 +58,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     timelineItems.forEach(item => {
         item.style.opacity = '0';
-        item.style.transform = 'translateY(30px)';
-        item.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        item.style.transform = 'translateY(20px)';
+        item.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
         observer.observe(item);
     });
 
 });
-
-
