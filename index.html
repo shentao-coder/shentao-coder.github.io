@@ -6,82 +6,69 @@
     <title>Richard T. Shen - Curriculum Vitae</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&family=Lora:wght@400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <header class="site-header">
-            <div class="avatar-container">
+        <div class="main-grid">
+            <header class="grid-header">
                 <img src="profile.jpg" alt="Photograph of Richard T. Shen" class="avatar">
-            </div>
-            <div class="header-text">
-                <h1 class="name">Richard T. Shen</h1>
-                <p class="contact-info">
-                    <a href="mailto:mr.shentao@outlook.com">mr.shentao@outlook.com</a> • (86) 185-2908-5521 • Shenzhen, GD
-                </p>
-                <nav class="header-links">
-                     <a href="resume.pdf" target="_blank">Download CV</a>
-                     <a href="https://github.com/shentao-coder" target="_blank">GitHub</a>
-                     <a href="#">LinkedIn</a>
-                </nav>
-            </div>
-        </header>
+                <div class="header-text">
+                    <h1 class="name">Richard T. Shen</h1>
+                    <p class="tagline">Applied Econometrics & Quantitative Analysis</p>
+                </div>
+            </header>
 
-        <main class="main-content">
-            <section class="content-section" id="experience">
-                <h2 class="section-title">Professional Experience</h2>
-                <div class="list-container">
-                    <div class="list-item">
-                        <p class="item-meta">Feb 2025 - May 2025</p>
-                        <h3>International Business Intern at <strong>CITIC Futures Co., Ltd</strong></h3>
-                    </div>
-                     <div class="list-item">
-                        <p class="item-meta">Nov 2024 - Dec 2024</p>
-                        <h3>Operations Management Intern at <strong>China CITIC Bank International</strong></h3>
-                    </div>
-                     <div class="list-item">
-                        <p class="item-meta">Jul 2024 - Aug 2024</p>
-                        <h3>Manager's Assistant at <strong>Agricultural Bank of China</strong></h3>
-                    </div>
+            <section class="grid-experience">
+                <h2 class="section-title">Experience</h2>
+                <div class="list-item">
+                    <h3>International Business Intern, <strong>CITIC Futures Co., Ltd</strong></h3>
+                    <p class="item-meta">Feb 2025 - May 2025</p>
+                </div>
+                <div class="list-item">
+                    <h3>Operations Management Intern, <strong>China CITIC Bank International</strong></h3>
+                    <p class="item-meta">Nov 2024 - Dec 2024</p>
+                </div>
+                <div class="list-item">
+                    <h3>Manager's Assistant, <strong>Agricultural Bank of China</strong></h3>
+                    <p class="item-meta">Jul 2024 - Aug 2024</p>
+                </div>
+            </section>
+
+            <section class="grid-education">
+                 <h2 class="section-title">Education</h2>
+                 <div class="list-item">
+                    <h3>B.S. in Economics</h3>
+                    <p class="item-meta">Shenzhen MSU-BIT University | 2021 - 2025 | GPA: 3.74</p>
                 </div>
             </section>
             
-            <section class="content-section" id="education">
-                <h2 class="section-title">Education & Leadership</h2>
-                <div class="list-container">
-                    <div class="list-item">
-                        <p class="item-meta">2021 - 2025</p>
-                        <h3>B.S. in Economics at <strong>Shenzhen MSU-BIT University</strong></h3>
-                    </div>
-                    <div class="list-item">
-                        <p class="item-meta">Dec 2023 - Feb 2024</p>
-                        <h3>Team Leader at <strong>GAOTON ACCA Enterprise Challenge</strong></h3>
-                    </div>
+            <section class="grid-leadership">
+                 <h2 class="section-title">Leadership</h2>
+                 <div class="list-item">
+                    <h3>Team Leader, <strong>GAOTON ACCA Enterprise Challenge</strong></h3>
+                    <p class="item-meta">Dec 2023 - Feb 2024</p>
                 </div>
             </section>
-        </main>
-        
-        <footer class="site-footer">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <h4>Technical Expertise</h4>
-                    <p>Python, R, MATLAB, SQL, Stata, VBA, Latex, Microsoft Office</p>
-                </div>
-                <div class="footer-column">
-                    <h4>Languages</h4>
-                    <p>Mandarin, English, Cantonese, Russian</p>
-                </div>
-                <div class="footer-column">
-                    <h4>Interests</h4>
-                    <p>Badminton, Music, Running, Movie, Traveling</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2025 Richard T. Shen. All Rights Reserved.</p>
-                <button id="theme-toggle" class="theme-toggle-button">Toggle Theme</button>
-            </div>
-        </footer>
+
+            <section class="grid-skills">
+                <h2 class="section-title">Skills</h2>
+                <p><strong>Programming:</strong> Python, R, MATLAB, SQL, VBA</p>
+                <p><strong>Software:</strong> Stata, Latex, Canva, Office</p>
+            </section>
+
+            <section class="grid-contact">
+                 <h2 class="section-title">Contact</h2>
+                 <ul class="contact-list">
+                    <li><a href="mailto:mr.shentao@outlook.com">mr.shentao@outlook.com</a></li>
+                    <li><a href="https://github.com/shentao-coder">GitHub</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="resume.pdf" target="_blank">Download CV</a></li>
+                 </ul>
+            </section>
+        </div>
+        <button id="theme-toggle" class="theme-toggle-button">Toggle Theme</button>
     </div>
     <script src="main.js"></script>
 </body>
