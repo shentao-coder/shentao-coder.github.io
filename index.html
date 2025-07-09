@@ -3,77 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SANTOS - Personal Website</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <title>Richard T. SHEN - Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header>
+<body data-theme="light">
+
+    <header class="main-header">
         <div class="container">
             <div class="header-content">
-                <img src="profile.jpg" alt="Santos Profile" class="profile-img">
-                <h1>SANTOS (Shentao)</h1>
-                <p>Economist | Business Analyst | Strategic Consultant</p>
-                <nav>
+                <div class="logo">Richard T. SHEN</div>
+                <nav class="main-nav">
                     <ul>
                         <li><a href="#about">About</a></li>
                         <li><a href="#experience">Experience</a></li>
-                        <li><a href="#resume">Resume</a></li>
+                        <li><a href="#education">Education</a></li>
+                        <li><a href="#skills">Skills</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
+                <div class="header-actions">
+                    <a href="resume.pdf" class="btn btn-primary" download>Download CV</a>
+                    <button id="theme-switcher" class="theme-btn" aria-label="Toggle theme">
+                        <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.106a.75.75 0 010 1.06l-1.591 1.59a.75.75 0 11-1.06-1.06l1.59-1.59a.75.75 0 011.06 0zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5h2.25a.75.75 0 01.75.75zM17.894 17.894a.75.75 0 01-1.06 0l-1.59-1.591a.75.75 0 111.06-1.06l1.59 1.59a.75.75 0 010 1.061zM12 18.75a.75.75 0 01-.75.75v2.25a.75.75 0 011.5 0v-2.25a.75.75 0 01-.75-.75zM5.106 17.894a.75.75 0 010-1.06l1.591-1.59a.75.75 0 111.06 1.06l-1.59 1.59a.75.75 0 01-1.06 0zM4.5 12a.75.75 0 01.75-.75h2.25a.75.75 0 010 1.5H5.25a.75.75 0 01-.75-.75zM6.106 5.106a.75.75 0 011.06 0l1.59 1.591a.75.75 0 01-1.06 1.06L6.106 6.166a.75.75 0 010-1.06z"/></svg>
+                        <svg class="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 004.472-.948.75.75 0 01.818.162l-2.071 3.674A10.5 10.5 0 019.528 1.718z" clip-rule="evenodd" /></svg>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
 
     <main>
-        <section id="about" class="section">
-            <div class="container">
-                <h2>About Me</h2>
-                <p>Hello, I’m SANTOS, an economist and business analyst with a focus on leveraging data-driven insights to guide strategic decision-making. With a solid foundation in economics and business management, I aim to optimize business growth and innovation.</p>
-            </div>
-        </section>
-
-        <section id="experience" class="section">
-            <div class="container">
-                <h2>Academic & Professional Experience</h2>
-                <div class="experience-list">
-                    <div class="experience-item">
-                        <h3>Research Lead - Economics</h3>
-                        <p>Led several academic projects analyzing economic trends and market behavior, focusing on financial sustainability and digital currency.</p>
+        <div class="container">
+            <section id="about" class="about-section">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h1>Richard T. SHEN</h1>
+                        <p class="subtitle">B.S. in Economics | Concentration in International Economics and Trade</p>
+                        <p>A recent graduate from Shenzhen MSU-BIT University with a strong foundation in economics, finance, and data analytics. Experienced in corporate risk management and investment strategy through internships at CITIC Futures, China CITIC Bank International, and Agricultural Bank of China. Seeking to leverage analytical skills in a professional financial setting.</p>
                     </div>
-                    <div class="experience-item">
-                        <h3>Intern - Citic Bank International</h3>
-                        <p>Worked in business analysis and strategy development, contributing to data-driven financial decision-making and operational strategies.</p>
+                    <div class="about-image">
+                        <img src="profile.jpg" alt="Richard T. SHEN">
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="resume" class="section">
-            <div class="container">
-                <h2>Resume</h2>
-                <p><a href="resume.pdf" target="_blank" class="btn">Download Resume (PDF)</a></p>
-            </div>
-        </section>
+            <section id="experience" class="experience-section">
+                <h2>Professional Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Feb 2025 - May 2025</div>
+                        <div class="timeline-content">
+                            <img src="https://i.postimg.cc/ZYF34YLX/logo-icon-cc04deb0.png" alt="CITIC Futures Logo" class="company-logo">
+                            <h3>International Business Intern</h3>
+                            <p class="company">CITIC Futures Co., Ltd.</p>
+                            <ul>
+                                [cite_start]<li>Analyzed futures hedging announcements for 50+ A-share companies using Wind Terminal and Excel to identify trends in corporate risk management. [cite: 15]</li>
+                                [cite_start]<li>Automated client trading data analysis using Python (Pandas) and Excel (VBA), creating dashboards that reduced manual reporting time by over 30%. [cite: 16]</li>
+                                [cite_start]<li>Supported institutional client investment strategy reports by analyzing 20+ sell-side research papers to identify alpha-generating factors. [cite: 17]</li>
+                            </ul>
+                        </div>
+                    </div>
 
-        <section id="contact" class="section">
-            <div class="container">
-                <h2>Contact</h2>
-                <p>Feel free to reach out via email or connect with me on LinkedIn or Twitter.</p>
-                <p>Email: <a href="mailto:santos@example.com">santos@example.com</a></p>
-                <p>LinkedIn: <a href="https://www.linkedin.com/in/santos" target="_blank">linkedin.com/in/santos</a></p>
-                <p>Twitter: <a href="https://twitter.com/santos" target="_blank">twitter.com/santos</a></p>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Nov 2024 - Dec 2024</div>
+                        <div class="timeline-content">
+                            <img src="https://i.postimg.cc/y853vDV3/China-CITICBank-International-logo-2022-svg.png" alt="China CITIC Bank International Logo" class="company-logo">
+                            <h3>Operations Management Intern</h3>
+                            <p class="company">China CITIC Bank International (China) Limited</p>
+                            <ul>
+                                [cite_start]<li>Conducted competitive analysis on 10+ peer banks, delivering an 8-page report with recommendations that contributed to a 10% reduction in reporting errors. [cite: 21]</li>
+                                [cite_start]<li>Analyzed client survey feedback to present insights on customer needs, informing product development decisions for financial derivatives. [cite: 22]</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Jul 2024 - Aug 2024</div>
+                        <div class="timeline-content">
+                            <img src="https://i.postimg.cc/XvCGhnJH/Agricultural-Bank-of-China-logo-svg.png" alt="Agricultural Bank of China Logo" class="company-logo">
+                            <h3>Manager's Assistant</h3>
+                            <p class="company">Agricultural Bank of China</p>
+                            <ul>
+                                [cite_start]<li>Analyzed daily transaction patterns from a customer flow of 200+ individuals to provide data-driven insights for optimizing staff allocation. [cite: 27]</li>
+                                [cite_start]<li>Mapped the client service workflow and proposed a streamlined procedure that contributed to a 10% increase in client satisfaction scores. [cite: 28]</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="grid-layout">
+                <section id="education" class="grid-item">
+                    <h2>Education</h2>
+                    <div class="education-content">
+                        <h3>SHENZHEN MSU-BIT UNIVERSITY</h3>
+                        <p><strong>B.S. in Economics</strong> | International Economics and Trade</p>
+                        [cite_start]<p><strong>GPA:</strong> 3.74 / 4.00 [cite: 7]</p>
+                        [cite_start]<p>Aug 2021 - Jun 2025 [cite: 8]</p>
+                        <p><strong>Awards:</strong> Scholarship for First-Year Bachelor's Students; [cite_start]Third Prize, The Global Management Challenge, China [cite: 9]</p>
+                    </div>
+                </section>
+
+                <section id="skills" class="grid-item">
+                    <h2>Technical Expertise</h2>
+                    <div class="skills-content">
+                        <div class="skill-category">
+                            <h4>Programming & Software</h4>
+                            <div class="skill-tags">
+                                <span>Python</span><span>MATLAB</span><span>R</span><span>Latex</span><span>Microsoft Office</span><span>Canva</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Languages</h4>
+                            <div class="skill-tags">
+                                <span>Mandarin (Native)</span><span>English (Fluent)</span><span>Cantonese (Fluent)</span><span>Russian (Basic)</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
-        </section>
+
+            <section id="contact" class="contact-section">
+                <h2>Get In Touch</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <p>I'm currently seeking new opportunities and would love to connect. Feel free to reach out via email, or let's connect on social media. I am based in Shanghai, China.</p>
+                        [cite_start]<p><strong>Email:</strong> mr.shentao@outlook.com [cite: 2]</p>
+                        [cite_start]<p><strong>Phone:</strong> (86) 185-2908-5521 [cite: 2]</p>
+                        <div class="social-icons">
+                            <a href="#" target="_blank" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3v9h4v-9z"></path></svg></a>
+                            <a href="#" target="_blank" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 5a2 2 0 1 1-4-.002 2 2 0 0 1 4 .002zM7 8.48H3V21h4V8.48zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68z"></path></svg></a>
+                            <a href="#" target="_blank" aria-label="Twitter" title="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.01-.06C2.98 20.29 5.25 21 7.74 21c7.14 0 11.04-5.92 11.04-11.04l-.01-.5A7.9 7.9 0 0 0 22.46 6z"></path></svg></a>
+                            <a href="#" target="_blank" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c2.72 0 3.05.01 4.12.06 1.06.05 1.79.22 2.42.47.65.25 1.13.59 1.61 1.08.5.48.83.96 1.08 1.61.25.63.42 1.36.47 2.42.05 1.07.06 1.4.06 4.12s-.01 3.05-.06 4.12c-.05 1.06-.22 1.79-.47 2.42-.25.65-.59 1.13-1.08 1.61-.48.5-.96.83-1.61 1.08-.63.25-1.36.42-2.42.47-1.07.05-1.4.06-4.12.06s-3.05-.01-4.12-.06c-1.06-.05-1.79-.22-2.42-.47-.65-.25-1.13-.59-1.61-1.08-.5-.48-.83-.96-1.08-1.61-.25-.63-.42-1.36-.47-2.42-.05-1.07-.06-1.4-.06-4.12s.01-3.05.06-4.12c.05-1.06.22-1.79.47-2.42.25-.65.59-1.13 1.08-1.61.48-.5.96-.83 1.61-1.08.63-.25 1.36-.42 2.42-.47C8.95 2.01 9.28 2 12 2zm0 1.8c-2.67 0-2.99.01-4.04.06-1.01.05-1.6.21-2.12.42-.54.21-.93.5-1.32.9-.39.39-.69.78-.9 1.32-.21.52-.37 1.11-.42 2.12-.05 1.05-.06 1.37-.06 4.04s.01 2.99.06 4.04c.05 1.01.21 1.6.42 2.12.21.54.5.93.9 1.32.39.39.78.69 1.32.9.52.21 1.11.37 2.12.42 1.05.05 1.37.06 4.04.06s2.99-.01 4.04-.06c1.01-.05 1.6-.21 2.12-.42.54-.21.93-.5 1.32-.9.39-.39.69-.78.9-1.32.21-.52.37-1.11.42-2.12.05-1.05.06-1.37.06-4.04s-.01-2.99-.06-4.04c-.05-1.01-.21-1.6-.42-2.12-.21-.54-.5-.93-.9-1.32-.39-.39-.78-.69-1.32-.9-.52-.21-1.11-.37-2.12-.42C14.99 3.81 14.67 3.8 12 3.8zm0 3.35c-2.4 0-4.35 1.95-4.35 4.35s1.95 4.35 4.35 4.35 4.35-1.95 4.35-4.35-1.95-4.35-4.35-4.35zm0 7c-1.47 0-2.65-1.18-2.65-2.65S10.53 9.5 12 9.5s2.65 1.18 2.65 2.65S13.47 14.15 12 14.15zm6.35-6.6c-.6 0-1.08-.48-1.08-1.08s.48-1.08 1.08-1.08 1.08.48 1.08 1.08-.48 1.08-1.08 1.08z"></path></svg></a>
+                            <a href="#" target="_blank" aria-label="WeChat" title="WeChat"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.96 15.3c-1.8 0-3.59.39-3.59 1.32 0 .94 1.79 1.33 3.59 1.33 1.79 0 3.59-.39 3.59-1.33 0-.93-1.8-1.32-3.59-1.32zm-5.46-3.61c-.49 0-.87-.39-.87-.88 0-.48.38-.88.87-.88.48 0 .87.4.87.88 0 .49-.39.88-.87.88zm10.92 0c-.48 0-.87-.39-.87-.88 0-.48.39-.88.87-.88.49 0 .87.4.87.88 0 .49-.38.88-.87.88zM22.92 12c0 5.1-4.74 9.24-10.59 9.24-1.64 0-3.2-.33-4.57-.92L2 22l1.9-5.18c-1.1-1.72-1.74-3.77-1.74-5.9 0-5.1 4.74-9.24 10.59-9.24S22.92 6.9 22.92 12zM12.33 2C6.42 2 1.5 6.27 1.5 11.23c0 2.25.75 4.36 2.05 6.13l-1.4 3.75 3.9-1.25c1.42.66 2.99 1.02 4.63 1.02C18.24 20.9 23.1 16.63 23.1 11.67S18.23 2 12.33 2z"></path></svg></a>
+                            <a href="#" target="_blank" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82h2.51v12.43h-2.51v-12.43zm-4.14 0h2.51v12.43h-2.51v-12.43zm-4.13 0h2.51v12.43h-2.51v-12.43zM21.21 2H2.79C2.35 2 2 2.35 2 2.79v18.42C2 21.65 2.35 22 2.79 22h18.42c.44 0 .79-.35.79-.79V2.79C22 2.35 21.65 2 21.21 2z"></path></svg></a>
+                        </div>
+                    </div>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d233668.38219999518!2d121.3636544517456!3d31.2243603460851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35b27040b1f53c33%3A0x295129423c364a1!2sShanghai%2C%20China!5e0!3m2!1sen!2s!4v1672848574977!5m2!1sen!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Shanghai, China"></iframe>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
-    <footer>
+    <footer class="main-footer">
         <div class="container">
-            <p>&copy; 2025 SANTOS. All Rights Reserved.</p>
+            <p>&copy; <span id="copyright-year"></span> Richard T. SHEN. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
-
