@@ -3,119 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Your Name] | Scholarly & Professional Portfolio</title>
+    <title>[Your Name] | Professional & Academic Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
+        </label>
+    </div>
 
-    <div class="container">
-
-        <section id="hero">
-            <div class="hero-content">
-                <img src="profile.jpg" alt="A portrait of [Your Name]" class="profile-pic">
-                <div class="hero-text">
-                    <h1>[Your Full Name]</h1>
-                    <p>
-                        A researcher and software engineer focused on [Your Field, e.g., applied machine learning and computational linguistics]. My work leverages quantitative methods to address complex problems in [mention a specific application area]. I am currently seeking a Ph.D. or Master's position in Computer Science for Fall 2026 admission.
-                    </p>
-                    <ul class="contact-info">
-                        <li><a href="mailto:[your.email@example.com]">Email</a></li>
-                        <li><a href="[your_linkedin_profile_url]" target="_blank">LinkedIn</a></li>
-                        <li><a href="https://github.com/shentao-coder" target="_blank">GitHub</a></li>
-                        <li><a href="[your_google_scholar_url]" target="_blank">Google Scholar</a></li>
-                    </ul>
-                    <a href="resume.pdf" class="btn" download>Download Curriculum Vitae</a>
-                </div>
-            </div>
-        </section>
-
-        <hr>
-
-        <section id="research">
-            <h2>Research Experience</h2>
+    <div class="page-wrapper">
+        <aside class="sidebar">
+            <img src="profile.jpg" alt="Portrait of [Your Name]" class="profile-pic">
+            <h1>[Your Name]</h1>
+            <p>Ph.D./Master's Candidate in Computer Science</p>
             
-            <div class="entry">
-                <h3>[Title of Your Research Project or Paper]</h3>
-                <p class="entry-meta">
-                    [Your Role, e.g., Research Assistant] at [Name of Lab or University] | [Start Date] – [End Date]
-                </p>
-                <p>
-                    [Provide a concise, formal description of your research. Start with the core problem. Then, describe your methodology and technical approach. Conclude with the main findings and your specific contributions. Use formal, academic language.]
-                </p>
-                <div class="tags">
-                    <span class="tag">Keyword 1</span>
-                    <span class="tag">Keyword 2</span>
-                    <span class="tag">PyTorch</span>
-                </div>
-                </div>
-
-            <div class="entry">
-                <h3>[Title of Your Second Research Project]</h3>
-                <p class="entry-meta">
-                    [Your Role] at [Name of Lab or University] | [Start Date] – [End Date]
-                </p>
-                <p>
-                    [Description of your second research project.]
-                </p>
-                <div class="tags">
-                    <span class="tag">Keyword A</span>
-                    <span class="tag">Keyword B</span>
-                </div>
-            </div>
-        </section>
-
-        <hr>
-
-        <section id="projects">
-            <h2>Selected Projects</h2>
-
-            <div class="entry">
-                <h3>[Title of Your Project]</h3>
-                <p class="entry-meta">
-                    [Context, e.g., Industry Internship at Company X / Personal Project] | [Date or Duration]
-                </p>
-                <p>
-                    [Describe the project's objective, your role, the technical architecture, and the outcome. Focus on problem-solving and technical execution. For industry experience, quantify achievements if possible (e.g., "improved processing speed by 15%").]
-                </p>
-                <p><a href="[Link_to_GitHub_Repo]" target="_blank">View Source Code &rarr;</a></p>
-            </div>
-            
-            <div class="entry">
-                <h3>[Title of Your Second Project]</h3>
-                <p class="entry-meta">
-                    [Context] | [Date or Duration]
-                </p>
-                <p>
-                    [Description of your second project.]
-                </p>
-                <p><a href="[Link_to_Project_Demo_or_Repo]" target="_blank">View Project &rarr;</a></p>
-            </div>
-        </section>
-
-        <hr>
-        
-        <section id="skills">
-            <h2>Technical Proficiencies</h2>
-            <ul class="skills-list">
-                <li>Python</li>
-                <li>PyTorch</li>
-                <li>TensorFlow</li>
-                <li>C++</li>
-                <li>Scikit-learn</li>
-                <li>Pandas & NumPy</li>
-                <li>Java</li>
-                <li>SQL (PostgreSQL)</li>
-                <li>JavaScript</li>
-                <li>Git & Version Control</li>
-                <li>Docker</li>
-                <li>Linux Environment</li>
+            <ul class="contact-links">
+                <li><a href="mailto:[your.email@example.com]">Email</a></li>
+                <li><a href="[your_linkedin_profile_url]" target="_blank">LinkedIn</a></li>
+                <li><a href="https://github.com/shentao-coder" target="_blank">GitHub</a></li>
+                <li><a href="[your_google_scholar_url]" target="_blank">Google Scholar</a></li>
+                <li><a href="resume.pdf" download>Download CV</a></li>
             </ul>
-        </section>
 
-        <footer>
-            <p>Last updated: July 2025</p>
-            <p>This website is built with HTML & CSS and hosted on GitHub Pages.</p>
-        </footer>
+            <h2>Skills</h2>
+            <p><strong>Languages:</strong> Python, C++, Java, SQL</p>
+            <p><strong>Frameworks:</strong> PyTorch, TensorFlow, Scikit-learn, Pandas, NumPy, React.js</p>
+            <p><strong>Tools:</strong> Git, Docker, Linux, LaTeX, Slurm</p>
+        </aside>
 
-    </div></body>
+        <main class="main-content">
+            <section class="section">
+                <h2>About Me</h2>
+                <p>
+                    I am a researcher and software engineer specializing in [Your Field, e.g., natural language processing and responsible AI]. My objective is to build robust, interpretable, and efficient models to tackle challenging real-world problems. I am passionate about the intersection of theory and application, and I am actively seeking a graduate research position to further explore these areas.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2>Research</h2>
+                <div class="entry">
+                    <h3>[Title of Research Project 1]</h3>
+                    <p class="entry-meta">[Your Role] @ [Lab/University] | [Date]</p>
+                    <p>
+                        [A compact, impactful summary of your research. Problem, method, results, and your contribution. Quantify results where possible.]
+                    </p>
+                    <a href="#" target="_blank">Publication Link &rarr;</a>
+                </div>
+                <div class="entry">
+                    <h3>[Title of Research Project 2]</h3>
+                    <p class="entry-meta">[Your Role] @ [Lab/University] | [Date]</p>
+                    <p>[Description of your second research project.]</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Projects & Experience</h2>
+                <div class="entry">
+                    <h3>[Title of Project or Role at Company]</h3>
+                    <p class="entry-meta">[Context, e.g., Software Engineer Intern @ BigTech] | [Date]</p>
+                    <p>
+                        [Description of your project or professional experience. Focus on technical challenges and achievements.]
+                    </p>
+                    <a href="#" target="_blank">View on GitHub &rarr;</a>
+                </div>
+                <div class="entry">
+                    <h3>[Title of Personal Project]</h3>
+                    <p class="entry-meta">Personal Project | [Date]</p>
+                    <p>[Description of a personal project demonstrating your skills and initiative.]</p>
+                    <a href="#" target="_blank">View Live Demo &rarr;</a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>
