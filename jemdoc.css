@@ -1,66 +1,48 @@
-/* 申韬定制版 jemdoc.css - Modern Style */
+/* --- 申韬定制：哈佛学术风 (Harvard Style Patch) --- */
 
-table#tlayout {
-    border: none;
-    border-collapse: separate;
-    background: white;
-    width: 100%;
+/* 1. 核心字体：回归经典衬线体 (Serif) */
+/* 这里的 Georgia 是屏幕上显示效果最好的衬线体，比 Times 更饱满 */
+body, td, div, p, a {
+    font-family: Georgia, "Times New Roman", "Songti SC", serif !important;
 }
 
-html {
-    background-color: #f9f9f9; /* 背景改淡一点的灰色，更护眼 */
-}
-
+/* 2. 布局调整：紧凑、高密度 */
 body {
-    /* 核心修改：现代无衬线字体 */
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-    font-size: 15px; /* 字号加大 */
-    line-height: 1.6; /* 行距加大 */
-    color: #333; /* 字体颜色改深灰，不刺眼 */
-    background-color: #ffffff;
-    text-align: left;
-    margin: 30px auto; /* 居中 */
-    padding: 40px 50px;
-    max-width: 900px; /* 稍微收窄一点，阅读体验更好 */
-    box-shadow: 0 0 20px rgba(0,0,0,0.05); /* 加一点点阴影 */
+    font-size: 16px !important; /* 字号稍微大一点点，显气场 */
+    line-height: 1.45 !important; /* 间距收紧！(之前是1.6) */
+    color: #1a1a1a !important; /* 接近纯黑，对比度极高 */
+    background-color: #ffffff !important; /* 纯白背景，不要灰色 */
+    max-width: 960px !important; /* 宽度加宽，像论文排版 */
+    padding: 20px 40px !important; /* 边距收紧 */
+    margin: 0 auto !important;
 }
 
-/* 链接样式优化 */
-a, a > tt {
-    color: #0066cc; /* 现代蓝 */
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-a:hover {
-    color: #004080;
-    text-decoration: underline;
-    border-bottom: none;
-}
-
-/* 标题样式优化 */
+/* 3. 标题：模仿哈佛那种锐利的大标题 */
 h1, h2, h3 {
-    color: #111; /* 标题纯黑 */
-    margin-top: 1.2em;
-    margin-bottom: 0.6em;
-    padding-bottom: 0.3em;
-    line-height: 1.2;
-    border-bottom: 1px solid #eee; /* 线条变细 */
-    font-weight: 600;
+    font-family: "Times New Roman", serif !important; /* 标题用 Times，更锐利 */
+    font-weight: bold !important;
+    color: #000 !important; /* 纯黑 */
+    letter-spacing: -0.5px !important; /* 字母间距微缩，显精致 */
+    margin-top: 1.0em !important;
+    margin-bottom: 0.4em !important; /* 标题和正文挨得近一点 */
+    border-bottom: 1px solid #ccc !important; /* 分割线加深一点 */
 }
 
-h1 { font-size: 2em; border: none; } /* 大标题不要下划线 */
-h2 { font-size: 1.5em; padding-top: 0.5em; }
-h3 { font-size: 1.2em; border: none; }
+h1 { font-size: 2.2em !important; border-bottom: none !important; }
 
-/* 列表优化 */
-ul, ol { margin-top: 0.5em; padding-left: 20px; }
-li { margin-top: 0.3em; margin-bottom: 0.3em; }
+/* 4. 链接颜色：哈佛红 (Harvard Crimson) 的变体 */
+/* 这种深红色比蓝色更显“贵族气” */
+a, a:visited {
+    color: #A51C30 !important; 
+    text-decoration: none;
+    font-weight: 600; /* 链接加粗 */
+}
+a:hover {
+    color: #000 !important; /* 鼠标悬停变黑 */
+    text-decoration: underline;
+}
 
-/* 图片表格优化 */
-table.imgtable td { vertical-align: top; padding-right: 20px; }
-img { border-radius: 4px; } /* 图片加一点圆角 */
-
-/* 下面这些保持默认即可 */
-#layout-menu { display: none; } /* 如果你的模版没用到左侧菜单，就隐藏它 */
-p { margin-bottom: 1em; }
+/* 5. 列表和段落：收紧 */
+p { margin-bottom: 0.8em !important; }
+ul, ol { margin-top: 0.4em !important; margin-bottom: 0.8em !important; }
+li { margin-top: 0.2em !important; }
