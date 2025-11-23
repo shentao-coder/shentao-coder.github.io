@@ -1,48 +1,99 @@
-/* --- 申韬定制：哈佛学术风 (Harvard Style Patch) --- */
+/* 申韬定制版 jemdoc.css - Elite Finance Style (Full Version) */
 
-/* 1. 核心字体：回归经典衬线体 (Serif) */
-/* 这里的 Georgia 是屏幕上显示效果最好的衬线体，比 Times 更饱满 */
-body, td, div, p, a {
-    font-family: Georgia, "Times New Roman", "Songti SC", serif !important;
+/* --- 1. 全局背景与布局 (The Desk & Paper) --- */
+html {
+    background-color: #f2f4f6; /* 网页背景：高级灰蓝色，像桌布 */
+    min-height: 100%;
 }
 
-/* 2. 布局调整：紧凑、高密度 */
 body {
-    font-size: 16px !important; /* 字号稍微大一点点，显气场 */
-    line-height: 1.45 !important; /* 间距收紧！(之前是1.6) */
-    color: #1a1a1a !important; /* 接近纯黑，对比度极高 */
-    background-color: #ffffff !important; /* 纯白背景，不要灰色 */
-    max-width: 960px !important; /* 宽度加宽，像论文排版 */
-    padding: 20px 40px !important; /* 边距收紧 */
-    margin: 0 auto !important;
+    /* 核心字体：经典衬线体 */
+    font-family: Georgia, "Times New Roman", "Songti SC", serif;
+    font-size: 16px; /* 字号适中 */
+    line-height: 1.6;
+    color: #333; /* 正文深灰 */
+    
+    /* 白纸效果核心 */
+    background-color: #ffffff;
+    max-width: 920px; /* 限制宽度 */
+    margin: 40px auto; /* 上下留空，居中 */
+    padding: 50px 60px; /* 内部留白 */
+    
+    /* 立体质感 */
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
 }
 
-/* 3. 标题：模仿哈佛那种锐利的大标题 */
-h1, h2, h3 {
-    font-family: "Times New Roman", serif !important; /* 标题用 Times，更锐利 */
-    font-weight: bold !important;
-    color: #000 !important; /* 纯黑 */
-    letter-spacing: -0.5px !important; /* 字母间距微缩，显精致 */
-    margin-top: 1.0em !important;
-    margin-bottom: 0.4em !important; /* 标题和正文挨得近一点 */
-    border-bottom: 1px solid #ccc !important; /* 分割线加深一点 */
-}
-
-h1 { font-size: 2.2em !important; border-bottom: none !important; }
-
-/* 4. 链接颜色：哈佛红 (Harvard Crimson) 的变体 */
-/* 这种深红色比蓝色更显“贵族气” */
-a, a:visited {
-    color: #A51C30 !important; 
+/* --- 2. 链接颜色：精英蓝 --- */
+a {
+    color: #004080; /* 投行深蓝 */
     text-decoration: none;
-    font-weight: 600; /* 链接加粗 */
+    font-weight: 600;
+    transition: color 0.2s;
 }
+
 a:hover {
-    color: #000 !important; /* 鼠标悬停变黑 */
+    color: #0066cc; /* 悬停变亮 */
     text-decoration: underline;
 }
 
-/* 5. 列表和段落：收紧 */
-p { margin-bottom: 0.8em !important; }
-ul, ol { margin-top: 0.4em !important; margin-bottom: 0.8em !important; }
-li { margin-top: 0.2em !important; }
+/* --- 3. 标题样式 --- */
+h1, h2, h3 {
+    font-family: Georgia, serif;
+    color: #0d2b4a; /* 接近黑色的深蓝 */
+    margin-top: 1.4em;
+    margin-bottom: 0.6em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eaeaea; /* 淡雅分割线 */
+    padding-bottom: 0.3em;
+}
+
+h1 {
+    font-size: 2.4em;
+    margin-top: 0;
+    border-bottom: none; /* 大标题不要线 */
+}
+
+h2 { font-size: 1.6em; }
+h3 { font-size: 1.3em; border-bottom: none; }
+
+/* --- 4. 基础排版结构 (保留原版逻辑，防止散架) --- */
+p { margin-bottom: 1em; }
+ul, ol { margin-top: 0.5em; margin-bottom: 1em; padding-left: 20px; }
+li { margin-bottom: 0.4em; }
+
+/* 表格布局修正 */
+table#tlayout {
+    width: 100%;
+    border-collapse: collapse;
+}
+td {
+    vertical-align: top;
+    padding-right: 20px;
+}
+
+/* 图片样式 */
+img {
+    border-radius: 4px; /* 图片微圆角 */
+    max-width: 100%;
+}
+
+/* 隐藏原版不需要的菜单栏 (如果你想用单页模式) */
+#layout-menu {
+    display: none; 
+}
+
+/* --- 5. 手机端适配 (必不可少) --- */
+@media screen and (max-width: 768px) {
+    body {
+        width: auto;
+        margin: 0; /* 手机上铺满 */
+        padding: 25px 20px; /* 边距减小 */
+        box-shadow: none; /* 去掉阴影 */
+        border-radius: 0;
+    }
+    
+    h1 { font-size: 2.0em; }
+    td { display: block; width: 100%; padding-right: 0; } /* 表格在手机上变垂直 */
+    img { margin-bottom: 20px; }
+}
