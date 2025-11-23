@@ -1,30 +1,47 @@
-/* jemdoc.css - 申韬原版复刻 (衬线字体版) */
+/* jemdoc.css - 申韬最终定稿版 (Small Caps名字 + 无横线) */
 
-/* 基础设置 */
-table#tlayout { border: none; border-collapse: separate; background: white; width: 100%; }
-html { background-color: #eeeeee; }
+/* --- 基础设置 --- */
+table#tlayout {
+    border: none;
+    border-collapse: separate;
+    background: white;
+    width: 100%;
+}
+
+html {
+    background-color: #eeeeee; 
+}
 
 body { 
-    /* 【核心修改】使用 Merriweather (Google衬线体) */
+    /* 核心字体：Merriweather / Georgia */
     font-family: 'Merriweather', Georgia, "Times New Roman", serif;
-    
-    /* 以下保持原版参数不动 */
     color: #000;
     background-color: #ffffff; 
     text-align:left;
-    margin: 30px auto; 
-    padding: 10px 50px 30px 50px;
+    margin-top: 30px; 
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left:  50px;
+    padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 30px;
     max-width: 960px;
 }
 
-/* 链接颜色 (原版深蓝) */
-a, a > tt { color: #224b8d; text-decoration: none; }
-a:hover { border-bottom: 1px gray dotted; }
+/* --- 链接样式 --- */
+a, a > tt {
+    color: #224b8d; /* 经典深蓝 */
+    text-decoration: none;
+}
 
-/* 标题样式 (原版深蓝 + 衬线体) */
+a:hover {
+    border-bottom: 1px gray dotted;
+}
+
+/* --- 标题样式 --- */
 h1, h2, h3 {
-    font-family: 'Merriweather', Georgia, serif; /* 标题也用衬线体，显学术 */
-    color: #527bbd; /* 原版那种经典的深蓝 */
+    color: #527bbd; /* 标题蓝 */
     font-weight: bold;
     margin-top: 0.7em;
     margin-bottom: 0.5em;
@@ -34,23 +51,38 @@ h1, h2, h3 {
     border-bottom: 1px solid #aaaaaa;
 }
 
-h1 { font-size: 165%; padding-bottom: 0.3em; }
+/* ★★★ 名字 (H1) 特效 ★★★ */
+h1 {
+    font-size: 3.0em; /* 字号加大 */
+    font-variant: small-caps; /* 小型大写字母 (TAO SHEN) */
+    letter-spacing: 0.05em; /* 字母间距微宽 */
+    padding-bottom: 0.1em;
+    border-bottom: none; /* 去掉文字下的线 */
+    margin-bottom: 0;
+}
+
 h2 { font-size: 125%; padding-top: 0.8em; }
 h3 { font-size: 110%; border-bottom: none; }
 
-/* 原版布局结构 (勿动) */
-div#toptitle { margin-bottom: 1.5em; }
-div#toptitle + h2 { margin-top: 0em; }
-p { margin-bottom: 0.8em; line-height: 1.4; }
-li { margin-top: 0.5em; }
-ul { margin-top: 0.2em; padding-left: 20px; }
+/* --- 顶部容器 (去掉横线) --- */
+div#toptitle {
+    padding-bottom: 0.2em;
+    margin-bottom: 1.5em;
+    border-bottom: none; /* 【关键】去掉名字下面那条长横线 */
+}
+
+/* --- 其他排版细节 --- */
+div#toptitle + h2, div#toptitle + h3 { margin-top: 0em; }
+p { margin-top: 0.0em; margin-bottom: 0.8em; padding: 0; line-height: 1.3; }
+li { margin-top: 0.9em; }
+ul { list-style-type: square; margin-top: 0.2em; padding-left: 20px; }
 table.imgtable td { border: none; text-align: left; vertical-align: top; padding-right: 20px; }
 img { border: none; }
-#layout-menu { display: none; } /* 隐藏不需要的侧边栏 */
+#layout-menu { display: none; }
 
 /* 手机适配 */
 @media screen and (max-width: 768px) {
     body { width: auto; margin: 0; padding: 20px; }
     td { display: block; width: 100%; padding-right: 0; }
-    img { max-width: 100%; }
+    h1 { font-size: 2.2em; }
 }
