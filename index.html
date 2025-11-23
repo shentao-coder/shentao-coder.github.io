@@ -1,75 +1,190 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name - Personal Website</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tao Shen | 申韬</title>
+    <style>
+        /* --- 基础设置 --- */
+        body {
+            font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fcfcfc;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* --- 容器：控制页面宽度，确保手机/电脑都好看 --- */
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05); /* 淡淡的阴影增加质感 */
+        }
+
+        /* --- 链接样式 --- */
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* --- 头部信息 (Header) --- */
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 30px;
+        }
+        .header-text { flex: 1; }
+        .header-text h1 { font-size: 2.2em; margin-bottom: 10px; }
+        .header-text p { font-size: 1.1em; color: #666; }
+        
+        /* 头像：圆形，带一点投影 */
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-left: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* --- 章节通用样式 --- */
+        section { margin-bottom: 50px; }
+        h2 { 
+            font-size: 1.5em; 
+            border-bottom: 2px solid #f0f0f0; 
+            padding-bottom: 10px; 
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        /* --- 经历板块 (含Logo) --- */
+        .experience-item {
+            display: flex;
+            margin-bottom: 25px;
+            align-items: flex-start;
+        }
+        .exp-logo {
+            width: 60px; /* Logo 大小控制 */
+            height: 60px;
+            object-fit: contain;
+            margin-right: 20px;
+            border: 1px solid #eee; /* 给Logo加个细框，显得整齐 */
+            border-radius: 8px;
+            padding: 5px;
+            background: #fff;
+        }
+        .exp-content h3 { margin: 0 0 5px 0; font-size: 1.1em; }
+        .exp-content .date { font-size: 0.85em; color: #888; margin-bottom: 8px; display: block;}
+        .exp-content ul { margin: 0; padding-left: 20px; font-size: 0.95em; color: #555; }
+
+        /* --- 学术/论文板块 --- */
+        .paper-item { margin-bottom: 20px; }
+        .paper-title { font-weight: bold; color: #222; }
+        .paper-meta { font-size: 0.9em; color: #666; font-style: italic; }
+
+        /* --- 手机端适配 (Responsive) --- */
+        @media (max-width: 600px) {
+            .header { flex-direction: column-reverse; text-align: center; }
+            .profile-pic { margin-left: 0; margin-bottom: 20px; width: 120px; height: 120px; }
+            .experience-item { flex-direction: column; }
+            .exp-logo { margin-bottom: 10px; width: 50px; height: 50px; }
+        }
+    </style>
 </head>
-
 <body>
-  <!-- Navigation Bar -->
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#resume">Resume</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <!-- Home Section -->
-  <section id="home">
-    <div class="intro">
-      <img src="profile.jpg" alt="Your Profile Picture" class="profile-img">
-      <h1>Your Name</h1>
-      <p>Welcome to my personal website. I am a passionate [Your Profession]...</p>
-    </div>
-  </section>
+<div class="container">
 
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Provide a detailed description of your background, skills, and achievements.</p>
-  </section>
+    <header class="header">
+        <div class="header-text">
+            <h1>申韬 (Tao Shen)</h1>
+            <p>
+                <strong>Prospective PhD Student in Economics</strong><br>
+                Shenzhen MSU-BIT University (SMBU)<br>
+                Email: <a href="mailto:shentao.mr@gmail.com">shentao.mr@gmail.com</a>
+            </p>
+            <p style="font-size: 0.95em; color: #444;">
+                I am an aspiring economist with a focus on <strong>Data Science</strong> and <strong>Financial Markets</strong>. 
+                My background combines rigorous economic theory with practical coding skills (Python/Stata). 
+                Previously, I have gained extensive industry experience at top-tier financial institutions.
+            </p>
+            <div class="social-links">
+                <a href="https://github.com/你的用户名" target="_blank">[GitHub]</a>
+                <a href="你的Fiverr链接" target="_blank">[Fiverr]</a>
+                <a href="#" target="_blank">[LinkedIn]</a>
+            </div>
+        </div>
+        <img src="https://via.placeholder.com/150" alt="Tao Shen" class="profile-pic">
+    </header>
 
-  <!-- Projects Section -->
-  <section id="projects">
-    <h2>My Projects</h2>
-    <div class="project-item">
-      <h3>Project Title</h3>
-      <p>Description of the project and the technologies used.</p>
-      <a href="https://github.com/your-repo-link" target="_blank">View Project</a>
-    </div>
-  </section>
+    <section>
+        <h2>Education</h2>
+        <div class="experience-item">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b6/Shenzhen_MSU-BIT_University_logo.svg/1200px-Shenzhen_MSU-BIT_University_logo.svg.png" class="exp-logo" alt="SMBU Logo">
+            <div class="exp-content">
+                <h3>Shenzhen MSU-BIT University (SMBU)</h3>
+                <span class="date">Aug 2021 – June 2025 | Shenzhen, China</span>
+                <p><strong>B.Econ. in International Economics and Trade</strong></p>
+                <p>GPA: 3.74 / 4.00 | <em>Jointly established by BIT (985) & MSU</em></p>
+            </div>
+        </div>
+    </section>
 
-  <!-- Resume Section -->
-  <section id="resume">
-    <h2>My Resume</h2>
-    <p>Download my resume in PDF format:</p>
-    <a href="resume.pdf" download>Download Resume</a>
-  </section>
+    <section>
+        <h2>Industry Experience</h2>
+        
+        <div class="experience-item">
+            <img src="https://via.placeholder.com/60?text=CITIC" class="exp-logo" alt="CITIC Logo">
+            <div class="exp-content">
+                <h3>CITIC Futures Co., Ltd.</h3>
+                <span class="date">Feb 2025 – May 2025 | Intern, International Business Center</span>
+                <ul>
+                    <li>Leveraged <strong>Wind</strong> & <strong>Python</strong> to mine data for 2000+ potential institutional clients.</li>
+                    <li>Created CLSA-standard pitch decks and visualized complex market data.</li>
+                </ul>
+            </div>
+        </div>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Feel free to reach out to me via email at <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-    <p>Or connect with me on:</p>
-    <a href="https://linkedin.com/in/your-profile">LinkedIn</a> |
-    <a href="https://twitter.com/your-profile">Twitter</a> |
-    <a href="https://github.com/your-profile">GitHub</a>
-  </section>
+        <div class="experience-item">
+            <img src="https://via.placeholder.com/60?text=ABC" class="exp-logo" alt="ABC Logo">
+            <div class="exp-content">
+                <h3>Agricultural Bank of China (ABC)</h3>
+                <span class="date">July 2024 – Aug 2024 | Intern, Shenzhen Branch</span>
+                <ul>
+                    <li>Managed daily operations for 200+ customers with zero complaints.</li>
+                    <li>Proposed optimization for elderly service processes.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Your Name</p>
-  </footer>
+    <section>
+        <h2>Research & Projects</h2>
+        <div class="paper-item">
+            <div class="paper-title">[Undergraduate Thesis Title Goes Here]</div>
+            <div class="paper-meta">Advisor: Prof. Name</div>
+            <p>Utilized advanced econometric models (DID/RD) to analyze [Topic]. Identified key factors influencing [Variable]. (Draft available upon request)</p>
+            <a href="#">[PDF]</a> <a href="#">[Code]</a>
+        </div>
+    </section>
 
-  <script src="script.js"></script>
+    <section>
+        <h2>Skills</h2>
+        <p>
+            <strong>Programming:</strong> Python (Pandas, NumPy), Stata, MATLAB, LaTeX<br>
+            <strong>Tools:</strong> Excel (Advanced), Wind Terminal, Git<br>
+            <strong>Languages:</strong> Chinese (Native), English (IELTS 7.5), Russian (Basic)
+        </p>
+    </section>
+
+    <footer style="text-align: center; font-size: 0.8em; color: #999; margin-top: 50px;">
+        &copy; 2025 Tao Shen. Built with GitHub Pages.
+    </footer>
+
+</div>
+
 </body>
-
 </html>
