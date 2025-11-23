@@ -1,99 +1,367 @@
-/* 申韬定制版 jemdoc.css - Elite Finance Style (Full Version) */
+/* css file for jemdoc - 申韬定制版 (哈佛字体 + 淡蓝配色) */
 
-/* --- 1. 全局背景与布局 (The Desk & Paper) --- */
+table#tlayout {
+    border: none;
+    border-collapse: separate;
+    background: white;
+}
+
 html {
-    background-color: #f2f4f6; /* 网页背景：高级灰蓝色，像桌布 */
-    min-height: 100%;
+    background-color: #eeeeee; 
 }
 
-body {
-    /* 核心字体：经典衬线体 */
-    font-family: Georgia, "Times New Roman", "Songti SC", serif;
-    font-size: 16px; /* 字号适中 */
-    line-height: 1.6;
-    color: #333; /* 正文深灰 */
-    
-    /* 白纸效果核心 */
-    background-color: #ffffff;
-    max-width: 920px; /* 限制宽度 */
-    margin: 40px auto; /* 上下留空，居中 */
-    padding: 50px 60px; /* 内部留白 */
-    
-    /* 立体质感 */
-    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
-    border-radius: 4px;
+body { 
+    /* 【修改点1】字体换成哈佛风：Times New Roman */
+    font-family: "Times New Roman", Georgia, serif;
+    color: #000;
+    background-color: #ffffff; 
+    text-align:left; /* for IE */
+    margin-top: 30px; 
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left:  50px;
+    padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    max-width: 960px;
 }
 
-/* --- 2. 链接颜色：精英蓝 --- */
-a {
-    color: #004080; /* 投行深蓝 */
+#layout-menu {
+    background: #f6f6f6;
+    border: 1px solid #dddddd;
+    padding-top: 0.5em;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 1.0em;
+    width: auto;
+    white-space: nowrap;
+    text-align: left;
+    vertical-align: top;
+}
+
+#layout-menu td {
+    background: #f4f4f4;
+    vertical-align: top;
+}
+
+#layout-content {
+    padding-top: 0.0em;
+    padding-left: 1.0em;
+    padding-right: 1.0em;
+    border: none;
+    background: white;
+    text-align: left;
+    vertical-align: top;
+}
+
+#layout-menu a {
+    line-height: 1.5em;
+    margin-left: 0.5em;
+}
+
+tt {
+    background: #ffffdd;
+}
+
+pre, tt {
+    font-size: 90%;
+    font-family: "Courier New", monaco, monospace; /* 代码字体也配一下 */
+}
+
+/* 【修改点2】链接颜色：改为淡蓝色 */
+a, a > tt {
+    color: #4a86e8; /* 这里是淡一点的蓝色 */
     text-decoration: none;
-    font-weight: 600;
-    transition: color 0.2s;
 }
 
 a:hover {
-    color: #0066cc; /* 悬停变亮 */
-    text-decoration: underline;
+    border-bottom: 1px gray dotted;
 }
 
-/* --- 3. 标题样式 --- */
+#layout-menu a.current:link, #layout-menu a.current:visited {
+    color: #4a86e8;
+    border-bottom: 1px gray solid;
+}
+#layout-menu a:link, #layout-menu a:visited, #layout-menu a:hover {
+    color: #4a86e8;
+    text-decoration: none;
+}
+#layout-menu a:hover {
+    text-decoration: none;
+}
+
+div.menu-category {
+    border-bottom: 1px solid gray;
+    margin-top: 0.8em;
+    padding-top: 0.2em;
+    padding-bottom: 0.1em;
+    font-weight: bold;
+}
+
+div.menu-item {
+    padding-left: 16px;
+    text-indent: -16px;
+}
+
+div#toptitle {
+    padding-bottom: 0.2em;
+    margin-bottom: 1.5em;
+}
+
+div#toptitle + h2, div#toptitle + h3 {
+    margin-top: 0em;
+}
+
+div#subtitle {
+    margin-top: 0.0em;
+    margin-bottom: 0.0em;
+    padding-top: 0em;
+    padding-bottom: 0.1em;
+}
+
+em {
+    font-style: italic;
+}
+
+strong {
+    font-weight: bold;
+}
+
+/* 【修改点3】标题颜色：改为淡蓝色 */
 h1, h2, h3 {
-    font-family: Georgia, serif;
-    color: #0d2b4a; /* 接近黑色的深蓝 */
-    margin-top: 1.4em;
-    margin-bottom: 0.6em;
-    line-height: 1.2;
-    border-bottom: 1px solid #eaeaea; /* 淡雅分割线 */
-    padding-bottom: 0.3em;
+    color: #5b9bd5; /* 这是一个看着很舒服的淡蓝色/天蓝色 */
+    margin-top: 0.7em;
+    margin-bottom: 0.5em;
+    padding-bottom: 0.2em;
+    line-height: 1.0;
+    padding-top: 0.5em;
+    border-bottom: 1px solid #aaaaaa;
 }
 
 h1 {
-    font-size: 2.4em;
+    font-size: 165%;
+    padding-bottom: 0.3em;
+}
+
+h2 {
+    padding-top: 0.8em;
+    font-size: 125%;
+}
+
+h2 + h3 {
+    padding-top: 0.2em;
+}
+
+h3 {
+    font-size: 110%;
+    border-bottom: none;
+}
+
+p {
+    margin-top: 0.0em;
+    margin-bottom: 0.8em;
+    padding: 0;
+    line-height: 1.3;
+}
+
+pre {
+    padding: 0;
+    margin: 0;
+}
+
+div#footer {
+    font-size: small;
+    border-top: 1px solid #c0c0c0;
+    padding-top: 0.1em;
+    margin-top: 4.0em;
+    color: #c0c0c0;
+}
+
+div#footer a {
+    color: #80a0b0;
+}
+
+div#footer-text {
+    float: left;
+    padding-bottom: 8px;
+}
+
+ul, ol, dl {
+    margin-top: 0.2em;
+    padding-top: 0;
+    margin-bottom: 0.8em;
+}
+
+dt {
+    margin-top: 0.5em;
+    margin-bottom: 0;
+}
+
+dl {
+    margin-left: 20px;
+}
+
+dd {
+    color: #222222;
+}
+
+dd > *:first-child {
     margin-top: 0;
-    border-bottom: none; /* 大标题不要线 */
 }
 
-h2 { font-size: 1.6em; }
-h3 { font-size: 1.3em; border-bottom: none; }
-
-/* --- 4. 基础排版结构 (保留原版逻辑，防止散架) --- */
-p { margin-bottom: 1em; }
-ul, ol { margin-top: 0.5em; margin-bottom: 1em; padding-left: 20px; }
-li { margin-bottom: 0.4em; }
-
-/* 表格布局修正 */
-table#tlayout {
-    width: 100%;
-    border-collapse: collapse;
-}
-td {
-    vertical-align: top;
-    padding-right: 20px;
+ul {
+    list-style-position: outside;
+    list-style-type: square;
 }
 
-/* 图片样式 */
+p + ul, p + ol {
+    margin-top: -0.5em;
+}
+
+li {
+    margin-top:0.9em;
+}
+
+ol {
+    list-style-position: outside;
+    list-style-type: decimal;
+}
+
+li p, dd p {
+    margin-bottom: 0.3em;
+}
+
+ol ol {
+    list-style-type: lower-alpha;
+}
+
+ol ol ol {
+    list-style-type: lower-roman;
+}
+
+p + div.codeblock {
+    margin-top: -0.6em;
+}
+
+div.codeblock, div.infoblock {
+    margin-right: 0%;
+    margin-top: 1.2em;
+    margin-bottom: 1.3em;
+}
+
+div.blocktitle {
+    font-weight: bold;
+    color: #cd7b62;
+    margin-top: 1.2em;
+    margin-bottom: 0.1em;
+}
+
+div.blockcontent {
+    border: 1px solid silver;
+    padding: 0.3em 0.5em;
+}
+
+div.infoblock > div.blockcontent {
+    background: #ffffee;
+}
+
+div.blockcontent p + ul, div.blockcontent p + ol {
+    margin-top: 0.4em;
+}
+
+div.infoblock p {
+    margin-bottom: 0em;
+}
+
+div.infoblock li p, div.infoblock dd p {
+    margin-bottom: 0.5em;
+}
+
+div.infoblock p + p {
+    margin-top: 0.8em;
+}
+
+div.codeblock > div.blockcontent {
+    background: #f6f6f6;
+}
+
+span.pycommand {
+    color: #000070;
+}
+
+span.statement {
+    color: #008800;
+}
+span.builtin {
+    color: #000088;
+}
+span.special {
+    color: #990000;
+}
+span.operator {
+    color: #880000;
+}
+span.error {
+    color: #aa0000;
+}
+span.comment, span.comment > *, span.string, span.string > * {
+    color: #606060;
+}
+
+@media print {
+    #layout-menu { display: none; }
+}
+
+#fwtitle {
+    margin: 2px;
+}
+
+#fwtitle #toptitle {
+    padding-left: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+#layout-content h1:first-child, #layout-content h2:first-child, #layout-content h3:first-child {
+    margin-top: -0.7em;
+}
+
+div#toptitle h1, #layout-content div#toptitle h1 {
+    margin-bottom: 0.0em;
+    padding-bottom: 0.1em;
+    padding-top: 0;
+    margin-top: 0.5em;
+    border-bottom: none;
+}
+
+img.eq {
+    padding: 0;
+    padding-left: 0.1em;
+    padding-right: 0.1em;
+    margin: 0;
+}
+
+img.eqwl {
+    padding-left: 2em;
+    padding-top: 0.6em;
+    padding-bottom: 0.2em;
+    margin: 0;
+}
+
+table + table {
+    margin-top: 1em;
+}
+
+tr.heading {
+    font-weight: bold;
+    border-bottom: 2px solid black;
+}
+
 img {
-    border-radius: 4px; /* 图片微圆角 */
-    max-width: 100%;
+    border: none;
 }
 
-/* 隐藏原版不需要的菜单栏 (如果你想用单页模式) */
-#layout-menu {
-    display: none; 
-}
-
-/* --- 5. 手机端适配 (必不可少) --- */
-@media screen and (max-width: 768px) {
-    body {
-        width: auto;
-        margin: 0; /* 手机上铺满 */
-        padding: 25px 20px; /* 边距减小 */
-        box-shadow: none; /* 去掉阴影 */
-        border-radius: 0;
-    }
-    
-    h1 { font-size: 2.0em; }
-    td { display: block; width: 100%; padding-right: 0; } /* 表格在手机上变垂直 */
-    img { margin-bottom: 20px; }
+table.imgtable, table.imgtable td {
+    border: none;
+    text-align: left;
 }
