@@ -16,7 +16,11 @@ body {
     /* 核心字体：Merriweather / Georgia */
     font-family: 'Merriweather', Georgia, "Times New Roman", serif;
     color: #000;
-    background-color: #ffffff; 
+    background-color: #ffffff !important; 
+    
+    /* 如果有 box-shadow (阴影)，可以保留，那是纸张的边缘 */
+    /* 如果你觉得阴影会让纸看起来不白，也可以把下面这行删掉 */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06); 
     text-align:left;
     margin-top: 30px; 
     margin-bottom: 30px;
