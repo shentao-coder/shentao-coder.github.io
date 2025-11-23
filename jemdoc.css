@@ -1,4 +1,4 @@
-/* css file for jemdoc - 申韬定制版 (哈佛字体 + 淡蓝配色) */
+/* css file for jemdoc - 申韬最终版 (哈佛Georgia字体 + 淡蓝配色) */
 
 table#tlayout {
     border: none;
@@ -11,8 +11,9 @@ html {
 }
 
 body { 
-    /* 【修改点1】字体换成哈佛风：Times New Roman */
-    font-family: "Times New Roman", Georgia, serif;
+    /* 【核心修改】回归哈佛风：Georgia */
+    /* Georgia 比 Times New Roman 更饱满，更有质感 */
+    font-family: Georgia, "Times New Roman", serif;
     color: #000;
     background-color: #ffffff; 
     text-align:left; /* for IE */
@@ -66,12 +67,12 @@ tt {
 
 pre, tt {
     font-size: 90%;
-    font-family: "Courier New", monaco, monospace; /* 代码字体也配一下 */
+    font-family: "Courier New", monaco, monospace;
 }
 
-/* 【修改点2】链接颜色：改为淡蓝色 */
+/* 【修改点】链接颜色：淡蓝色 (Elite Light Blue) */
 a, a > tt {
-    color: #4a86e8; /* 这里是淡一点的蓝色 */
+    color: #4a86e8; 
     text-decoration: none;
 }
 
@@ -128,9 +129,9 @@ strong {
     font-weight: bold;
 }
 
-/* 【修改点3】标题颜色：改为淡蓝色 */
+/* 【修改点】标题颜色：淡蓝色 */
 h1, h2, h3 {
-    color: #5b9bd5; /* 这是一个看着很舒服的淡蓝色/天蓝色 */
+    color: #5b9bd5; /* 清爽的淡蓝/天蓝 */
     margin-top: 0.7em;
     margin-bottom: 0.5em;
     padding-bottom: 0.2em;
