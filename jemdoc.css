@@ -1,368 +1,100 @@
-/* css file for jemdoc - 申韬最终版 (哈佛Georgia字体 + 淡蓝配色) */
+/* 申韬定制版 jemdoc.css - Citadel Style + Harvard Fonts */
 
-table#tlayout {
-    border: none;
-    border-collapse: separate;
-    background: white;
-}
-
+/* --- 1. 全局设置 (The Foundation) --- */
 html {
-    background-color: #eeeeee; 
+    background-color: #f4f5f7; /* 背景：极淡的灰冷色，像金融终端的护眼模式 */
+    min-height: 100%;
 }
 
-body { 
-    /* 【核心修改】回归哈佛风：Georgia */
-    /* Georgia 比 Times New Roman 更饱满，更有质感 */
-    font-family: Georgia, "Times New Roman", serif;
-    color: #000;
-    background-color: #ffffff; 
-    text-align:left; /* for IE */
-    margin-top: 30px; 
-    margin-bottom: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left:  50px;
-    padding-right: 50px;
-    padding-top: 10px;
-    padding-bottom: 30px;
-    max-width: 960px;
+body {
+    /* 核心字体：哈佛同款衬线体，以此为骨 */
+    font-family: "Adobe Garamond Pro", "Garamond", "Didot", "Times New Roman", serif;
+    font-size: 16px; 
+    line-height: 1.5; /* 紧凑而有力 */
+    color: #1a1a1a; /* 正文：接近纯黑的深灰 */
+    
+    /* 布局：白纸质感 */
+    background-color: #ffffff;
+    max-width: 940px;
+    margin: 40px auto;
+    padding: 40px 60px;
+    
+    /* 阴影：更加锐利、现代的投影 */
+    box-shadow: 0 2px 15px rgba(0, 33, 81, 0.05); 
+    border-radius: 2px;
 }
 
-#layout-menu {
-    background: #f6f6f6;
-    border: 1px solid #dddddd;
-    padding-top: 0.5em;
-    padding-left: 8px;
-    padding-right: 8px;
-    font-size: 1.0em;
-    width: auto;
-    white-space: nowrap;
-    text-align: left;
-    vertical-align: top;
-}
+/* --- 2. 核心配色：Citadel Navy (城堡蓝) --- */
+/* 这是 Citadel 官网标志性的深海军蓝 #002151 */
 
-#layout-menu td {
-    background: #f4f4f4;
-    vertical-align: top;
-}
-
-#layout-content {
-    padding-top: 0.0em;
-    padding-left: 1.0em;
-    padding-right: 1.0em;
-    border: none;
-    background: white;
-    text-align: left;
-    vertical-align: top;
-}
-
-#layout-menu a {
-    line-height: 1.5em;
-    margin-left: 0.5em;
-}
-
-tt {
-    background: #ffffdd;
-}
-
-pre, tt {
-    font-size: 90%;
-    font-family: "Courier New", monaco, monospace;
-}
-
-/* 【修改点】链接颜色：淡蓝色 (Elite Light Blue) */
-a, a > tt {
-    color: #4a86e8; 
+a {
+    color: #003366; /* 链接：比纯黑稍蓝一点，低调奢华 */
     text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+    border-bottom: 1px solid rgba(0, 51, 102, 0.2); /* 极细的下划线 */
 }
 
 a:hover {
-    border-bottom: 1px gray dotted;
-}
-
-#layout-menu a.current:link, #layout-menu a.current:visited {
-    color: #4a86e8;
-    border-bottom: 1px gray solid;
-}
-#layout-menu a:link, #layout-menu a:visited, #layout-menu a:hover {
-    color: #4a86e8;
-    text-decoration: none;
-}
-#layout-menu a:hover {
+    color: #002151; /* 悬停：变深为城堡蓝 */
+    background-color: rgba(0, 33, 81, 0.05); /* 增加一个淡淡的底色块，像彭博终端的选中效果 */
+    border-bottom-color: #002151;
     text-decoration: none;
 }
 
-div.menu-category {
-    border-bottom: 1px solid gray;
-    margin-top: 0.8em;
-    padding-top: 0.2em;
-    padding-bottom: 0.1em;
-    font-weight: bold;
-}
-
-div.menu-item {
-    padding-left: 16px;
-    text-indent: -16px;
-}
-
-div#toptitle {
-    padding-bottom: 0.2em;
-    margin-bottom: 1.5em;
-}
-
-div#toptitle + h2, div#toptitle + h3 {
-    margin-top: 0em;
-}
-
-div#subtitle {
-    margin-top: 0.0em;
-    margin-bottom: 0.0em;
-    padding-top: 0em;
-    padding-bottom: 0.1em;
-}
-
-em {
-    font-style: italic;
-}
-
-strong {
-    font-weight: bold;
-}
-
-/* 【修改点】标题颜色：淡蓝色 */
+/* --- 3. 标题样式：权利的颜色 --- */
 h1, h2, h3 {
-    color: #5b9bd5; /* 清爽的淡蓝/天蓝 */
-    margin-top: 0.7em;
+    font-family: "Adobe Garamond Pro", "Garamond", serif; /* 保持衬线体的威严 */
+    color: #002151; /* 【重点】标题使用 Citadel 官方蓝 */
+    font-weight: bold;
+    margin-top: 1.4em;
     margin-bottom: 0.5em;
+    line-height: 1.1;
+    border-bottom: 2px solid #002151; /* 分割线加粗，变成深蓝，更有力量感 */
     padding-bottom: 0.2em;
-    line-height: 1.0;
-    padding-top: 0.5em;
-    border-bottom: 1px solid #aaaaaa;
 }
 
 h1 {
-    font-size: 165%;
-    padding-bottom: 0.3em;
-}
-
-h2 {
-    padding-top: 0.8em;
-    font-size: 125%;
-}
-
-h2 + h3 {
-    padding-top: 0.2em;
-}
-
-h3 {
-    font-size: 110%;
-    border-bottom: none;
-}
-
-p {
-    margin-top: 0.0em;
-    margin-bottom: 0.8em;
-    padding: 0;
-    line-height: 1.3;
-}
-
-pre {
-    padding: 0;
-    margin: 0;
-}
-
-div#footer {
-    font-size: small;
-    border-top: 1px solid #c0c0c0;
-    padding-top: 0.1em;
-    margin-top: 4.0em;
-    color: #c0c0c0;
-}
-
-div#footer a {
-    color: #80a0b0;
-}
-
-div#footer-text {
-    float: left;
-    padding-bottom: 8px;
-}
-
-ul, ol, dl {
-    margin-top: 0.2em;
-    padding-top: 0;
-    margin-bottom: 0.8em;
-}
-
-dt {
-    margin-top: 0.5em;
-    margin-bottom: 0;
-}
-
-dl {
-    margin-left: 20px;
-}
-
-dd {
-    color: #222222;
-}
-
-dd > *:first-child {
+    font-size: 2.6em;
     margin-top: 0;
+    border-bottom: none; /* 大标题不要线，要留白 */
+    letter-spacing: -0.02em; /* 字母收紧，显得紧凑 */
 }
 
-ul {
-    list-style-position: outside;
-    list-style-type: square;
+h2 { font-size: 1.8em; }
+h3 { 
+    font-size: 1.4em; 
+    border-bottom: none; /* 小标题去掉线，保持干净 */
+    color: #003366; /* 次级标题颜色稍浅 */
 }
 
-p + ul, p + ol {
-    margin-top: -0.5em;
+/* --- 4. 细节微调 (Micro-Typography) --- */
+p { margin-bottom: 1em; text-align: justify; /* 两端对齐，像印刷品 */ }
+ul, ol { margin-top: 0.5em; margin-bottom: 1em; padding-left: 20px; }
+li { margin-bottom: 0.3em; }
+
+/* 表格布局 */
+table#tlayout { width: 100%; border-collapse: collapse; }
+td { vertical-align: top; padding-right: 25px; }
+
+/* 图片 */
+img { 
+    border-radius: 2px; 
+    border: 1px solid #eee; /* 给图片加个极细的边框，显得精致 */
 }
 
-li {
-    margin-top:0.9em;
-}
+/* 隐藏左侧菜单 */
+#layout-menu { display: none; }
 
-ol {
-    list-style-position: outside;
-    list-style-type: decimal;
-}
-
-li p, dd p {
-    margin-bottom: 0.3em;
-}
-
-ol ol {
-    list-style-type: lower-alpha;
-}
-
-ol ol ol {
-    list-style-type: lower-roman;
-}
-
-p + div.codeblock {
-    margin-top: -0.6em;
-}
-
-div.codeblock, div.infoblock {
-    margin-right: 0%;
-    margin-top: 1.2em;
-    margin-bottom: 1.3em;
-}
-
-div.blocktitle {
-    font-weight: bold;
-    color: #cd7b62;
-    margin-top: 1.2em;
-    margin-bottom: 0.1em;
-}
-
-div.blockcontent {
-    border: 1px solid silver;
-    padding: 0.3em 0.5em;
-}
-
-div.infoblock > div.blockcontent {
-    background: #ffffee;
-}
-
-div.blockcontent p + ul, div.blockcontent p + ol {
-    margin-top: 0.4em;
-}
-
-div.infoblock p {
-    margin-bottom: 0em;
-}
-
-div.infoblock li p, div.infoblock dd p {
-    margin-bottom: 0.5em;
-}
-
-div.infoblock p + p {
-    margin-top: 0.8em;
-}
-
-div.codeblock > div.blockcontent {
-    background: #f6f6f6;
-}
-
-span.pycommand {
-    color: #000070;
-}
-
-span.statement {
-    color: #008800;
-}
-span.builtin {
-    color: #000088;
-}
-span.special {
-    color: #990000;
-}
-span.operator {
-    color: #880000;
-}
-span.error {
-    color: #aa0000;
-}
-span.comment, span.comment > *, span.string, span.string > * {
-    color: #606060;
-}
-
-@media print {
-    #layout-menu { display: none; }
-}
-
-#fwtitle {
-    margin: 2px;
-}
-
-#fwtitle #toptitle {
-    padding-left: 0.5em;
-    margin-bottom: 0.5em;
-}
-
-#layout-content h1:first-child, #layout-content h2:first-child, #layout-content h3:first-child {
-    margin-top: -0.7em;
-}
-
-div#toptitle h1, #layout-content div#toptitle h1 {
-    margin-bottom: 0.0em;
-    padding-bottom: 0.1em;
-    padding-top: 0;
-    margin-top: 0.5em;
-    border-bottom: none;
-}
-
-img.eq {
-    padding: 0;
-    padding-left: 0.1em;
-    padding-right: 0.1em;
-    margin: 0;
-}
-
-img.eqwl {
-    padding-left: 2em;
-    padding-top: 0.6em;
-    padding-bottom: 0.2em;
-    margin: 0;
-}
-
-table + table {
-    margin-top: 1em;
-}
-
-tr.heading {
-    font-weight: bold;
-    border-bottom: 2px solid black;
-}
-
-img {
-    border: none;
-}
-
-table.imgtable, table.imgtable td {
-    border: none;
-    text-align: left;
+/* --- 5. 手机适配 --- */
+@media screen and (max-width: 768px) {
+    body {
+        width: auto;
+        margin: 0;
+        padding: 30px 20px;
+        box-shadow: none;
+    }
+    h1 { font-size: 2.0em; }
+    td { display: block; width: 100%; padding-right: 0; }
+    img { margin-bottom: 20px; }
 }
