@@ -514,8 +514,14 @@
 		</div>
 		<p style="text-align: center;">
 			<br>
-			&copy; 2025 Tao Shen. Last updated: Nov. 2025.
+			&copy; <span id="year"></span> <span style="font-variant: small-caps; font-weight: bold;">Tao Shen</span>.
+			<span style="color: #666; font-size: 0.9em;">Last updated: Nov. 2025.</span>
 		</p>
+
+		<script>
+			// 自动获取当前年份并填入 id="year" 的位置
+			document.getElementById('year').innerText = new Date().getFullYear();
+		</script>
 
 
 	</div>
