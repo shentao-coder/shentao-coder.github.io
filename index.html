@@ -12,7 +12,8 @@
 	<link href="https://fonts.loli.net/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap"
 		rel="stylesheet">
 
-	<title>me@shentao</title>
+	<link rel="icon" href="pic/favicon.png" type="image/png">
+	<title>Tao Shen | Economics</title>
 
 	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -22,6 +23,54 @@
 		.sign-img {
 			width: 120px;
 			margin-top: 5px;
+		}
+
+
+		/* 让图片在鼠标悬停时，轻微上浮 + 增加阴影 */
+		img:hover {
+			transform: translateY(-5px);
+			/* 向上浮动 5 像素 */
+			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+			/* 产生柔和的投影 */
+			transition: all 0.3s ease;
+			/* 动画过程 0.3秒，丝滑 */
+			cursor: pointer;
+			/* 鼠标变手型，暗示可点击（可选） */
+		}
+
+		/* 让图片恢复默认时也有过渡动画，不会生硬地跳回去 */
+		img {
+			transition: all 0.3s ease;
+		}
+
+		/* 特殊处理：签名图片不要浮动，保持沉稳 */
+		img[alt="Signature"] {
+			transform: none !important;
+			box-shadow: none !important;
+			cursor: default;
+		}
+
+		/* === 链接样式升级 === */
+		a {
+			color: #527bbd;
+			/* 保持你的主题蓝 */
+			text-decoration: none;
+			/* 去掉默认下划线 */
+			border-bottom: none !important;
+			/* 【核心】强制去掉那个老土的虚线 */
+			transition: all 0.2s ease;
+			/* 丝滑过渡 */
+		}
+
+		a:hover {
+			color: #0056b3;
+			/* 鼠标放上去变深蓝，增加对比度 */
+			text-decoration: underline;
+			/* 出现实线下划线 */
+			text-underline-offset: 4px;
+			/* 【现代感秘诀】让线下移 4px，更透气 */
+			text-decoration-thickness: 1.5px;
+			/* 线条稍微加粗一点点 */
 		}
 	</style>
 
@@ -191,7 +240,9 @@
 			<tbody>
 				<tr>
 					<td width="200">
-						<img src="pic/smbu.png" width="160px">
+						<a href="https://en.smbu.edu.cn/" target="_blank">
+							<img src="pic/smbu.png" width="160px">
+						</a>
 					</td>
 					<td>
 						<p><b>Shenzhen MSU-BIT University</b></p>
@@ -220,7 +271,9 @@
 				<tr>&nbsp;</tr>
 				<tr>
 					<td width="200">
-						<img src="pic/mq.svg" width="145px">
+						<a href="https://www.mq.edu.au/" target="_blank">
+							<img src="pic/mq.svg" width="145px">
+						</a>
 					</td>
 					<td>
 						<p><b>Macquarie University</b></p>
@@ -244,7 +297,9 @@
 			<tbody>
 				<tr>
 					<td width="200">
-						<img src="pic/citicf.png" width="140px">
+						<a href="https://www.citicsf.com/en/" target="_blank">
+							<img src="pic/citicf.png" width="140px">
+						</a>
 					</td>
 					<td>
 						<p><b>CITIC Futures Co., Ltd.</b></p>
@@ -262,7 +317,9 @@
 				<tr>&nbsp;</tr>
 				<tr>
 					<td width="200">
-						<img src="pic/cncbi.png" width="160px">
+						<a href="https://www.cncbinternational.com/" target="_blank">
+							<img src="pic/cncbi.png" width="160px">
+						</a>
 					</td>
 					<td>
 						<p><b>China CITIC Bank International</b></p>
@@ -281,7 +338,9 @@
 
 				<tr>
 					<td width="200">
-						<img src="pic/abc.png" width="160px">
+						<a href="https://www.abchina.com/en/" target="_blank">
+							<img src="pic/abc.png" width="160px">
+						</a>
 					</td>
 					<td>
 						<p><b>Agricultural Bank of China</b></p>
@@ -305,7 +364,7 @@
 					<td width="40" valign="top">
 						<div style="font-size: 24px; text-align: center;">📈</div>
 					</td>
-					<td>
+					<td valign="top">
 						<p>
 							<b>Exploration of the Opportunities of Digital RMB (e-CNY) in Promoting China's Cross-Border
 								Trade and RMB Internationalization</b>
@@ -313,26 +372,29 @@
 						<p style="color: #666; font-size: 0.9em; margin-bottom: 5px;">
 							<i>Undergraduate Graduation Thesis (Senior Thesis) | 2025</i>
 						</p>
+
 						<p style="margin-top:5px; color: #444; font-size: 0.95em; line-height: 1.5;">
 							Constructed a comprehensive dataset combining monthly macroeconomic indicators (2012–2025)
 							and e-CNY policy milestones.
 							Employed the <b>Autoregressive Distributed Lag (ARDL)</b> bounds testing approach and
 							<b>Error Correction Model (ECM)</b> framework:
+						</p>
 
 						<div style="text-align: center; font-size: 1.1em; color: #333; margin: 10px 0;">
 							$$ \Delta y_t = \alpha_0 + \sum_{i=1}^{p} \beta_i \Delta y_{t-i} + \sum_{j=0}^{q} \delta_j
 							\Delta x_{t-j} + \lambda_1 y_{t-1} + \lambda_2 x_{t-1} + \epsilon_t $$
 						</div>
 
-						to analyze the long-run cointegration and short-run dynamics between CBDC development and
-						currency internationalization.
-						<br>
-						<span style="color: #888; font-size: 0.9em;">
-							• <b>Findings:</b> Empirical results indicate that the official announcement and app
-							rollout of e-CNY exert a significant positive structural effect on RMB
-							internationalization in the long run, whereas the geographic expansion of pilot zones
-							shows ambiguous effects, suggesting a "quality over quantity" policy implication.
-						</span>
+						<p style="margin-top:5px; color: #444; font-size: 0.95em; line-height: 1.5;">
+							to analyze the long-run cointegration and short-run dynamics between CBDC development and
+							currency internationalization.
+							<br>
+							<span style="color: #888; font-size: 0.9em;">
+								• <b>Findings:</b> Empirical results indicate that the official announcement and app
+								rollout of e-CNY exert a significant positive structural effect on RMB
+								internationalization in the long run, whereas the geographic expansion of pilot zones
+								shows ambiguous effects, suggesting a "quality over quantity" policy implication.
+							</span>
 						</p>
 					</td>
 				</tr>
