@@ -9,24 +9,24 @@ table#tlayout {
 }
 
 html {
-    background-color: #eeeeee; 
+    background-color: #eeeeee;
 }
 
-body { 
+body {
     /* 核心字体：Merriweather / Georgia */
     font-family: 'Merriweather', Georgia, "Times New Roman", serif;
     color: #000;
-    background-color: #ffffff !important; 
-    
+    background-color: #ffffff !important;
+
     /* 如果有 box-shadow (阴影)，可以保留，那是纸张的边缘 */
     /* 如果你觉得阴影会让纸看起来不白，也可以把下面这行删掉 */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06); 
-    text-align:left;
-    margin-top: 30px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    text-align: left;
+    margin-top: 30px;
     margin-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
-    padding-left:  70px;
+    padding-left: 70px;
     padding-right: 70px;
     padding-top: 0px;
     padding-bottom: 30px;
@@ -34,8 +34,10 @@ body {
 }
 
 /* --- 链接样式 --- */
-a, a > tt {
-    color: #224b8d; /* 经典深蓝 */
+a,
+a>tt {
+    color: #224b8d;
+    /* 经典深蓝 */
     text-decoration: none;
 }
 
@@ -44,50 +46,110 @@ a:hover {
 }
 
 /* --- 标题样式 --- */
-h1, h2, h3 {
-    color: #527bbd; /* 标题蓝 */
-    font-weight: 900 !important; /* 【修改点】改成 900 (特粗) 并强制生效 */
+h1,
+h2,
+h3 {
+    color: #527bbd;
+    /* 标题蓝 */
+    font-weight: 900 !important;
+    /* 【修改点】改成 900 (特粗) 并强制生效 */
     margin-top: 0.7em;
     margin-bottom: 0.5em;
     padding-bottom: 0.2em;
-    line-height: 1.1; /* 【建议】稍微收紧一点行高，显粗 */
+    line-height: 1.1;
+    /* 【建议】稍微收紧一点行高，显粗 */
     padding-top: 0.5em;
     border-bottom: 1px solid #aaaaaa;
 }
 
 /* ★★★ 名字 (H1) 特效 ★★★ */
 h1 {
-    font-size: 2.5em; /* 字号加大 */
-	font-weight: 900 !important; /* 【修改点】再次强调加粗 */
-    font-variant: small-caps; /* 小型大写字母 (TAO SHEN) */
-    letter-spacing: 0.02em; /* 字母间距微宽 */
+    font-size: 2.5em;
+    /* 字号加大 */
+    font-weight: 900 !important;
+    /* 【修改点】再次强调加粗 */
+    font-variant: small-caps;
+    /* 小型大写字母 (TAO SHEN) */
+    letter-spacing: 0.02em;
+    /* 字母间距微宽 */
     padding-bottom: 0.1em;
-    border-bottom: none; /* 去掉文字下的线 */
+    border-bottom: none;
+    /* 去掉文字下的线 */
     margin-bottom: 0;
 }
 
-h2 { font-size: 125%; padding-top: 0.8em; }
-h3 { font-size: 110%; border-bottom: none; }
+h2 {
+    font-size: 125%;
+    padding-top: 0.8em;
+}
+
+h3 {
+    font-size: 110%;
+    border-bottom: none;
+}
 
 /* --- 顶部容器 (去掉横线) --- */
 div#toptitle {
     padding-bottom: 0.2em;
     margin-bottom: 1.5em;
-    border-bottom: none; /* 【关键】去掉名字下面那条长横线 */
+    border-bottom: none;
+    /* 【关键】去掉名字下面那条长横线 */
 }
 
 /* --- 其他排版细节 --- */
-div#toptitle + h2, div#toptitle + h3 { margin-top: 0em; }
-p { margin-top: 0.0em; margin-bottom: 0.8em; padding: 0; line-height: 1.3; }
-li { margin-top: 0.9em; }
-ul { list-style-type: square; margin-top: 0.2em; padding-left: 20px; }
-table.imgtable td { border: none; text-align: left; vertical-align: top; padding-right: 20px; }
-img { border: none; }
-#layout-menu { display: none; }
+div#toptitle+h2,
+div#toptitle+h3 {
+    margin-top: 0em;
+}
+
+p {
+    margin-top: 0.0em;
+    margin-bottom: 0.8em;
+    padding: 0;
+    line-height: 1.3;
+    text-align: justify;
+}
+
+li {
+    margin-top: 0.9em;
+}
+
+ul {
+    list-style-type: square;
+    margin-top: 0.2em;
+    padding-left: 20px;
+}
+
+table.imgtable td {
+    border: none;
+    text-align: left;
+    vertical-align: top;
+    padding-right: 20px;
+}
+
+img {
+    border: none;
+}
+
+#layout-menu {
+    display: none;
+}
 
 /* 手机适配 */
 @media screen and (max-width: 768px) {
-    body { width: auto; margin: 0; padding: 20px; }
-    td { display: block; width: 100%; padding-right: 0; }
-    h1 { font-size: 2.2em; }
+    body {
+        width: auto;
+        margin: 0;
+        padding: 20px;
+    }
+
+    td {
+        display: block;
+        width: 100%;
+        padding-right: 0;
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
 }
